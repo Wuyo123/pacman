@@ -14,10 +14,23 @@ from .model import BeliefMiTA
 from .runtime import ACTIONS, Actions, Configuration, ObservationEncoder, OraclePlanner
 
 
-def joint_top3(first, conditional_second, legal):
+def joint_top3(first, conditional_second, legal, acting_slot=None):
     joint = first[:, None] * conditional_second
     joint *= legal[0, :, None] & legal[1, None, :]
-    choices = np.argsort(-joint.ravel(), kind='stable')[:3]
+    if acting_slot is None:
+        choices = np.argsort(-joint.ravel(), kind='stable')[:3]
+    elif acting_slot in (0, 1):
+        candidates = []
+        for action in range(5):
+            if acting_slot == 0:
+                partner = int(joint[action].argmax())
+                candidates.append(5*action + partner)
+            else:
+                partner = int(joint[:,action].argmax())
+                candidates.append(5*partner + action)
+        choices = sorted(candidates, key=lambda i: (-float(joint.ravel()[i]), i))[:3]
+    else:
+        raise ValueError('acting_slot must be0,1 or None')
     choices = [int(i) for i in choices if joint.ravel()[i] > 0]
     total = sum(joint.ravel()[i] for i in choices)
     return [((i // 5, i % 5), float(joint.ravel()[i] / total)) for i in choices]
@@ -85,7 +98,9 @@ class Edge:
 
 
 class NeuralController:
-    def __init__(self, checkpoint, seed, budget_ms=50, device='cpu'):
+    def __init__(self, checkpoint, seed, budget_ms=50, device='cpu', mode='original'):
+        if mode not in ('original', 'diverse', 'policy'):
+            raise ValueError('unknown controller mode')
         torch.set_num_threads(1)
         checkpoint = torch.load(Path(checkpoint), map_location='cpu', weights_only=False)
         if checkpoint['epochs'] != 20 or checkpoint['status'] != 'completed':
@@ -93,9 +108,12 @@ class NeuralController:
         self.model = BeliefMiTA(d=checkpoint['d']).to(device).eval()
         self.model.load_state_dict(checkpoint['state_dict'])
         self.device, self.budget = torch.device(device), budget_ms / 1000
+        self.mode = mode
         self.rng = np.random.default_rng(seed)
         self.statistics = {'decisions': 0, 'simulations': 0, 'shield_removed': 0,
-                           'shield_fallbacks': 0, 'forward_ms': [], 'deadline_stops': 0}
+                           'shield_fallbacks': 0, 'forward_ms': [], 'deadline_stops': 0,
+                           'root_action_choices': [0,0,0,0], 'forced_despite_alternatives': 0,
+                           'search_changed_policy': 0, 'chosen_stop': 0}
 
     def start(self, observation, topology, team, red):
         self.topology, self.team, self.red = topology, list(team), red
@@ -125,7 +143,7 @@ class NeuralController:
         self.statistics['forward_ms'].append((time.perf_counter() - started) * 1000)
         return evidence_belief(observation, belief, self.topology, self.team, self.red), first, second, value
 
-    def plans(self, observation, belief, first, second, count_statistics=False):
+    def plans(self, observation, belief, first, second, count_statistics=False, actor=None):
         legal = np.asarray([[a in observation.getLegalActions(i) for a in ACTIONS] for i in self.team])
         raw = legal.copy()
         threatening = [not observation.getAgentState(i).isPacman and
@@ -153,7 +171,8 @@ class NeuralController:
                     self.statistics['shield_fallbacks'] += 1
         if count_statistics:
             self.statistics['shield_removed'] += int((raw & ~legal).sum())
-        return [Edge(plan, prior) for plan, prior in joint_top3(first, second, legal)]
+        acting_slot = self.team.index(actor) if self.mode == 'diverse' else None
+        return [Edge(plan, prior) for plan, prior in joint_top3(first, second, legal, acting_slot)]
 
     def macro_step(self, state, actor, plan, encoder):
         encoder = copy.copy(encoder)
@@ -177,9 +196,18 @@ class NeuralController:
     def choose(self, observation, actor, encoder, landmarks, started):
         deadline = started + self.budget
         belief, first, second, _ = self.infer(observation, encoder, landmarks)
-        root = self.plans(observation, belief, first, second, count_statistics=True)
+        root = self.plans(observation, belief, first, second, count_statistics=True, actor=actor)
         if not root:
             raise RuntimeError('no legal joint plan')
+        slot = self.team.index(actor)
+        count = len({edge.plan[slot] for edge in root})
+        self.statistics['root_action_choices'][count] += 1
+        self.statistics['forced_despite_alternatives'] += count == 1 and len(observation.getLegalActions(actor)) > 1
+        policy_best = max(root, key=lambda edge: edge.prior)
+        if self.mode == 'policy':
+            self.statistics['decisions'] += 1
+            self.statistics['chosen_stop'] += policy_best.plan[slot] == 4
+            return ACTIONS[policy_best.plan[slot]]
         simulations = 0
         while time.perf_counter() < deadline - 0.012:
             state = sampled_state(observation, belief, self.topology, self.team, self.red, self.rng)
@@ -206,7 +234,7 @@ class NeuralController:
                              tuple(future.getAgentDistances()), future.getScore(),
                              tuple(future.getRedFood().asList()), tuple(future.getBlueFood().asList()))
                 if signature not in edge.observations:
-                    edge.observations[signature] = self.plans(future, next_belief, next_first, next_second)
+                    edge.observations[signature] = self.plans(future, next_belief, next_first, next_second, actor=actor)
                     break
                 edges = edge.observations[signature]
                 if not edges:
@@ -223,4 +251,6 @@ class NeuralController:
         if simulations == 0:
             self.statistics['deadline_stops'] += 1
         best = max(root, key=lambda edge: (edge.visits, edge.total / max(1, edge.visits), edge.prior))
-        return ACTIONS[best.plan[self.team.index(actor)]]
+        self.statistics['search_changed_policy'] += best.plan[slot] != policy_best.plan[slot]
+        self.statistics['chosen_stop'] += best.plan[slot] == 4
+        return ACTIONS[best.plan[slot]]

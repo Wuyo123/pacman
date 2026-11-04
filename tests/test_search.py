@@ -21,6 +21,29 @@ class SearchTests(unittest.TestCase):
             self.assertGreater(prior, 0)
         self.assertAlmostEqual(sum(p for _, p in plans), 1.0)
 
+    def test_current_actor_receives_distinct_actions_instead_of_duplicate_plans(self):
+        import inspect
+        self.assertIn('acting_slot', inspect.signature(joint_top3).parameters,
+                      'pruning has no awareness of the current actor')
+        first = np.array([0.96, 0.01, 0.01, 0.01, 0.01])
+        conditional = np.full((5,5), 0.2)
+        legal = np.ones((2,5), dtype=bool)
+        original = joint_top3(first, conditional, legal)
+        self.assertEqual(len({plan[0] for plan,_ in original}), 1)
+        for slot in [0,1]:
+            improved = joint_top3(first, conditional, legal, acting_slot=slot)
+            self.assertEqual(len({plan[slot] for plan,_ in improved}), 3)
+            self.assertAlmostEqual(sum(prior for _,prior in improved), 1.0)
+            self.assertTrue(all(legal[0,plan[0]] and legal[1,plan[1]] for plan,_ in improved))
+
+    def test_diverse_pruning_retains_only_available_current_actions(self):
+        import inspect
+        self.assertIn('acting_slot', inspect.signature(joint_top3).parameters)
+        legal = np.array([[False,True,False,False,True],[True,False,False,False,False]])
+        plans = joint_top3(np.ones(5)/5,np.ones((5,5))/5,legal,acting_slot=0)
+        self.assertEqual({plan[0] for plan,_ in plans}, {1,4})
+        self.assertTrue(all(plan[1] == 0 for plan,_ in plans))
+
     def test_literal_threshold_shield(self):
         from types import SimpleNamespace
         topology = SimpleNamespace(gate=np.array([-1, 0, 0]), escape_depth=np.array([0, 1, 2]),
