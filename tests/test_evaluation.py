@@ -1,6 +1,9 @@
 import unittest
 import time
 import gc
+import signal
+from types import SimpleNamespace
+from unittest.mock import patch
 try:
     from belief_mita.evaluate import gate_result, evaluation_spec
 except ImportError:
@@ -8,6 +11,26 @@ except ImportError:
 
 
 class EvaluationTests(unittest.TestCase):
+    @unittest.skipUnless(hasattr(signal,'SIGALRM'),'POSIX timer regression')
+    def test_deadline_during_timer_arming_returns_legal_fallback(self):
+        from belief_mita.evaluate import TimedController
+        controller = TimedController.__new__(TimedController)
+        controller.budget = .05
+        controller.statistics = {'deadline_stops':0}
+        before = signal.getsignal(signal.SIGALRM)
+        def arm_or_cancel(which, seconds):
+            if seconds:
+                signal.getsignal(signal.SIGALRM)(signal.SIGALRM,None)
+            return (0.,0.)
+        try:
+            with patch('belief_mita.evaluate.signal.setitimer',side_effect=arm_or_cancel):
+                action = controller.choose(SimpleNamespace(getLegalActions=lambda actor:['Stop']),0,None,None,time.perf_counter())
+            self.assertEqual(action,'Stop')
+            self.assertEqual(controller.statistics['deadline_stops'],1)
+            self.assertEqual(signal.getsignal(signal.SIGALRM),before)
+        finally:
+            signal.signal(signal.SIGALRM,before)
+
     def test_original_gate_counts_all_twenty_games_and_half_draws(self):
         self.assertIsNotNone(gate_result, 'original M0 evaluation not implemented')
         outcomes = [1] * 10 + [0] * 10

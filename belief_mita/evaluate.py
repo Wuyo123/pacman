@@ -111,18 +111,22 @@ class TimedController(NeuralController):
     def choose(self, observation, actor, encoder, landmarks, started):
         def timeout(signum, frame):
             raise DecisionDeadline()
-        previous = signal.signal(signal.SIGALRM, timeout)
-        remaining = started + self.budget - time.perf_counter() - 0.001
-        signal.setitimer(signal.ITIMER_REAL, max(0.0001, remaining))
+        previous = signal.getsignal(signal.SIGALRM)
         try:
-            return super().choose(observation, actor, encoder, landmarks, started)
+            try:
+                signal.signal(signal.SIGALRM, timeout)
+                remaining = started + self.budget - time.perf_counter() - 0.001
+                signal.setitimer(signal.ITIMER_REAL, max(0.0001, remaining))
+                return super().choose(observation, actor, encoder, landmarks, started)
+            finally:
+                signal.setitimer(signal.ITIMER_REAL, 0)
+                signal.signal(signal.SIGALRM, previous)
         except DecisionDeadline:
+            signal.setitimer(signal.ITIMER_REAL, 0)
+            signal.signal(signal.SIGALRM, previous)
             self.statistics['deadline_stops'] += 1
             legal = observation.getLegalActions(actor)
             return 'Stop' if 'Stop' in legal else legal[0]
-        finally:
-            signal.setitimer(signal.ITIMER_REAL, 0)
-            signal.signal(signal.SIGALRM, previous)
 
 
 def evaluate(checkpoint, data_dir, out_dir, deadline=None, defer_gc=False):

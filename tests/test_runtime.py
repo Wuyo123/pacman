@@ -65,6 +65,20 @@ class RuntimeTests(unittest.TestCase):
         oracle.choose(self.state, 0)
         self.assertGreaterEqual(min(seen_times), 0, 'expert used states beyond game expiry')
 
+    def test_student_rollout_collects_expert_labels_without_exposing_truth(self):
+        class StopStudent:
+            def start(self, observation, topology, team, red):
+                self.team = team
+            def choose(self, observation, actor, encoder, landmarks, started):
+                for enemy in [i for i in range(4) if i not in self.team]:
+                    assert observation.getAgentPosition(enemy) is None
+                return 'Stop'
+        result, episode = runtime.play_game(8000012, length=8, collect=True, controller=StopStudent())
+        self.assertTrue(result['validated'])
+        self.assertEqual(episode['student_action'].tolist(), [4]*len(episode['frames']))
+        self.assertEqual(episode['labels'].shape, (len(episode['frames']),2))
+        self.assertTrue((episode['frames'][:,:,9:11] == 0).all())
+
 
 if __name__ == '__main__':
     unittest.main()

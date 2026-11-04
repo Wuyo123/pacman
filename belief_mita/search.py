@@ -103,8 +103,8 @@ class NeuralController:
             raise ValueError('unknown controller mode')
         torch.set_num_threads(1)
         checkpoint = torch.load(Path(checkpoint), map_location='cpu', weights_only=False)
-        if checkpoint['epochs'] != 20 or checkpoint['status'] != 'completed':
-            raise ValueError('official M0 evaluation requires the completed20-epoch checkpoint')
+        if not isinstance(checkpoint.get('epochs'),int) or checkpoint['epochs'] < 1 or checkpoint['status'] != 'completed':
+            raise ValueError('evaluation requires a completed training checkpoint')
         self.model = BeliefMiTA(d=checkpoint['d']).to(device).eval()
         self.model.load_state_dict(checkpoint['state_dict'])
         self.device, self.budget = torch.device(device), budget_ms / 1000

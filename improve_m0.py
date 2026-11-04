@@ -85,8 +85,8 @@ def paired_comparison(records, candidate):
                            for red in (True,False)]) for seed in seeds]
     rng = np.random.default_rng(20261105)
     boot = np.asarray(differences)[rng.integers(0,len(seeds),size=(10000,len(seeds)))].mean(1)
-    positives = sum(value>0 for value in differences)
-    negatives = sum(value<0 for value in differences)
+    positives = int(sum(value>0 for value in differences))
+    negatives = int(sum(value<0 for value in differences))
     n = positives+negatives
     p = min(1.,2*sum(math.comb(n,k) for k in range(min(positives,negatives)+1))/2**n) if n else 1.
     return {'seed_blocks':len(seeds),'mean_score_gain':float(np.mean(differences)),
@@ -98,7 +98,11 @@ def paired_comparison(records, candidate):
 def run_stage(stage,modes,deadline):
     stage_dir = OUT/stage
     if stage_dir.exists():
-        raise FileExistsError('refusing to overwrite an experiment stage')
+        paths = [stage_dir/mode/f'game_{index:02d}.json' for mode in modes for index in range(20)]
+        if not all(path.exists() for path in paths) or (stage_dir/'summary.json').exists():
+            raise FileExistsError('only a fully completed, unsummarized stage can be recovered')
+        records = [json.loads(path.read_text()) for path in paths]
+        return finalize_stage(stage,modes,records,deadline)
     stage_dir.mkdir()
     jobs = []
     for index in range(20):
@@ -122,6 +126,11 @@ def run_stage(stage,modes,deadline):
             records.append(result)
             if len(records)%10 == 0:
                 print(json.dumps({'stage':stage,'completed':len(records),'planned':len(jobs)}),flush=True)
+    return finalize_stage(stage,modes,records,deadline)
+
+
+def finalize_stage(stage,modes,records,deadline):
+    stage_dir = OUT/stage
     summary = summarize(records)
     comparisons = {mode:paired_comparison(records,mode) for mode in modes if mode!='original'}
     replays, audit_complete = {}, True
@@ -134,7 +143,7 @@ def run_stage(stage,modes,deadline):
                 break
             replays[mode].append(replay(record))
     report = {'summary':summary,'comparisons':comparisons,'replay_diagnostics':replays,
-              'planned_games':len(jobs),'completed_records':len(records),
+              'planned_games':20*len(modes),'completed_records':len(records),
               'all_valid_traces_replayed':audit_complete,
               'resource_status':'COMPLETE' if audit_complete and time.monotonic()<deadline else 'INCONCLUSIVE_RESOURCE'}
     (stage_dir/'summary.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
@@ -143,20 +152,25 @@ def run_stage(stage,modes,deadline):
 
 
 def main():
-    if (OUT/'manifest.json').exists():
-        raise FileExistsError('experiment already exists')
     started = time.monotonic()
-    manifest = {'started_utc':datetime.now(timezone.utc).isoformat(),'base_commit':'7bf5a308bf05757bbe1f82def8183cc0d50db6e2',
-                'checkpoint_sha256':hashlib.sha256(CHECKPOINT.read_bytes()).hexdigest(),
-                'workers':3,'device':'cpu','action_budget_ms':50,'development_minutes':45,'total_minutes':90,
-                'source_sha256':{},'protocol_sha256':hashlib.sha256((ROOT/'IMPROVEMENT_PROTOCOL_20261105.md').read_bytes()).hexdigest()}
-    for path in list((ROOT/'belief_mita').glob('*.py'))+[Path(__file__).resolve(),ROOT/'diagnose_m0.py']:
-        relative = path.relative_to(ROOT)
-        manifest['source_sha256'][str(relative)] = hashlib.sha256(path.read_bytes()).hexdigest()
-        snapshot = OUT/'source'/relative
-        snapshot.parent.mkdir(parents=True,exist_ok=True)
-        snapshot.write_bytes(path.read_bytes())
-    (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2))
+    recovering = (OUT/'manifest.json').exists()
+    if recovering:
+        manifest = json.loads((OUT/'manifest.json').read_text())
+        if (OUT/'development/summary.json').exists() or (OUT/'selection.json').exists():
+            raise FileExistsError('refusing to restart a summarized or selected experiment')
+        original_start = datetime.fromisoformat(manifest['started_utc']).timestamp()
+        started -= time.time()-original_start
+        for relative, expected in manifest['source_sha256'].items():
+            if relative == Path(__file__).name:
+                continue
+            if hashlib.sha256((ROOT/relative).read_bytes()).hexdigest() != expected:
+                raise RuntimeError('simulation/model code changed during reporting recovery')
+        recovery = {'reason':'normalize numpy integer counts for JSON; aggregate existing60games without rerunning',
+                     'original_runner_sha256':manifest['source_sha256'][Path(__file__).name],
+                     'reporting_runner_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
+        (OUT/'reporting_recovery.json').write_text(json.dumps(recovery,indent=2))
+    else:
+        write_manifest(started)
     development = run_stage('development',list(MODES),started+45*60)
     selected = select_candidate(development['summary']) if development['all_valid_traces_replayed'] else None
     result = {'selected':selected,'development':development['summary'],
@@ -175,6 +189,20 @@ def main():
     result['elapsed_seconds'] = time.monotonic()-started
     (OUT/'result.json').write_text(json.dumps(result,indent=2))
     print(json.dumps(result),flush=True)
+
+
+def write_manifest(started):
+    manifest = {'started_utc':datetime.now(timezone.utc).isoformat(),'base_commit':'7bf5a308bf05757bbe1f82def8183cc0d50db6e2',
+                'checkpoint_sha256':hashlib.sha256(CHECKPOINT.read_bytes()).hexdigest(),
+                'workers':3,'device':'cpu','action_budget_ms':50,'development_minutes':45,'total_minutes':90,
+                'source_sha256':{},'protocol_sha256':hashlib.sha256((ROOT/'IMPROVEMENT_PROTOCOL_20261105.md').read_bytes()).hexdigest()}
+    for path in list((ROOT/'belief_mita').glob('*.py'))+[Path(__file__).resolve(),ROOT/'diagnose_m0.py']:
+        relative = path.relative_to(ROOT)
+        manifest['source_sha256'][str(relative)] = hashlib.sha256(path.read_bytes()).hexdigest()
+        snapshot = OUT/'source'/relative
+        snapshot.parent.mkdir(parents=True,exist_ok=True)
+        snapshot.write_bytes(path.read_bytes())
+    (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2))
 
 
 if __name__ == '__main__':

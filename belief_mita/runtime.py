@@ -253,7 +253,8 @@ def play_game(seed, red=True, opponent='baseline', name='defaultCapture', length
         controller.start(state.makeObservation(team[0]), topology, team, red)
     landmarks = topology.landmark_indices(state.getRedFood().asList() + state.getBlueFood().asList(),
                                          state.getCapsules(), 16)
-    rows = {key: [] for key in ('frames', 'agents', 'labels', 'enemy', 'visible', 'legal')}
+    rows = {key: [] for key in ('frames', 'agents', 'labels', 'enemy', 'visible', 'legal',
+                                'student_action', 'actor_slot')}
     times, deaths, moves = [], [0, 0, 0, 0], []
     actor = random.randint(0, 1)
     started = time.perf_counter()
@@ -276,19 +277,23 @@ def play_game(seed, red=True, opponent='baseline', name='defaultCapture', length
                 finally:
                     # Simulated sonar draws must not change actual opponent/noise randomness.
                     random.setstate(environment_rng)
+        else:
+            action = opponents[actor].getAction(observation)
+        elapsed = (time.perf_counter() - begin) * 1000
+        if actor in team:
+            times.append(elapsed)
             if collect:
-                assert controller is None, 'teacher labels must come from oracle'
+                # Expert queries are offline labels; only the student's callback is timed.
+                if controller is not None:
+                    joint_plan = oracle.plan(state, actor)
                 rows['frames'].append(frame)
                 rows['agents'].append([topology.index[observation.getAgentPosition(i)] for i in team])
                 rows['labels'].append(joint_plan)
                 rows['enemy'].append([topology.index[state.getAgentPosition(i)] for i in other])
                 rows['visible'].append([observation.getAgentPosition(i) is not None for i in other])
                 rows['legal'].append([[a in observation.getLegalActions(i) for a in ACTIONS] for i in team])
-        else:
-            action = opponents[actor].getAction(observation)
-        elapsed = (time.perf_counter() - begin) * 1000
-        if actor in team:
-            times.append(elapsed)
+                rows['student_action'].append(ACTIONS.index(action))
+                rows['actor_slot'].append(team.index(actor))
         before = state
         state = state.generateSuccessor(actor, action)
         validate_transition(before, state, actor, action)
