@@ -1,0 +1,47 @@
+test_two_hundred_games_form_fifty_fifty_color_pairs (test_collection.CollectionTests.test_two_hundred_games_form_fifty_fifty_color_pairs) ... ok
+test_benchmark_rejects_expired_budget_before_loading_any_data (test_evaluation.EvaluationTests.test_benchmark_rejects_expired_budget_before_loading_any_data) ... ok
+test_deadline_during_timer_arming_returns_legal_fallback (test_evaluation.EvaluationTests.test_deadline_during_timer_arming_returns_legal_fallback) ... ok
+test_gc_is_deferred_and_restored_even_when_decision_fails (test_evaluation.EvaluationTests.test_gc_is_deferred_and_restored_even_when_decision_fails) ... ok
+test_holdout_seeds_are_disjoint_and_color_paired (test_evaluation.EvaluationTests.test_holdout_seeds_are_disjoint_and_color_paired) ... ok
+test_original_gate_counts_all_twenty_games_and_half_draws (test_evaluation.EvaluationTests.test_original_gate_counts_all_twenty_games_and_half_draws) ... ok
+test_balanced_sampling_has_exact_counts_and_fixed_seed (test_finetune.FinetuneTests.test_balanced_sampling_has_exact_counts_and_fixed_seed) ... ok
+test_expired_deadline_preserves_exact_loaded_base (test_finetune.FinetuneTests.test_expired_deadline_preserves_exact_loaded_base) ... ok
+test_one_cpu_minibatch_updates_base_and_keeps_validation_games_out (test_finetune.FinetuneTests.test_one_cpu_minibatch_updates_base_and_keeps_validation_games_out) ... {"arm": "recovery", "epoch": 1, "train_loss": 4.289007186889648, "val_loss": 4.33421516418457, "seconds": 0.2617407049999656}
+ok
+test_paired_report_is_json_serializable (test_improvement.ImprovementTests.test_paired_report_is_json_serializable) ... ok
+test_recovery_selection_distinguishes_data_from_extra_training (test_improvement.ImprovementTests.test_recovery_selection_distinguishes_data_from_extra_training) ... ok
+test_selection_requires_original_gate_and_paired_control_gain (test_improvement.ImprovementTests.test_selection_requires_original_gate_and_paired_control_gain) ... ok
+test_contract_and_finite_outputs_on_different_map_sizes (test_model.ModelTests.test_contract_and_finite_outputs_on_different_map_sizes) ... ok
+test_global_path_reads_cells_excluded_from_all_sparse_routes (test_model.ModelTests.test_global_path_reads_cells_excluded_from_all_sparse_routes) ... ok
+test_gradients_reach_learned_routes_and_temporal_history (test_model.ModelTests.test_gradients_reach_learned_routes_and_temporal_history) ... ok
+test_invalid_selected_cells_and_empty_maps_are_rejected (test_model.ModelTests.test_invalid_selected_cells_and_empty_maps_are_rejected) ... ok
+test_padding_does_not_change_real_cell_outputs (test_model.ModelTests.test_padding_does_not_change_real_cell_outputs) ... ok
+test_sparse_routes_and_legal_belief_distributions (test_model.ModelTests.test_sparse_routes_and_legal_belief_distributions) ... ok
+test_actual_observer_sonar_ring (test_runtime.RuntimeTests.test_actual_observer_sonar_ring) ... ok
+test_encoder_cannot_see_hidden_oracle_positions (test_runtime.RuntimeTests.test_encoder_cannot_see_hidden_oracle_positions) ... ok
+test_oracle_does_not_plan_after_official_time_expiry (test_runtime.RuntimeTests.test_oracle_does_not_plan_after_official_time_expiry) ... ok
+test_oracle_joint_plan_is_legal (test_runtime.RuntimeTests.test_oracle_joint_plan_is_legal) ... ok
+test_student_rollout_collects_expert_labels_without_exposing_truth (test_runtime.RuntimeTests.test_student_rollout_collects_expert_labels_without_exposing_truth) ... ok
+test_transition_validation_rejects_illegal_action (test_runtime.RuntimeTests.test_transition_validation_rejects_illegal_action) ... ok
+test_current_actor_receives_distinct_actions_instead_of_duplicate_plans (test_search.SearchTests.test_current_actor_receives_distinct_actions_instead_of_duplicate_plans) ... ok
+test_diverse_pruning_retains_only_available_current_actions (test_search.SearchTests.test_diverse_pruning_retains_only_available_current_actions) ... ok
+test_literal_threshold_shield (test_search.SearchTests.test_literal_threshold_shield) ... ok
+test_pruning_returns_three_legal_joint_plans (test_search.SearchTests.test_pruning_returns_three_legal_joint_plans) ... ok
+test_sampled_opponents_obey_visibility_and_role (test_search.SearchTests.test_sampled_opponents_obey_visibility_and_role) ... ok
+test_corridor_uses_outer_escape_gate_and_preserves_central_cycle (test_topology.TopologyTests.test_corridor_uses_outer_escape_gate_and_preserves_central_cycle) ... ok
+test_cycle_has_no_invented_dead_ends (test_topology.TopologyTests.test_cycle_has_no_invented_dead_ends) ... ok
+test_distances_follow_maze_and_disconnected_cells_stay_unreachable (test_topology.TopologyTests.test_distances_follow_maze_and_disconnected_cells_stay_unreachable) ... ok
+test_landmarks_are_deterministic_distinct_valid_and_include_capsule (test_topology.TopologyTests.test_landmarks_are_deterministic_distinct_valid_and_include_capsule) ... ok
+test_long_corridor_does_not_depend_on_python_recursion_limit (test_topology.TopologyTests.test_long_corridor_does_not_depend_on_python_recursion_limit) ... ok
+test_small_disconnected_and_empty_maps (test_topology.TopologyTests.test_small_disconnected_and_empty_maps) ... ok
+test_cpu_loss_updates_parameters_with_a_real_minibatch (test_training.TrainingTests.test_cpu_loss_updates_parameters_with_a_real_minibatch) ... ok
+test_expired_deadline_records_checkpoint_and_raises (test_training.TrainingTests.test_expired_deadline_records_checkpoint_and_raises) ... ok
+test_game_split_is_exact_and_disjoint (test_training.TrainingTests.test_game_split_is_exact_and_disjoint) ... ok
+test_graph_gaussian_uses_shortest_path_distance_and_excludes_unreachable (test_training.TrainingTests.test_graph_gaussian_uses_shortest_path_distance_and_excludes_unreachable) ... ok
+test_histories_repeat_first_frame_and_never_cross_games (test_training.TrainingTests.test_histories_repeat_first_frame_and_never_cross_games) ... ok
+test_total_loss_matches_original_joint_action_belief_and_value_objective (test_training.TrainingTests.test_total_loss_matches_original_joint_action_belief_and_value_objective) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 8.356s
+
+OK

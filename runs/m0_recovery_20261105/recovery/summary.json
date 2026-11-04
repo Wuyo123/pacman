@@ -1,0 +1,1161 @@
+{
+  "status": "completed",
+  "epochs_completed": 5,
+  "epoch_in_progress": 0,
+  "batches_completed_in_epoch": 0,
+  "provenance": {
+    "arm": "recovery",
+    "seed": 20261105,
+    "device": "cuda",
+    "base_checkpoint": "/mnt/c/D/PacMan/runs/m0_original/training/model.pt",
+    "base_checkpoint_sha256": "a38950722ac309ea3a585850a6d06fa59dd4d88dbec39ea6f915d7af3ab7657e",
+    "old_data_dir": "/mnt/c/D/PacMan/runs/m0_original/data",
+    "recovery_data_dir": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data",
+    "old_train_games": [
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0000.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0001.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0002.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0003.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0004.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0005.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0006.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0007.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0008.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0009.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0010.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0011.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0012.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0013.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0014.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0015.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0016.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0017.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0018.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0019.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0020.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0021.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0022.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0023.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0024.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0025.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0026.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0027.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0028.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0029.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0030.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0031.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0032.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0033.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0034.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0035.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0036.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0037.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0038.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0039.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0040.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0041.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0042.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0043.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0044.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0045.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0046.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0047.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0048.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0049.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0050.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0051.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0052.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0053.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0054.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0055.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0056.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0057.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0058.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0059.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0060.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0061.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0062.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0063.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0064.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0065.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0066.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0067.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0068.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0069.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0070.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0071.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0072.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0073.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0074.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0075.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0076.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0077.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0078.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0079.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0080.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0081.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0082.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0083.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0084.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0085.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0086.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0087.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0088.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0089.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0090.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0091.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0092.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0093.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0094.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0095.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0096.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0097.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0098.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0099.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0100.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0101.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0102.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0103.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0104.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0105.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0106.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0107.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0108.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0109.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0110.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0111.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0112.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0113.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0114.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0115.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0116.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0117.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0118.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0119.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0120.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0121.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0122.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0123.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0124.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0125.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0126.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0127.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0128.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0129.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0130.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0131.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0132.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0133.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0134.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0135.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0136.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0137.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0138.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0139.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0140.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0141.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0142.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0143.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0144.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0145.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0146.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0147.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0148.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0149.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0150.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0151.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0152.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0153.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0154.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0155.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0156.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0157.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0158.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0159.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0160.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0161.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0162.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0163.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0164.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0165.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0166.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0167.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0168.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0169.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0170.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0171.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0172.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0173.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0174.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0175.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0176.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0177.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0178.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0179.npz"
+    ],
+    "old_val_games": [
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0180.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0181.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0182.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0183.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0184.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0185.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0186.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0187.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0188.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0189.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0190.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0191.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0192.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0193.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0194.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0195.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0196.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0197.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0198.npz",
+      "/mnt/c/D/PacMan/runs/m0_original/data/game_0199.npz"
+    ],
+    "recovery_games": [
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0000.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0001.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0002.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0003.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0004.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0005.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0006.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0007.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0008.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0009.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0010.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0011.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0012.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0013.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0014.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0015.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0016.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0017.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0018.npz",
+      "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0019.npz"
+    ],
+    "requested_epochs": 5,
+    "samples_per_epoch": 24000,
+    "mix_per_epoch": {
+      "old": 12000,
+      "recovery": 12000
+    },
+    "sampling": "uniform with replacement per source, followed by a seeded shuffle",
+    "batch_size": 64,
+    "lr": 0.0003,
+    "fresh_optimizer": true,
+    "loss": "first CE + conditional second CE + graph-Gaussian KL + 0.5 value MSE",
+    "torch_version": "2.8.0+cu126",
+    "source_sha256": {
+      "finetune.py": "de6ca20d4dba3badf0561f566f22033cf409100f803a4a599bacb9a1b28c34c1",
+      "training.py": "98625a152d3b338b5e685ec6305d6f8fae44ae7b080ddd4b7c71c58ce13eb9e9",
+      "model.py": "05e8c690d84740e856dd162c54ae009ad3bc8d36493f1b6503d3c9de5dee8380"
+    },
+    "old_train_samples": 108000,
+    "old_val_samples": 12000,
+    "recovery_samples": 11786,
+    "data_sha256": [
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0000.npz",
+        "sha256": "1c261fd2002942853a2c5b1ab76ddde1438e5986a7643b1a168455263b89ff67"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0001.npz",
+        "sha256": "1e51bbabe5044b5dffc428dd4f2f0c1ac5ea72151eea0007d25db8a53e4e6d32"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0002.npz",
+        "sha256": "e86e117e698f17c26f38f24dc7d5a754acd68140a814a40b41eead80add39d5c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0003.npz",
+        "sha256": "27183e07e9c0c6f421759c07275990be299a4ad996782871eb0069b379f334b6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0004.npz",
+        "sha256": "a23cb235646a55a3b1282179c3e2cc21314147371feb570f14f98529f1051f20"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0005.npz",
+        "sha256": "3ace6ee3c850aa1e0d6a08d8f535a88419959259a189fbdde56106aa5b215c44"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0006.npz",
+        "sha256": "bfdbc4627ea9a8387d9b8db7f948d347d1df4bbe8be6e5853b8285c4cf265e42"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0007.npz",
+        "sha256": "ba015b3ee99cb83efebe4b977fcfee4c0552f602b3df870ecc909df21646fc30"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0008.npz",
+        "sha256": "79b77a9b4ff74a3bf11166dfa671dc2ce5d12d8b00804bccc954febb506ba5da"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0009.npz",
+        "sha256": "bd6aa5356ea9e7b735953c9f08390ba02c7bfe151c9005679d0a7eb01ec36ef5"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0010.npz",
+        "sha256": "bd7f78a178a1ba5db8a98c2d7da352944b6688a3234121b7cd1039afd9cabab4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0011.npz",
+        "sha256": "64893ce7bfa359f446fc4e3bf9d839a99d82dc25b5dae8491c0f259eb5b2fe8a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0012.npz",
+        "sha256": "d16339fa4a5541ba048cc1d996f0bd0c149166a262ef1d6543d99cf633a1946f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0013.npz",
+        "sha256": "dc0c7e83f2fcdd0cfb7b555c2a3bd8ad829e2a767506feacc76ab86c6cf3ed5f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0014.npz",
+        "sha256": "1dab47c1183c4eec8a7958e9f9cad309299f0793e5dbfd9eb83967daf6aa9864"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0015.npz",
+        "sha256": "aac102d1b42fcc522c7be066de9302f569fc4be966f6a6f9ff6dd61b9091cb03"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0016.npz",
+        "sha256": "82d691e9f1414e0626f22669a081fea9dcc2bbe3847845a4cef1e195c1dfd9ec"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0017.npz",
+        "sha256": "3bb705f790b8a1f4018ce11b686086ab8698761db600da1d73ebcdc10208ab76"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0018.npz",
+        "sha256": "824695c745389a5dc15a358346dda7515e4697128e44413a580ddb83f4c3c130"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0019.npz",
+        "sha256": "509bdbbab19277b27c72343e029d42dc3a684f8805ca802b47a1ab00e24d1458"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0020.npz",
+        "sha256": "1a91af36ef2b634b80c5a0ef542a315e51bad18672c46559433d6d56d8aa200d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0021.npz",
+        "sha256": "142e760b8041f7b80698f559389756605d021f1c637c4e905474dd0b7f75cb0d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0022.npz",
+        "sha256": "f95577d048c8bf0067a619874b32e9be4fd3d87ea367434c39f909d45a748fbe"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0023.npz",
+        "sha256": "d3237b24fb34293823b3bc3b117a8be7ac35b0ccab09f2432c416dc687cbf97f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0024.npz",
+        "sha256": "fa48c376a441deef31a20722c22ed7a09befe4a65fa1e99880c0144d18e800b7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0025.npz",
+        "sha256": "eec87fc6f2ae2bf0d48c6f603eae13b5d6337286c592dc550ef0edf5a51be66b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0026.npz",
+        "sha256": "34c1478a2fa322d7b8e4e58a4c79cee65d04a3b9cc098651ae5838bb71e747c1"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0027.npz",
+        "sha256": "633c8cf584a8e2b9b5ce0ac337fd9473c243b09ea93bc3e03da1f8c71778091e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0028.npz",
+        "sha256": "194c8fa896d585895a9048f724238ee266a93f12dac485b9408862eb0b3043fa"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0029.npz",
+        "sha256": "dc9307383954d5dde6aa2a272a9a779011b6697b9c1cd16199f3df24bcbc7900"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0030.npz",
+        "sha256": "33b2619bc5d45ada5f80f77b53c718d9aca070a5c674a1f0effbd30f403a83e7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0031.npz",
+        "sha256": "67e7e0ea8b825d87513665d30cdc8521b1b908e96da1076c8473b4f96de54808"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0032.npz",
+        "sha256": "524272b53050cf84dc915cf15ee70d49c84f87c9ba2a6647bd63d71dbf8b379c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0033.npz",
+        "sha256": "d024cf9d75abfbd91947832ebb86cee477152e2648e69c6cc9f28ff08b9ccb48"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0034.npz",
+        "sha256": "12631d5e93781259a0f0914419dbe326a2c72a2893dbc9d34a36209a6463de0c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0035.npz",
+        "sha256": "583a3655ce9909df11880d3b9c56aea7e2fd71fa5cc718cb4572010a440e53a8"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0036.npz",
+        "sha256": "d4d02b56b946750a0bff4c49c6dd42abd2ea579ccbbaab9f88f6386772d5d0ba"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0037.npz",
+        "sha256": "cf033ba443093dacba2634fddee8b2e0556bbdd7986d3f54201298f205b27a61"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0038.npz",
+        "sha256": "3e789c379f3222aa62b1d204e5c5669e23529eead472da2070e5b3296f2f2c05"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0039.npz",
+        "sha256": "0f458572b3415b35083da879a4a1baecc0f6d36512e49db4a8b7504b0be1285e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0040.npz",
+        "sha256": "6051a06b0ecc27e8e87b24488a605632d890304f07b945829d0c6aa5398bb668"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0041.npz",
+        "sha256": "8dd463802fd619921e3ce82c09ac0ed7a097212fc98e70498a507032e01e2675"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0042.npz",
+        "sha256": "f857c8d2adeb0446317d7851da74d54855d704817e234d47681f5cba2c773c88"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0043.npz",
+        "sha256": "8f1d46007680c999fe78fcbc2041821908af206ce98cc56e161c1172f0febb1f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0044.npz",
+        "sha256": "9a7da9cd6790f58e8037597b2cfc41ba58000c7383a18b0305bb93c9b8b41206"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0045.npz",
+        "sha256": "14dcb40cf4c53cb8e088243bf83b83f76cce2d98d47c6c85d06370a08bcdacd5"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0046.npz",
+        "sha256": "b9b751aabf62da05a40a706dde7cf9f56333ffaa6a69de4e6177df97938ba42b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0047.npz",
+        "sha256": "e04fa409077ce41a47425e36fcd3c4bcb98d15174810212e41e7a27c174b6a17"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0048.npz",
+        "sha256": "c11908edc786ffe5d21b62eda04fcdd91ce85e4c1b1d5f35bd9fca2180460f7b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0049.npz",
+        "sha256": "7ffc52d17a10eb1da1bc2a917e8a0462ed9b0e081bd831c04f7acf0835460dbf"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0050.npz",
+        "sha256": "0990678c4287cb85b18d8274fa4c88eac0e5373bdfe3d3c60f2db1849a1a2208"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0051.npz",
+        "sha256": "8171b049db6e47ee42a6b6990b8acb7c2c6b7b4721c1786f7e99e11eaf073d94"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0052.npz",
+        "sha256": "aef1fe5d4fe96133c4a9c93280b59f9f9ccfa46726ad0378e678ef13b262ac5a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0053.npz",
+        "sha256": "12e7495e2cf02ccf5e201ee0ce70a05c74678b9004d798baf04c93a1db223474"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0054.npz",
+        "sha256": "0c1605de866b8a1fc659f11e89ac28b4b96ba986003efd5df404e8f6147feeb6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0055.npz",
+        "sha256": "4dc65ffb132e436054061ad28da40ef04d96ffc3e1b6e33aad6df339366dfc98"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0056.npz",
+        "sha256": "275ca052cc1b0ead20fc80a234e1e41e79857d40bbc2b76f870a008f8c4c75ad"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0057.npz",
+        "sha256": "2c69088dc22df7d9c3ccdf25fc147188e211f2b78b6117105e503e54f2f92f88"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0058.npz",
+        "sha256": "45e8784721da0882603741595255f8f17fe451323830e0ca7bd1764be86c9e89"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0059.npz",
+        "sha256": "f8b37d2d4b3195bfbe9e6145d79f629b50c9f4a7ebfd8b614ff3e41cecf2f01f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0060.npz",
+        "sha256": "417c3e52b29a3ee439ce720643b0689f4e02b2be8ec25100c13edd5ba0572d44"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0061.npz",
+        "sha256": "76c0bff74e686eb4fe240c805b0b1dfc1f9b5b4b939f0d19a636f2c71935ec76"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0062.npz",
+        "sha256": "336e0bf24655c30b6f6582a81a973f44d1b974d8d7e993b20b217404d7b1e378"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0063.npz",
+        "sha256": "9edc091f3bb1b269761606cfd55235f78577f8a5308571bbd40368f3be299a5b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0064.npz",
+        "sha256": "d343068b56a7c50c4a85c887707917205c358c650a826fc90658c46ce4be993d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0065.npz",
+        "sha256": "16e948c938d8d49c66171d9a07bb3fbc1023c7e08f512aa86842dba7b53cf579"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0066.npz",
+        "sha256": "3c71812a0366b38825481fea19256c3156f2faaff96e0c33841391d6468e4bc1"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0067.npz",
+        "sha256": "00467bea2c73991744b996ce7c2e4533df3e8c46abc25827c3bf4dc95b0bed7f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0068.npz",
+        "sha256": "9725dc46c04de2c507a2bd6d6e7c6ad7ebbf523a810e542a1b8053b65fe07af8"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0069.npz",
+        "sha256": "176d2c798c182a0b602416745fe95a6b29e783c53e47150ec92824bf86c27a7d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0070.npz",
+        "sha256": "50c27e397293735a27d5bd6beaf15c888d2c7a65de8bed48b1e259bd31bf4e91"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0071.npz",
+        "sha256": "36093a9ff98bdc89e81fd23e0c02718b75c3f1259d005f2fe39faaca9c50dcad"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0072.npz",
+        "sha256": "16db2a1554b8d0ce114308c0ff987515dde603d98e320d0177501786acd44555"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0073.npz",
+        "sha256": "3ca173eb515439f14e3c5c9ee644c3f0adc780530faede9f517643f2cd95bc5b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0074.npz",
+        "sha256": "380f16a488f84c54e3b3d96165d61cd466ee7e276f124957310a93b20f9ae540"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0075.npz",
+        "sha256": "dc87d4e419e95f8d852260645d5467eb9a13ee41a6d6947a43175d125e1f502a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0076.npz",
+        "sha256": "c799f44fc7006ec3d66c02429336efd53e5f0ae4003ea9f6d624178b66ce1c72"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0077.npz",
+        "sha256": "d7609751e282711b6b11ddcb7698567501240b94c452f57b2a238cab94f0a763"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0078.npz",
+        "sha256": "eecfcbf5074656febde3f91704da7b3a733dbd2e5b30ebd0b3e1ba38de637d44"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0079.npz",
+        "sha256": "ec43e17636139e01f3b784e8c881177007ca12af60581fd97e0239128d1d147a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0080.npz",
+        "sha256": "d84ee4603e525362303871477548e1f6f88f450783f34dcfc67859cdafeda1d4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0081.npz",
+        "sha256": "59a3f864474d1a61846fc5c859c1f68cff52e8fe5177d96b0bda835d393a5354"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0082.npz",
+        "sha256": "c88b9ddf7d43bd04f54306d30b3870f4c81668321c53dc7007d06ca5fede49f7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0083.npz",
+        "sha256": "81c922df746569747741171c3f37670d163d49bab00b4f01784839f1f26aac33"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0084.npz",
+        "sha256": "83de3570f2ac9ea6cbe2baab055d2a9f56fd314e6cd2d167f1fd41d66436d7af"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0085.npz",
+        "sha256": "0cc45cd05fb890c789d8d5af89f7d2e4a4d4deed6b18330af11252b6dd60addb"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0086.npz",
+        "sha256": "c9ab9d6dc0281056510edaca38379cfb972f510ad699668f127cc613ee6bdd33"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0087.npz",
+        "sha256": "29c26f6b9b174e379b502594e62114cd2e5a0e2ea24c259b6b54aa46fd0b5195"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0088.npz",
+        "sha256": "353b52dbd8f4bf600ac0814197e3b03c8b3ad6b141312359a91596e3a7061c56"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0089.npz",
+        "sha256": "38056e1d409560bb9d47e50b95a37557ee06014b7200bfecb23053a6ac3d2ef6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0090.npz",
+        "sha256": "6aef7f714295e2ce95c3a26dcc27268644e40cb0f11a9ebb8ceb4091e9a84553"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0091.npz",
+        "sha256": "f5a7adde5707e22ac713ca72f2c5048ad531a62c764912ec3f6116815d580ab4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0092.npz",
+        "sha256": "824a78396bd1adb033249a90b7909862850df5b924249b938bf1f816c41055cf"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0093.npz",
+        "sha256": "d0e1790ac303b872209f7e7ca2020a8ecfaf05cf48853876efa521a89a19763e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0094.npz",
+        "sha256": "feb6d87c2ea7e09491dd4eaee5327e4798e25396cefa14600ac41e677732f1d6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0095.npz",
+        "sha256": "13b97fdcc85406f0e68ae6c1ed990c41c90a8e63d3e4232b51df8089f50eb5e7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0096.npz",
+        "sha256": "005219da2d72be9a751cbc651edaa8c0ba2aa256e60f0aa02e133233fd1f39d9"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0097.npz",
+        "sha256": "51d0e4bb0c30ebc60a7294191495472c768466bf3a26c6f3a8d0f179e16a6940"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0098.npz",
+        "sha256": "a6839e96ce0f43bd8163b0564891bde042f33e3de1b977f549344f1571fc73de"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0099.npz",
+        "sha256": "a20f0c67255667ab336f8e593e70a1c52c3b921cb06dbc52b06a63938178b774"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0100.npz",
+        "sha256": "a4cf77bcb49f153d94ec619b5425a6195cf59c318c464244edf4bcb948ce7335"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0101.npz",
+        "sha256": "eff3c648cd4a51004b352ad9f794337b66c98dfa4d444147109ffa1ad40ac446"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0102.npz",
+        "sha256": "b041ee8decf84225c290172015b21c668cd5c6e1b4f14f86633818e98678bc09"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0103.npz",
+        "sha256": "59010e281a1464e79637856200905a875b4e059f6e39b49ec5365a2b00587246"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0104.npz",
+        "sha256": "b887c3395c2a1fa714b593be5ca33b5a5aa793438064bd420f86ec8190f269cb"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0105.npz",
+        "sha256": "7184c9e47b43a582dbe8a66d9d2f08770fbe26b45f5eabc1592237865168ce4d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0106.npz",
+        "sha256": "336888ba1b60af15ca9e9047253bc18f3aca57d3a93fc712df73441f7ef04899"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0107.npz",
+        "sha256": "9f0a924cd6b2c35bf5ad628a9bd665fc5541ba9048ffb1ff4872f47f95b92f0b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0108.npz",
+        "sha256": "b04ab426f8ff6c309d6d26561a11343fc6f7708e981f0bfe2e6e25f83a6333b7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0109.npz",
+        "sha256": "5ac179a6013c9b582c5c8ecffc29dc8865080840b251b66a91b76b6a319035be"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0110.npz",
+        "sha256": "cf186e7593529573c182ffc666d19aa84508961f9cb32dc1ddc2c5a8cc18d06c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0111.npz",
+        "sha256": "4d9029fdeffa48dc38bcad6ec5e189f4ffba3f826b424ba1fd9687f7ee38ee84"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0112.npz",
+        "sha256": "0be4d66efa1fbdc0663bb21b2710c6a56cb5e43f1059fe697204043f378a2896"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0113.npz",
+        "sha256": "8c7bd7a7571f555b5a1a42793548b2db3a4346ca6894f588588f590ea62ec033"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0114.npz",
+        "sha256": "10054b888d0afa579fda46687cc72032fac730541d2fdfd767a92916472d7993"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0115.npz",
+        "sha256": "02c1d114eac6881148eec9df9c9fc34250d7093f0f1311f280a5dbb1ec7fa26a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0116.npz",
+        "sha256": "2b73e7c4fd6e6a49397dea037378520bf9c46ebbad4cc42d7a3e095c143d3b3e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0117.npz",
+        "sha256": "b18eae6c27216ac4f04e347fdd6b22ea3887a98f32c614a85c4e3ce598d2e034"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0118.npz",
+        "sha256": "9db483b9e07d69e04829bc332e8f76ba95484088e808754971c1e195ec7f57b7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0119.npz",
+        "sha256": "23f48661a401c842dd9de9a314df2891a5532be4657b7d04d47f0969d35b53dc"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0120.npz",
+        "sha256": "49e6c85fcc5faeaa85b3b1f0c996ad1a312385943319de70e8598a0d52130956"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0121.npz",
+        "sha256": "f3658141ee7e07b6ee0926bd1ef9d6353c1a97197fdb1c650d35486ea8563210"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0122.npz",
+        "sha256": "1ee8461549b096f11bd26afdc2b100a03153c0c6e961cea3cd28e8f9f464793d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0123.npz",
+        "sha256": "f4db7261b5ea716aa30cfe93db506fd06d38e606c88738e17477e56154353ef3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0124.npz",
+        "sha256": "701096cf9d93ae8aedc0c0310f2b6a0a113c69db53ddb5a8fc78c2b5d206481a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0125.npz",
+        "sha256": "e09cd1c87c2a6d1838dd48d655295ddb1a117bd25ff1f2b66565099225db8b8e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0126.npz",
+        "sha256": "d2b6fdeb926ed08f84516003ed48e4df91c3f45367db618ae7610f434fd9aa6f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0127.npz",
+        "sha256": "59e67f219ec60b0f716bba0c95c2ebb48d398bdc1881cf96c603e36573ad7325"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0128.npz",
+        "sha256": "a8f07ac838aa0619f7320eec0f2528de63e29fb29fc84d7d8877279828391a84"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0129.npz",
+        "sha256": "4c74162d98676669f0459b3b1a97a4e2561c3e125959f7fbba99122860eaca60"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0130.npz",
+        "sha256": "ccf99be6355c03e477e82415725e88585a61fc5f305e50616f3677fc045e1e7e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0131.npz",
+        "sha256": "334e4952544141cb629e50af0df44ae5c89d4c11780993e8fabcef8b2926cd19"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0132.npz",
+        "sha256": "55524c0a1344d76dc31c73f807d96242fe1a537672cf669ef02d76ca148167c7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0133.npz",
+        "sha256": "67eab337d57c73346188bcbe8c9392a5c38788bd016153ca7f0c3d5c0415af2d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0134.npz",
+        "sha256": "916ab9ff3798ec6fd73ce9632de6547f6c85babdfb3128ce4a5b85c2706bc76d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0135.npz",
+        "sha256": "76c0931fd729d89ec8ab3b0ab8e672a779a0b34bfd4532e34ce4fac7dcad9b05"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0136.npz",
+        "sha256": "4cd08bcdfce53fa6c25cdd2435761e356c5da92206efa096be2af55f31f226ff"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0137.npz",
+        "sha256": "701c23dc3efa947a8ce179e5b6c459a2180f40a457321573a3941062d48d084d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0138.npz",
+        "sha256": "07c40d65dd64310ce61adf6fef2155f66366dcd75d3248ae5f805e3544396932"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0139.npz",
+        "sha256": "73e3162284d97f9aa31ec2465ae69ef7ebfd87a0b48edc970e27fe7a939968ad"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0140.npz",
+        "sha256": "74fb8c7ced710be82809cb012950f586f3e99ee1ce09f0378f4203c652de96d8"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0141.npz",
+        "sha256": "b1729de998bfd7489b7384d550ab3c59746eed8d34fdc8efadac58255bfc11ee"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0142.npz",
+        "sha256": "2a1ce43d2058d8db0909d3e4c345ee3f8a94002a48a1f5da1b896a6fc792c84b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0143.npz",
+        "sha256": "13bcdc052e06b1ff1c0906e6b441f8e4c825ed89d63895a7115da36887d430b8"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0144.npz",
+        "sha256": "ac51510407297f1f82455aed5e03e73e997ec4bdd6cbb84fe2ee2d72b77717ff"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0145.npz",
+        "sha256": "968f999000f6bd5d0d0b40391c5e304ebc2e5219344519a15aec0401e319bb9c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0146.npz",
+        "sha256": "a0e0e5a173a3aabedc323cf452d11ebd7b9f873db8434d2bad1cff9cfa771320"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0147.npz",
+        "sha256": "c2ca5f673dee231c473829dff9eab435be9dc66111548d5c05ce0038c70bfb5f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0148.npz",
+        "sha256": "2f1884bbb7b077d8e6226d58e246a791c9cf8160d30d8466bf649e465c971154"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0149.npz",
+        "sha256": "fb02c60a6237b647c9f1841afc0a1faf081160ee7def167818ed76c1ee14fca1"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0150.npz",
+        "sha256": "c248c44fd9f63fd2ca429371583bd74e8258f8d7fc40565e77de33ed4cfe3b8e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0151.npz",
+        "sha256": "a87ad01a1b14f0962e42a5270dab247060db497875242e029bfa5a230ebff041"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0152.npz",
+        "sha256": "4acf521064bf961d6a6044e86221d5454a3a3219f35a5af70bdcc258992fa81b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0153.npz",
+        "sha256": "74985d6a642fd97d33d0d9e1aebde3413b8b60ceb25e2d00df93b245bf344434"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0154.npz",
+        "sha256": "ecd6169a45e009066d6634b2613b740113fe5eb22fe8a68dec4795ad82825f80"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0155.npz",
+        "sha256": "c560d467f66408798a32b581b73b4310c59b916ed2623060f24f528af5bf88ca"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0156.npz",
+        "sha256": "8d8e504082705e207f02a45dd37c41bb06bac7f861ae3869bfc1f5c6f302768d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0157.npz",
+        "sha256": "9787b00633f90a286ade9c9792ef488789e0edcfaa16f00221648e3bf5a98553"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0158.npz",
+        "sha256": "a90566b655515d8218d5677fea91ac8ace5e99ba43d67b859c1cc5e8026b988c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0159.npz",
+        "sha256": "8f75f9e0f2e237afb297871a15c565014099bf1a187ef64301a94fe6a280fb6f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0160.npz",
+        "sha256": "13c61a91f88d2f3348e93037e49d43686d9f0f8a607e9fa630cfb7d9ecbcf167"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0161.npz",
+        "sha256": "66b358a67c8c315f632e89533f2dc0c41ea92e947f3e23c4b297e42d1962ea8d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0162.npz",
+        "sha256": "f2a2cf500e0301393bc0680a571b902b43e8418944910a33676b292c7fc81169"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0163.npz",
+        "sha256": "36fb73c2015c363074f65d3f8c1683c111b6e1d547d72a389c74908ea2dbe01f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0164.npz",
+        "sha256": "45345ccf26dc4789bfde9d37c7891e06c12989ec73d47ac28e525e53c6af5cfd"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0165.npz",
+        "sha256": "3f6b4153a3f723170e10245b9bf0170d5e9360d1b166bc94345dfccff97289d0"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0166.npz",
+        "sha256": "51d7c36dfd9487f76ebb9218920825260f95fb0d25f96815fee5501e43db3496"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0167.npz",
+        "sha256": "82faaa4651c8083a5673058994d47436f8f41c32fbe8f2d58914cd43667ec303"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0168.npz",
+        "sha256": "354d049a2d1584ed8f0d7a3897a5b06a838300baa26ba974d6328f0dd72e196d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0169.npz",
+        "sha256": "e95cf79311008c1783757400b51c5524a8a43d962c12dfa76f816ea0dbf2ff26"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0170.npz",
+        "sha256": "29031df615beb33d48d382ac52f17d90bcebef585d97bc102c5ca69204057418"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0171.npz",
+        "sha256": "957a4e27290f7d6fc7cb8179e834633a801db3855d0090d34f5f7f758c6afe8e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0172.npz",
+        "sha256": "6907fec7c46a9d638862d5163908170daaf5cc3950145db1a9a61040cc604000"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0173.npz",
+        "sha256": "1ee6e82257a15ae6c0275dee50ad7bfd2d9c0226bfd227f218ea604958317f0f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0174.npz",
+        "sha256": "c33b00c5e3ab04fe2dcfb0533d91b3d5916c7523affd2ee3d003903fb55b3790"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0175.npz",
+        "sha256": "a7ea33aa4673ccb320368bf5c638a3ec0a78f6c3c039f3db3734e016dd31bf70"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0176.npz",
+        "sha256": "aaf8b113d3211b65c62e6358969f87735b35f132d214b6417c15ade81b9f916a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0177.npz",
+        "sha256": "e8de5cc05ebde53fe6518f15d7812dd1cf0f98415bb59cbb2032ed20fb13cb3e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0178.npz",
+        "sha256": "9bb415c851bfb141c872b7d950180452f01f89886f86ba7955f7aee3ce668ed6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0179.npz",
+        "sha256": "890d38800a0c46e9f9543ad071dbe8499eb31a0abad420ddd38fcdcd904957a3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0180.npz",
+        "sha256": "f33898dc87cca9d40ade30826cb52d0172581371dcfd4d9f89bcaf00872ff920"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0181.npz",
+        "sha256": "311cbe838304e83a0f004732a8dbfa27a190ceefa00c704766d724041a43a1ff"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0182.npz",
+        "sha256": "b878c34d0f3a2480f9e27463a7be02b69e60df31622513b5648479aa9afea674"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0183.npz",
+        "sha256": "07d32835577ab8942de6637e48352a516c493e8b9e06555dc17a4c6486d23afc"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0184.npz",
+        "sha256": "68e9069b0f72e2801a0c48675c2ae7ec03562d6332193a10547998bd0dcc5d83"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0185.npz",
+        "sha256": "6a698192bba3c62015c60daa143dddd525d9a6e433a1b388255743c0c3757c4c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0186.npz",
+        "sha256": "45f9ca72c15a399c83687a614cf0ef2b75bf18ffbfa964189c72e5740c08481a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0187.npz",
+        "sha256": "3abe630c2a92042b8a8d3daec74417c91c884355bcc6953a270f0f9c467bcfe4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0188.npz",
+        "sha256": "c1d93e0bc47b40e95fa0dbe2a161ffab04fb1661c65f4bd85c627258ee7a7887"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0189.npz",
+        "sha256": "cb75cb7880835e0a8e3d853ae66fb868887cb5d97defb84232ebb268af266caa"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0190.npz",
+        "sha256": "0dec29c0bc4f5e809204769e7b97c5d063dd84d64a76e50bb7f3d84742155d2a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0191.npz",
+        "sha256": "08c368c2180c36edc8f1a383f7e38f1f3f6e3cd0f369e68bc5f18f6fce2ad847"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0192.npz",
+        "sha256": "b79e9422862f2d34abca3d0fd54f517e35f7f235e3c89267b1fb107a6a6d0a26"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0193.npz",
+        "sha256": "874ef3cf44a08d4a461f30cd918b6a718086efd9b5f2613957cbb1fe05182d7b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0194.npz",
+        "sha256": "e4b754be122f389f9e59ae4116efd179f1cedd6e2cae45fc4c5f6195aa25034e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0195.npz",
+        "sha256": "cf81bff024725552eb9085e8af9f7444f453efeeb7326c5f6f944ac779d87a0e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0196.npz",
+        "sha256": "80e6d3d4f959a49140740704d291f534c6a6d1991cfbcae1ff5c72618016250f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0197.npz",
+        "sha256": "f2ada936d61caf5e1bec5c3c442245ef5bc4cc46c5c73d3cf706fa5eccbd96a4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0198.npz",
+        "sha256": "502c340da58c373f8ca34306e9c2fede63b2e276b6a5029c220e194be7608eda"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_original/data/game_0199.npz",
+        "sha256": "df0641d09ed49459aa21c5c9a933cd0b6c3a4728ed4333cfb430f179d468077d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0000.npz",
+        "sha256": "231d053dc5f8483ada9b2b4c71bbb9f60a8ada8ac9344267682e8b15399a8d77"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0001.npz",
+        "sha256": "94e83dfc91e533b68178376c8b4d444b19b253b6268864acb8ffb8ff996ced6e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0002.npz",
+        "sha256": "c0caa0054cda01dd0dc1975d69effb49a9826e5f1ba94f458b2f173bc674f852"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0003.npz",
+        "sha256": "d08d6117e32cf0fafab5ee9870b32259c6bf348125bac823d44caba94bb13c3a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0004.npz",
+        "sha256": "e1894eaa8a7d0f4ac6e4c8ccea7628a7da7b91199d91102f3fa5009d38a6950d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0005.npz",
+        "sha256": "2d964abcca4866fadd48c24816ef35ae3161b18e26d862ea730fc9d4b4765a14"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0006.npz",
+        "sha256": "af209cbac77fd509ffcfa35eb6a71cee7f5e47000f3b9dfa8a325a59c7756922"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0007.npz",
+        "sha256": "e0383573d63f44b0be9c02848c72329a20ed3234a0a8766c92b981911208f4aa"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0008.npz",
+        "sha256": "6a796d6e346539d4e2a2af1502dd2bfe7762cfbed75c41b42693ed3871d7ebb3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0009.npz",
+        "sha256": "899d82d717d94966a00e3718f4413844a3e706c700edfe4b711a63ce063503bc"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0010.npz",
+        "sha256": "0bc136ed06480e249e95dfb7d587eda2b5a3af900f7a8209cf7e7f967b9435e6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0011.npz",
+        "sha256": "5eb1a2139cda6de1cf9c45757f44f52e5aa0e69d400229913944dcc574108628"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0012.npz",
+        "sha256": "afc7d957d884f9fb051fc322beb7bba60efe8fd9b0832d8d46d72ec8e0b4eb7f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0013.npz",
+        "sha256": "3bf4607cabb0e51241744d814f182b86b82718bf4358ee8fe86f32cac3b99788"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0014.npz",
+        "sha256": "07d7b6e4d0d090773a1a4621cb7c2e255df37031401e78c46cea8fd126dd7b8a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0015.npz",
+        "sha256": "4a98de8083d61e4a918bc0004dd12f3865ecfb9ec06a7f20c62fa3a689c6e79c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0016.npz",
+        "sha256": "991099e8a0f2abb1de208731ae67cd7c208faffb923c54d4e03ff0708441c617"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0017.npz",
+        "sha256": "1a47ab40ae03be9a727777720d9f3d5141ccee98c87dc5755ff52e17d9b5069d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0018.npz",
+        "sha256": "b737dc8c0821d8f403f0e29cfb9af184dd671f5216b758342d5b0509734404cc"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/m0_recovery_20261105/data/game_0019.npz",
+        "sha256": "36432af2552ee63e6196edcdfc93a15b8e3ecf7ca84bf7df3ab1c0a887d06ef4"
+      }
+    ]
+  },
+  "validation": {
+    "loss": 1.5933167203267415,
+    "action_loss": 0.14553781902603805,
+    "marginal_loss": 3.128736573035518,
+    "belief_kl": 1.3108403482437134,
+    "value_mse": 0.27387712503472966,
+    "samples": 12000,
+    "action_top3_per_agent": [
+      0.9993333220481873,
+      0.9994999766349792
+    ],
+    "blind_count": 18606,
+    "blind_nll": 2.8285381235538676,
+    "blind_hit3": 0.4472750725572396,
+    "blind_expected_l1": 4.459162067805748
+  },
+  "elapsed_seconds": 126.13479172400002,
+  "peak_gpu_memory_bytes": 998576128
+}

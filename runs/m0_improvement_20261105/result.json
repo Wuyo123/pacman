@@ -1,0 +1,77 @@
+{
+  "selected": null,
+  "development": {
+    "diverse": {
+      "completed": 18,
+      "records": 20,
+      "planned": 20,
+      "wins": 6,
+      "draws": 11,
+      "losses": 3,
+      "score_rate": 0.575,
+      "failures": 2,
+      "over_50ms": 0,
+      "own_decisions": 10752,
+      "max_ms": 49.22129299998801,
+      "forward_p95_ms_max": 5.475456199997097,
+      "root_action_choices": [
+        0,
+        5,
+        768,
+        9979
+      ],
+      "search_changed_policy": 82,
+      "simulations": 54304,
+      "chosen_stop": 6267
+    },
+    "original": {
+      "completed": 19,
+      "records": 20,
+      "planned": 20,
+      "wins": 7,
+      "draws": 12,
+      "losses": 1,
+      "score_rate": 0.65,
+      "failures": 1,
+      "over_50ms": 0,
+      "own_decisions": 11400,
+      "max_ms": 49.311991999999805,
+      "forward_p95_ms_max": 5.5240926000010395,
+      "root_action_choices": [
+        0,
+        1949,
+        7242,
+        2209
+      ],
+      "search_changed_policy": 63,
+      "simulations": 57692,
+      "chosen_stop": 6845
+    },
+    "policy": {
+      "completed": 20,
+      "records": 20,
+      "planned": 20,
+      "wins": 5,
+      "draws": 13,
+      "losses": 2,
+      "score_rate": 0.575,
+      "failures": 0,
+      "over_50ms": 0,
+      "own_decisions": 11937,
+      "max_ms": 14.354791000016576,
+      "forward_p95_ms_max": 5.491411500000254,
+      "root_action_choices": [
+        0,
+        2274,
+        7068,
+        2595
+      ],
+      "search_changed_policy": 0,
+      "simulations": 0,
+      "chosen_stop": 7497
+    }
+  },
+  "confirmation_status": "NOT_RUN_PREREGISTERED_STOP",
+  "base_model_unchanged": true,
+  "elapsed_seconds": 471.2669197103203
+}

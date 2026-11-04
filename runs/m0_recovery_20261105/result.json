@@ -1,0 +1,85 @@
+{
+  "status": "NOT_ESTABLISHED",
+  "stages": {
+    "old_extra": "COMPLETED",
+    "recovery": "COMPLETED"
+  },
+  "collection": {
+    "samples": 11786,
+    "teacher_disagreements": 2068,
+    "teacher_stop": 5641,
+    "student_stop": 7173
+  },
+  "selected": null,
+  "development": {
+    "old_extra": {
+      "completed": 20,
+      "records": 20,
+      "planned": 20,
+      "wins": 6,
+      "draws": 13,
+      "losses": 1,
+      "score_rate": 0.625,
+      "failures": 0,
+      "over_50ms": 0,
+      "own_decisions": 11912,
+      "max_ms": 49.191276999863476,
+      "forward_p95_ms_max": 5.385527999919759,
+      "root_action_choices": [
+        0,
+        2518,
+        6670,
+        2724
+      ],
+      "search_changed_policy": 45,
+      "simulations": 58406,
+      "chosen_stop": 7450
+    },
+    "original": {
+      "completed": 20,
+      "records": 20,
+      "planned": 20,
+      "wins": 7,
+      "draws": 9,
+      "losses": 4,
+      "score_rate": 0.575,
+      "failures": 0,
+      "over_50ms": 0,
+      "own_decisions": 11305,
+      "max_ms": 49.43841199997223,
+      "forward_p95_ms_max": 5.437759200003711,
+      "root_action_choices": [
+        0,
+        2144,
+        6673,
+        2488
+      ],
+      "search_changed_policy": 84,
+      "simulations": 57058,
+      "chosen_stop": 6550
+    },
+    "recovery": {
+      "completed": 20,
+      "records": 20,
+      "planned": 20,
+      "wins": 6,
+      "draws": 10,
+      "losses": 4,
+      "score_rate": 0.55,
+      "failures": 0,
+      "over_50ms": 0,
+      "own_decisions": 11776,
+      "max_ms": 49.27160400006869,
+      "forward_p95_ms_max": 5.4719320000913285,
+      "root_action_choices": [
+        0,
+        2815,
+        6090,
+        2871
+      ],
+      "search_changed_policy": 133,
+      "simulations": 58049,
+      "chosen_stop": 4996
+    }
+  }
+}

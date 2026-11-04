@@ -1,0 +1,35 @@
+{"stage": "development", "completed": 10, "planned": 60}
+{"stage": "development", "completed": 20, "planned": 60}
+{"stage": "development", "completed": 30, "planned": 60}
+{"stage": "development", "completed": 40, "planned": 60}
+{"stage": "development", "completed": 50, "planned": 60}
+{"stage": "development", "completed": 60, "planned": 60}
+Traceback (most recent call last):
+  File "/mnt/c/D/PacMan/improve_m0.py", line 181, in <module>
+    main()
+  File "/mnt/c/D/PacMan/improve_m0.py", line 160, in main
+    development = run_stage('development',list(MODES),started+45*60)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/D/PacMan/improve_m0.py", line 140, in run_stage
+    (stage_dir/'summary.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/lagat-h-20261022/standalone/python/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/opt/lagat-h-20261022/standalone/python/lib/python3.11/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/opt/lagat-h-20261022/standalone/python/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/opt/lagat-h-20261022/standalone/python/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/lagat-h-20261022/standalone/python/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/lagat-h-20261022/standalone/python/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/lagat-h-20261022/standalone/python/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/opt/lagat-h-20261022/standalone/python/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable

@@ -1,0 +1,5 @@
+{
+  "reason": "normalize numpy integer counts for JSON; aggregate existing60games without rerunning",
+  "original_runner_sha256": "18f9b9b55d874579122f3332d111208a78a526121ce7cd3b427ca35fecf768a8",
+  "reporting_runner_sha256": "3b25b5ec18e2a980ced760725b04d3012ff22aa1d23874f5b0a7dc894064c49d"
+}

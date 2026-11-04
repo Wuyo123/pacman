@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-11-04T16:54:19.119157+00:00",
+  "base_commit": "7bf5a308bf05757bbe1f82def8183cc0d50db6e2",
+  "checkpoint_sha256": "a38950722ac309ea3a585850a6d06fa59dd4d88dbec39ea6f915d7af3ab7657e",
+  "workers": 3,
+  "device": "cpu",
+  "action_budget_ms": 50,
+  "development_minutes": 45,
+  "total_minutes": 90,
+  "source_sha256": {
+    "belief_mita/collect.py": "0d0a8b58ffe1b935107436d29f431d017aacfde1ce1261e25630e0a40217725f",
+    "belief_mita/evaluate.py": "7b3b9373f38ba571ec343ee0d13ed8d4020c6c23ba68ca413b9dabca7a2b0502",
+    "belief_mita/latency_probe.py": "227945ae807b2ee44d9a2463df73a30fd32c2316b3cf64c208eb7eb1c38624cf",
+    "belief_mita/m0.py": "26f2f83f847a9fea3f401f968897eb3bbe361a2c7c314a296377b88b4de19a19",
+    "belief_mita/model.py": "05e8c690d84740e856dd162c54ae009ad3bc8d36493f1b6503d3c9de5dee8380",
+    "belief_mita/runtime.py": "245eadb641119b31527d06feb41e0aa734322603e9f2807bab65a76ecea6b64b",
+    "belief_mita/search.py": "419d81f9d9c41a9a9dcc4971465e5b5e5f1fc85109893c2ebe03cb484a2c5bca",
+    "belief_mita/topology.py": "af3d233397af34e8674da0907059eeb2f79db7949dcbc00ca772d13a86b35c0d",
+    "belief_mita/training.py": "98625a152d3b338b5e685ec6305d6f8fae44ae7b080ddd4b7c71c58ce13eb9e9",
+    "improve_m0.py": "18f9b9b55d874579122f3332d111208a78a526121ce7cd3b427ca35fecf768a8",
+    "diagnose_m0.py": "9b02fa750362b1bc287e3eedc92e9b5f5fd4df85f236020d15ba3cd546baf94b"
+  },
+  "protocol_sha256": "497bac58318e460889dd80a21ea7b6ca263681c83692471f6642a92131d0b85f"
+}

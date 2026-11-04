@@ -1,0 +1,2358 @@
+{
+  "summary": {
+    "diverse": {
+      "completed": 18,
+      "records": 20,
+      "planned": 20,
+      "wins": 6,
+      "draws": 11,
+      "losses": 3,
+      "score_rate": 0.575,
+      "failures": 2,
+      "over_50ms": 0,
+      "own_decisions": 10752,
+      "max_ms": 49.22129299998801,
+      "forward_p95_ms_max": 5.475456199997097,
+      "root_action_choices": [
+        0,
+        5,
+        768,
+        9979
+      ],
+      "search_changed_policy": 82,
+      "simulations": 54304,
+      "chosen_stop": 6267
+    },
+    "original": {
+      "completed": 19,
+      "records": 20,
+      "planned": 20,
+      "wins": 7,
+      "draws": 12,
+      "losses": 1,
+      "score_rate": 0.65,
+      "failures": 1,
+      "over_50ms": 0,
+      "own_decisions": 11400,
+      "max_ms": 49.311991999999805,
+      "forward_p95_ms_max": 5.5240926000010395,
+      "root_action_choices": [
+        0,
+        1949,
+        7242,
+        2209
+      ],
+      "search_changed_policy": 63,
+      "simulations": 57692,
+      "chosen_stop": 6845
+    },
+    "policy": {
+      "completed": 20,
+      "records": 20,
+      "planned": 20,
+      "wins": 5,
+      "draws": 13,
+      "losses": 2,
+      "score_rate": 0.575,
+      "failures": 0,
+      "over_50ms": 0,
+      "own_decisions": 11937,
+      "max_ms": 14.354791000016576,
+      "forward_p95_ms_max": 5.491411500000254,
+      "root_action_choices": [
+        0,
+        2274,
+        7068,
+        2595
+      ],
+      "search_changed_policy": 0,
+      "simulations": 0,
+      "chosen_stop": 7497
+    }
+  },
+  "comparisons": {
+    "diverse": {
+      "seed_blocks": 10,
+      "mean_score_gain": -0.075,
+      "bootstrap95_seed_block_gain": [
+        -0.225,
+        0.1
+      ],
+      "positive_blocks": 2,
+      "negative_blocks": 5,
+      "ties": 3,
+      "paired_sign_two_sided_p": 0.453125,
+      "differences": [
+        0.25,
+        0.0,
+        0.0,
+        -0.25,
+        -0.25,
+        -0.5,
+        0.5,
+        -0.25,
+        0.0,
+        -0.25
+      ]
+    },
+    "policy": {
+      "seed_blocks": 10,
+      "mean_score_gain": -0.075,
+      "bootstrap95_seed_block_gain": [
+        -0.225,
+        0.05
+      ],
+      "positive_blocks": 2,
+      "negative_blocks": 4,
+      "ties": 4,
+      "paired_sign_two_sided_p": 0.6875,
+      "differences": [
+        0.0,
+        0.25,
+        0.0,
+        -0.25,
+        -0.5,
+        -0.25,
+        0.25,
+        0.0,
+        -0.25,
+        0.0
+      ]
+    }
+  },
+  "replay_diagnostics": {
+    "original": [
+      {
+        "seed": 9100000,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          6,
+          8
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5966666666666667,
+          0.71
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100000,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          9,
+          14
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6466666666666666,
+          0.2833333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100001,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6366666666666667,
+          0.7
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100001,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          9,
+          17
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6433333333333333,
+          0.4866666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100002,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          7,
+          3
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.45,
+          0.6533333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100002,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          9
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.67,
+          0.62
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100003,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          0,
+          3
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.2833333333333333,
+          0.7033333333333334
+        ],
+        "stagnant_carry_moves": [
+          0,
+          166
+        ]
+      },
+      {
+        "seed": 9100003,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          2,
+          1
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.61,
+          0.5433333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100004,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          7,
+          3
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.63,
+          0.74
+        ],
+        "stagnant_carry_moves": [
+          32,
+          0
+        ]
+      },
+      {
+        "seed": 9100004,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          9,
+          13
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6733333333333333,
+          0.49333333333333335
+        ],
+        "stagnant_carry_moves": [
+          3,
+          0
+        ]
+      },
+      {
+        "seed": 9100005,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          1,
+          11
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.3933333333333333,
+          0.5566666666666666
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100005,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          1,
+          10
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7666666666666667,
+          0.6333333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          10
+        ]
+      },
+      {
+        "seed": 9100006,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          1
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          8,
+          12
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7066666666666667,
+          0.55
+        ],
+        "stagnant_carry_moves": [
+          0,
+          3
+        ]
+      },
+      {
+        "seed": 9100007,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          11,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6833333333333333,
+          0.7733333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100007,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          7,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7,
+          0.6366666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100008,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          2,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          2,
+          0
+        ],
+        "crossings": [
+          5,
+          3
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.4166666666666667,
+          0.6866666666666666
+        ],
+        "stagnant_carry_moves": [
+          20,
+          0
+        ]
+      },
+      {
+        "seed": 9100008,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          7,
+          4
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.66,
+          0.67
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100009,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          9,
+          10
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.4666666666666667,
+          0.6333333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          20
+        ]
+      },
+      {
+        "seed": 9100009,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          10,
+          4
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.67,
+          0.5066666666666667
+        ],
+        "stagnant_carry_moves": [
+          3,
+          0
+        ]
+      }
+    ],
+    "diverse": [
+      {
+        "seed": 9100000,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          0,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.3566666666666667,
+          0.6266666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          7
+        ]
+      },
+      {
+        "seed": 9100000,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          9,
+          14
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6466666666666666,
+          0.2833333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100001,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          8,
+          8
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.65,
+          0.7066666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          9
+        ]
+      },
+      {
+        "seed": 9100002,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          4,
+          11
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.2866666666666667,
+          0.6633333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100002,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          9
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.67,
+          0.62
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100003,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          0,
+          1
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6733333333333333,
+          0.79
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100003,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          3,
+          1
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.4866666666666667,
+          0.63
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100004,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          5,
+          3
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5933333333333334,
+          0.75
+        ],
+        "stagnant_carry_moves": [
+          33,
+          0
+        ]
+      },
+      {
+        "seed": 9100004,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          9,
+          13
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6733333333333333,
+          0.49333333333333335
+        ],
+        "stagnant_carry_moves": [
+          3,
+          0
+        ]
+      },
+      {
+        "seed": 9100005,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          1,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.39666666666666667,
+          0.7466666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100005,
+        "red": false,
+        "outcome": -1,
+        "score": -18,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 18,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          15,
+          11
+        ],
+        "decisions": [
+          276,
+          276
+        ],
+        "stop_rate": [
+          0.6630434782608695,
+          0.29347826086956524
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100006,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          2,
+          9
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.47333333333333333,
+          0.64
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100006,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          12
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7066666666666667,
+          0.5533333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100007,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          7,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7,
+          0.6366666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100008,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          2,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          2,
+          0
+        ],
+        "crossings": [
+          5,
+          3
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.3433333333333333,
+          0.6966666666666667
+        ],
+        "stagnant_carry_moves": [
+          20,
+          0
+        ]
+      },
+      {
+        "seed": 9100008,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          7,
+          4
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.66,
+          0.67
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100009,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          9,
+          10
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.47333333333333333,
+          0.6333333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          20
+        ]
+      },
+      {
+        "seed": 9100009,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          4
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6166666666666667,
+          0.5033333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      }
+    ],
+    "policy": [
+      {
+        "seed": 9100000,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          6,
+          8
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5966666666666667,
+          0.7133333333333334
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100000,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          13
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6433333333333333,
+          0.2833333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100001,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          8,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6333333333333333,
+          0.7033333333333334
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100001,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          9,
+          16
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6433333333333333,
+          0.5
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100002,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          6,
+          2
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.43333333333333335,
+          0.7933333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100002,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          9
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.67,
+          0.62
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100003,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          0,
+          1
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.63,
+          0.7933333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100003,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          2,
+          1
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5966666666666667,
+          0.5666666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100004,
+        "red": true,
+        "outcome": -1,
+        "score": -18,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 18,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          5,
+          3
+        ],
+        "decisions": [
+          272,
+          271
+        ],
+        "stop_rate": [
+          0.6875,
+          0.7712177121771218
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100004,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          9,
+          13
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6733333333333333,
+          0.49333333333333335
+        ],
+        "stagnant_carry_moves": [
+          3,
+          0
+        ]
+      },
+      {
+        "seed": 9100005,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          3,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.55,
+          0.74
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100005,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          7,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7266666666666667,
+          0.65
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100006,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          3,
+          1
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          1
+        ],
+        "max_carry": [
+          2,
+          1
+        ],
+        "crossings": [
+          3,
+          5
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5,
+          0.72
+        ],
+        "stagnant_carry_moves": [
+          42,
+          4
+        ]
+      },
+      {
+        "seed": 9100006,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          12
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7033333333333334,
+          0.5533333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100007,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          11,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6766666666666666,
+          0.7666666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100007,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          7,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7,
+          0.6366666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100008,
+        "red": true,
+        "outcome": -1,
+        "score": -16,
+        "collected": [
+          3,
+          1
+        ],
+        "returned": [
+          1,
+          1
+        ],
+        "opponent_returned": 18,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          2,
+          1
+        ],
+        "crossings": [
+          4,
+          5
+        ],
+        "decisions": [
+          297,
+          297
+        ],
+        "stop_rate": [
+          0.49158249158249157,
+          0.6734006734006734
+        ],
+        "stagnant_carry_moves": [
+          71,
+          5
+        ]
+      },
+      {
+        "seed": 9100008,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          7,
+          4
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.66,
+          0.67
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ]
+      },
+      {
+        "seed": 9100009,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          5,
+          19
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.43,
+          0.61
+        ],
+        "stagnant_carry_moves": [
+          0,
+          6
+        ]
+      },
+      {
+        "seed": 9100009,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          9,
+          3
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.69,
+          0.5466666666666666
+        ],
+        "stagnant_carry_moves": [
+          3,
+          0
+        ]
+      }
+    ]
+  },
+  "planned_games": 60,
+  "completed_records": 60,
+  "all_valid_traces_replayed": true,
+  "resource_status": "COMPLETE"
+}
