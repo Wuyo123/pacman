@@ -25,7 +25,7 @@
     }
   },
   "manifest": "runs/m0_original/manifest.json",
-  "updated_utc": "2026-11-04T15:48:45.6651040+00:00",
+  "updated_utc": "2026-11-04T23:48:45.665104+08:00",
   "gate": {
     "decision": "INVALID_EXECUTION",
     "wins": 7,
@@ -72,5 +72,18 @@
     "checkpoint_sha256": "a38950722ac309ea3a585850a6d06fa59dd4d88dbec39ea6f915d7af3ab7657e",
     "repeated_M0_seeds_not_independent_confirmation": true
   },
-  "verification": "runs/m0_original/verification.json"
+  "verification": "runs/m0_original/verification.json",
+  "git_preservation": {
+    "original_commit": "7bf5a308bf05757bbe1f82def8183cc0d50db6e2",
+    "original_tag": "v0-m0-20261104",
+    "neural_control_commit": "1b156c9",
+    "neural_control_tag": "m0-neural-controls-20261105",
+    "remote_status": "AWAITING_DESTINATION",
+    "pushed": false
+  },
+  "improvement_runs": {
+    "coverage": "STOP_NO_CANDIDATE_WITH_EXECUTION_ERRORS",
+    "recovery": "NOT_ESTABLISHED",
+    "goal": "RUNNING"
+  }
 }

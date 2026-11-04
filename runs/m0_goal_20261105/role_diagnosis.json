@@ -1,0 +1,23 @@
+{
+  "original": {
+    "mean_our_returned": 0.4,
+    "mean_opponent_returned": 1.8,
+    "mean_defender_crossings": 9.5,
+    "mean_defender_collected": 0.35,
+    "games_defender_crossed": 20
+  },
+  "guard": {
+    "mean_our_returned": 2.1,
+    "mean_opponent_returned": 9.9,
+    "mean_defender_crossings": 5.25,
+    "mean_defender_collected": 2.15,
+    "games_defender_crossed": 20
+  },
+  "heuristic": {
+    "mean_our_returned": 9.55,
+    "mean_opponent_returned": 18.0,
+    "mean_defender_crossings": 2.85,
+    "mean_defender_collected": 6.3,
+    "games_defender_crossed": 20
+  }
+}

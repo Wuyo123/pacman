@@ -1,0 +1,78 @@
+{
+  "status": "NOT_ESTABLISHED",
+  "selected": null,
+  "development": {
+    "guard": {
+      "completed": 20,
+      "records": 20,
+      "planned": 20,
+      "wins": 7,
+      "draws": 2,
+      "losses": 11,
+      "score_rate": 0.4,
+      "failures": 0,
+      "over_50ms": 0,
+      "own_decisions": 10116,
+      "max_ms": 49.261903999990864,
+      "forward_p95_ms_max": 5.196779849993049,
+      "root_action_choices": [
+        0,
+        2310,
+        5353,
+        2453
+      ],
+      "search_changed_policy": 248,
+      "simulations": 52974,
+      "chosen_stop": 1984,
+      "goal_guard_overrides": 1702
+    },
+    "heuristic": {
+      "completed": 20,
+      "records": 20,
+      "planned": 20,
+      "wins": 0,
+      "draws": 0,
+      "losses": 20,
+      "score_rate": 0.0,
+      "failures": 0,
+      "over_50ms": 0,
+      "own_decisions": 6361,
+      "max_ms": 2.5494879999996556,
+      "forward_p95_ms_max": null,
+      "root_action_choices": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "search_changed_policy": 0,
+      "simulations": 0,
+      "chosen_stop": 82,
+      "goal_guard_overrides": 0
+    },
+    "original": {
+      "completed": 20,
+      "records": 20,
+      "planned": 20,
+      "wins": 8,
+      "draws": 10,
+      "losses": 2,
+      "score_rate": 0.65,
+      "failures": 0,
+      "over_50ms": 0,
+      "own_decisions": 11470,
+      "max_ms": 49.244406000013896,
+      "forward_p95_ms_max": 4.756783900002404,
+      "root_action_choices": [
+        0,
+        2234,
+        6659,
+        2577
+      ],
+      "search_changed_policy": 56,
+      "simulations": 58875,
+      "chosen_stop": 6888,
+      "goal_guard_overrides": 0
+    }
+  }
+}
