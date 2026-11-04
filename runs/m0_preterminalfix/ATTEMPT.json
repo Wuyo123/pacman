@@ -1,0 +1,9 @@
+{
+  "status": "ABORTED_IMPLEMENTATION_BUG",
+  "planned_games": 200,
+  "completed_game_records": 119,
+  "excluded_from_training": true,
+  "reason": "oracle terminal search allowed negative remaining time",
+  "resolution": "failing regression then cutoff at timeleft<=0; recaptured same200seeds",
+  "official_attempt": "runs/m0_original"
+}

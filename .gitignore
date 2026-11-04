@@ -1,0 +1,8 @@
+vendor/
+__pycache__/
+.pytest_cache/
+runs/
+*.pt
+*.npz
+*.npy
+

@@ -1,0 +1,17 @@
+Exception ignored in: <function run.<locals>.callback at 0x7fa4f208f4c0>
+Traceback (most recent call last):
+  File "/mnt/c/D/PacMan/belief_mita/latency_probe.py", line 16, in callback
+    def callback(phase, info):
+
+  File "/mnt/c/D/PacMan/belief_mita/latency_probe.py", line 44, in timeout
+    raise TimeoutError('probe decision deadline')
+TimeoutError: probe decision deadline
+Exception ignored in: <function run.<locals>.callback at 0x7fa4f208f4c0>
+Traceback (most recent call last):
+  File "/mnt/c/D/PacMan/belief_mita/latency_probe.py", line 16, in callback
+    def callback(phase, info):
+
+  File "/mnt/c/D/PacMan/belief_mita/latency_probe.py", line 44, in timeout
+    raise TimeoutError('probe decision deadline')
+TimeoutError: probe decision deadline
+{"seed": 8000000, "purpose": "engineering diagnostic, excluded from M0 twenty games", "late_decisions": [{"elapsed_ms": 69.21800099999942, "gc_pause_ms": [], "alarm_at_ms": [59.90768400000057], "phases": [["infer", 0.2445719999997209, 2.789845000000568], ["macro", 4.647527999999568, 1.5126670000000786], ["infer", 6.1638330000004515, 2.7103959999994487], ["macro", 10.596512999999419, 1.46228400000048], ["infer", 12.069093000000919, 2.734921000000057], ["macro", 16.619966000000375, 52.49212000000014]]}, {"elapsed_ms": 75.47004799999968, "gc_pause_ms": [], "alarm_at_ms": [65.41432999999941], "phases": [["infer", 0.2165010000005907, 2.6867230000000575], ["macro", 4.563422000000372, 1.4533209999996188], ["infer", 6.018823000001561, 2.677620000000047], ["macro", 10.61433799999989, 1.4111489999990567], ["infer", 12.035243999999778, 2.8225790000000472], ["macro", 16.705718000000758, 58.65043900000089]]}], "total_own_decisions": 600, "over_50ms": 2, "gc_pauses_over_10ms": [{"ms": 35.61667199999974, "generation": 2}]}

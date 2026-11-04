@@ -1,0 +1,5 @@
+{"stage": "collect", "completed": 20, "failed": 0, "planned": 200, "seconds": 48.76276009900002}
+{"stage": "collect", "completed": 40, "failed": 0, "planned": 200, "seconds": 96.96754091599999}
+{"stage": "collect", "completed": 60, "failed": 0, "planned": 200, "seconds": 145.66003617599998}
+{"stage": "collect", "completed": 80, "failed": 0, "planned": 200, "seconds": 193.40897976099998}
+{"stage": "collect", "completed": 100, "failed": 0, "planned": 200, "seconds": 241.12328776899997}

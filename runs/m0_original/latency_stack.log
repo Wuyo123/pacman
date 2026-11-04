@@ -1,0 +1,17 @@
+Exception ignored in: <function run.<locals>.callback at 0x7f26ca8c74c0>
+Traceback (most recent call last):
+  File "/mnt/c/D/PacMan/belief_mita/latency_probe.py", line 16, in callback
+    def callback(phase, info):
+
+  File "/mnt/c/D/PacMan/belief_mita/latency_probe.py", line 49, in timeout
+    raise TimeoutError('probe decision deadline')
+TimeoutError: probe decision deadline
+Exception ignored in: <function run.<locals>.callback at 0x7f26ca8c74c0>
+Traceback (most recent call last):
+  File "/mnt/c/D/PacMan/belief_mita/latency_probe.py", line 16, in callback
+    def callback(phase, info):
+
+  File "/mnt/c/D/PacMan/belief_mita/latency_probe.py", line 49, in timeout
+    raise TimeoutError('probe decision deadline')
+TimeoutError: probe decision deadline
+{"seed": 8000000, "purpose": "engineering diagnostic, excluded from M0 twenty games", "late_decisions": [{"elapsed_ms": 72.10026000000092, "gc_pause_ms": [], "alarm_at_ms": [64.92698299999944], "alarm_stack": [["/mnt/c/D/PacMan/belief_mita/latency_probe.py", "callback", 16], ["/mnt/c/D/PacMan/vendor/capture/game.py", "<listcomp>", 176], ["/mnt/c/D/PacMan/vendor/capture/game.py", "<listcomp>", 176], ["/mnt/c/D/PacMan/vendor/capture/game.py", "__init__", 176], ["/mnt/c/D/PacMan/vendor/capture/layout.py", "__init__", 31], ["/mnt/c/D/PacMan/vendor/capture/layout.py", "deepCopy", 93], ["/mnt/c/D/PacMan/vendor/capture/game.py", "deepCopy", 398], ["/mnt/c/D/PacMan/vendor/capture/capture.py", "deepCopy", 261]], "phases": [["infer", 0.28059599999963325, 3.4209409999998996], ["macro", 5.381949000000219, 1.5539740000001245], ["infer", 6.938364999999891, 2.9032740000012325], ["macro", 11.736678000000111, 1.6392270000000764], ["infer", 13.383869000000104, 3.011366000000848], ["macro", 18.556017999999952, 53.40736099999965]]}, {"elapsed_ms": 77.96916900000284, "gc_pause_ms": [], "alarm_at_ms": [69.57820600000275], "alarm_stack": [["/mnt/c/D/PacMan/belief_mita/latency_probe.py", "callback", 16], ["/mnt/c/D/PacMan/vendor/capture/game.py", "<listcomp>", 176], ["/mnt/c/D/PacMan/vendor/capture/game.py", "<listcomp>", 176], ["/mnt/c/D/PacMan/vendor/capture/game.py", "__init__", 176], ["/mnt/c/D/PacMan/vendor/capture/layout.py", "__init__", 31], ["/mnt/c/D/PacMan/vendor/capture/layout.py", "deepCopy", 93], ["/mnt/c/D/PacMan/vendor/capture/game.py", "deepCopy", 398], ["/mnt/c/D/PacMan/vendor/capture/capture.py", "deepCopy", 261]], "phases": [["infer", 0.22998000000029606, 3.591291999999413], ["macro", 5.530554999999993, 1.3135060000024623], ["infer", 6.846255000002799, 3.6144569999976284], ["macro", 12.229478000001848, 1.3876919999979975], ["infer", 13.624871000001093, 3.842109000000704], ["macro", 19.299750000001836, 58.57141199999916]]}], "total_own_decisions": 600, "over_50ms": 2, "gc_pauses_over_10ms": [{"ms": 36.149997000000766, "generation": 2}]}

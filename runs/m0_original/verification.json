@@ -1,0 +1,23 @@
+{
+  "training_epochs": 20,
+  "train_games": 180,
+  "validation_games": 20,
+  "input_hashes_verified": 200,
+  "original_source_snapshot_verified": true,
+  "evaluations": {
+    "evaluation": {
+      "replayed_games": 20,
+      "own_decisions": 11692,
+      "all_scores_and_actions_verified": true,
+      "same_checkpoint": true,
+      "decision": "INVALID_EXECUTION"
+    },
+    "evaluation_gcfix": {
+      "replayed_games": 20,
+      "own_decisions": 11718,
+      "all_scores_and_actions_verified": true,
+      "same_checkpoint": true,
+      "decision": "M0_NOT_PASSED"
+    }
+  }
+}

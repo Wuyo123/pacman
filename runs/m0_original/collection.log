@@ -1,0 +1,11 @@
+{"stage": "collect", "completed": 20, "failed": 0, "planned": 200, "seconds": 48.37405183999999}
+{"stage": "collect", "completed": 40, "failed": 0, "planned": 200, "seconds": 98.118085253}
+{"stage": "collect", "completed": 60, "failed": 0, "planned": 200, "seconds": 148.71953839000003}
+{"stage": "collect", "completed": 80, "failed": 0, "planned": 200, "seconds": 199.55474184599996}
+{"stage": "collect", "completed": 100, "failed": 0, "planned": 200, "seconds": 248.22923522400004}
+{"stage": "collect", "completed": 120, "failed": 0, "planned": 200, "seconds": 297.483161848}
+{"stage": "collect", "completed": 140, "failed": 0, "planned": 200, "seconds": 346.75183897700003}
+{"stage": "collect", "completed": 160, "failed": 0, "planned": 200, "seconds": 395.21054380299995}
+{"stage": "collect", "completed": 180, "failed": 0, "planned": 200, "seconds": 441.74836934999996}
+{"stage": "collect", "completed": 200, "failed": 0, "planned": 200, "seconds": 488.89016466399994}
+{"status": "PASS", "planned_games": 200, "completed_games": 200, "failures": [], "steps": 120000, "wins": 119, "draws": 81, "losses": 0, "seconds": 488.892889353, "source_sha256": {"belief_mita/collect.py": "0d0a8b58ffe1b935107436d29f431d017aacfde1ce1261e25630e0a40217725f", "belief_mita/evaluate.py": "c9575ffc7fee736bf86040bcc9360b68b3e714e5742f97e599f301c2e281660e", "belief_mita/model.py": "05e8c690d84740e856dd162c54ae009ad3bc8d36493f1b6503d3c9de5dee8380", "belief_mita/runtime.py": "245eadb641119b31527d06feb41e0aa734322603e9f2807bab65a76ecea6b64b", "belief_mita/search.py": "9babd13dbdf69c026e7efe0aeca99f0bfadb5a1de5d78d3cc631750098da98e4", "belief_mita/topology.py": "af3d233397af34e8674da0907059eeb2f79db7949dcbc00ca772d13a86b35c0d", "belief_mita/training.py": "98625a152d3b338b5e685ec6305d6f8fae44ae7b080ddd4b7c71c58ce13eb9e9"}}

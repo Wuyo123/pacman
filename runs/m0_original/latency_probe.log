@@ -1,0 +1,17 @@
+Exception ignored in: <function run.<locals>.callback at 0x7f7886a59a80>
+Traceback (most recent call last):
+  File "/mnt/c/D/PacMan/belief_mita/latency_probe.py", line 14, in callback
+    def callback(phase, info):
+
+  File "/mnt/c/D/PacMan/belief_mita/evaluate.py", line 88, in timeout
+    raise DecisionDeadline()
+belief_mita.evaluate.DecisionDeadline: 
+Exception ignored in: <function run.<locals>.callback at 0x7f7886a59a80>
+Traceback (most recent call last):
+  File "/mnt/c/D/PacMan/belief_mita/latency_probe.py", line 14, in callback
+    def callback(phase, info):
+
+  File "/mnt/c/D/PacMan/belief_mita/evaluate.py", line 88, in timeout
+    raise DecisionDeadline()
+belief_mita.evaluate.DecisionDeadline: 
+{"seed": 8000000, "purpose": "engineering diagnostic, excluded from M0 twenty games", "late_decisions": [{"elapsed_ms": 74.98557200000278, "gc_pause_ms": []}, {"elapsed_ms": 76.83895799999974, "gc_pause_ms": []}], "total_own_decisions": 600, "over_50ms": 2, "gc_pauses_over_10ms": [{"ms": 35.41536799999978, "generation": 2}]}

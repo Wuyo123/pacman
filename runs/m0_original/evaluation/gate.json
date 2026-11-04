@@ -1,0 +1,598 @@
+{
+  "decision": "INVALID_EXECUTION",
+  "wins": 7,
+  "draws": 11,
+  "losses": 2,
+  "planned_games": 20,
+  "completed_games": 20,
+  "failures": 0,
+  "score_rate": 0.625,
+  "forward_p95_ms": 2.556779449832902,
+  "moves_over_50ms": 29,
+  "original_forward_gate_ms": 8,
+  "original_score_gate": 0.75,
+  "checkpoint_sha256": "a38950722ac309ea3a585850a6d06fa59dd4d88dbec39ea6f915d7af3ab7657e",
+  "inference_device": "cpu",
+  "results": [
+    {
+      "seed": 9000000,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": -18,
+      "outcome": -1,
+      "moves": 617,
+      "own_decisions": 308,
+      "seconds": 12.999799921999966,
+      "own_ms_p50": 40.618115499910346,
+      "own_ms_p95": 44.11166625011447,
+      "own_ms_max": 186.1459029996695,
+      "over_50ms": 1,
+      "deaths": [
+        0,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 307,
+        "simulations": 1920,
+        "shield_removed": 15,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "calls": 2099,
+        "forward_with_transfer_p95_ms": 3.3838239997294295
+      }
+    },
+    {
+      "seed": 9000000,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.648058450000008,
+      "own_ms_p50": 41.976780999902985,
+      "own_ms_p95": 44.32928110009016,
+      "own_ms_max": 95.95593299991378,
+      "over_50ms": 2,
+      "deaths": [
+        1,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 598,
+        "simulations": 3581,
+        "shield_removed": 29,
+        "shield_fallbacks": 0,
+        "deadline_stops": 2,
+        "calls": 4109,
+        "forward_with_transfer_p95_ms": 3.2641509999848495
+      }
+    },
+    {
+      "seed": 9000001,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.351423769999656,
+      "own_ms_p50": 41.49844149992532,
+      "own_ms_p95": 44.084959350038844,
+      "own_ms_max": 90.21656999993866,
+      "over_50ms": 1,
+      "deaths": [
+        2,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3639,
+        "shield_removed": 21,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "calls": 4167,
+        "forward_with_transfer_p95_ms": 3.2684484997844256
+      }
+    },
+    {
+      "seed": 9000001,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.33499646500013,
+      "own_ms_p50": 40.90373250005541,
+      "own_ms_p95": 44.497248149855295,
+      "own_ms_max": 97.91034299996682,
+      "over_50ms": 2,
+      "deaths": [
+        0,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 598,
+        "simulations": 3461,
+        "shield_removed": 0,
+        "shield_fallbacks": 0,
+        "deadline_stops": 2,
+        "calls": 3957,
+        "forward_with_transfer_p95_ms": 4.3219163999310695
+      }
+    },
+    {
+      "seed": 9000002,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.947811680000086,
+      "own_ms_p50": 42.15216649981812,
+      "own_ms_p95": 46.333894699955636,
+      "own_ms_max": 118.08142000018051,
+      "over_50ms": 1,
+      "deaths": [
+        0,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 597,
+        "simulations": 3009,
+        "shield_removed": 13,
+        "shield_fallbacks": 0,
+        "deadline_stops": 3,
+        "calls": 3544,
+        "forward_with_transfer_p95_ms": 4.533661899995423
+      }
+    },
+    {
+      "seed": 9000002,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.442463011999735,
+      "own_ms_p50": 41.03611400000773,
+      "own_ms_p95": 44.953951900015454,
+      "own_ms_max": 93.8713599998664,
+      "over_50ms": 2,
+      "deaths": [
+        0,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 597,
+        "simulations": 3291,
+        "shield_removed": 30,
+        "shield_fallbacks": 0,
+        "deadline_stops": 3,
+        "calls": 3783,
+        "forward_with_transfer_p95_ms": 3.8422415000695755
+      }
+    },
+    {
+      "seed": 9000003,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.466021702000035,
+      "own_ms_p50": 41.14696500005266,
+      "own_ms_p95": 44.689612750130436,
+      "own_ms_max": 112.04698300025484,
+      "over_50ms": 2,
+      "deaths": [
+        1,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 598,
+        "simulations": 3376,
+        "shield_removed": 39,
+        "shield_fallbacks": 0,
+        "deadline_stops": 2,
+        "calls": 3851,
+        "forward_with_transfer_p95_ms": 3.877158499790312
+      }
+    },
+    {
+      "seed": 9000003,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": -18,
+      "outcome": -1,
+      "moves": 1168,
+      "own_decisions": 584,
+      "seconds": 24.866449784999986,
+      "own_ms_p50": 41.583608500104674,
+      "own_ms_p95": 44.867481549908916,
+      "own_ms_max": 106.36943999998039,
+      "over_50ms": 1,
+      "deaths": [
+        1,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 583,
+        "simulations": 3153,
+        "shield_removed": 28,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "calls": 3730,
+        "forward_with_transfer_p95_ms": 3.9240469999640464
+      }
+    },
+    {
+      "seed": 9000004,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.494772222999927,
+      "own_ms_p50": 41.762085499840396,
+      "own_ms_p95": 44.79811324986258,
+      "own_ms_max": 93.5507580002195,
+      "over_50ms": 1,
+      "deaths": [
+        2,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3338,
+        "shield_removed": 56,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "calls": 3862,
+        "forward_with_transfer_p95_ms": 3.6761772500085494
+      }
+    },
+    {
+      "seed": 9000004,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.72439457900009,
+      "own_ms_p50": 42.221141500021986,
+      "own_ms_p95": 44.447821850053515,
+      "own_ms_max": 93.01984900002935,
+      "over_50ms": 2,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 598,
+        "simulations": 3570,
+        "shield_removed": 30,
+        "shield_fallbacks": 0,
+        "deadline_stops": 2,
+        "calls": 4051,
+        "forward_with_transfer_p95_ms": 3.330744500090077
+      }
+    },
+    {
+      "seed": 9000005,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.56675420700003,
+      "own_ms_p50": 42.076816999951916,
+      "own_ms_p95": 44.29780495011073,
+      "own_ms_max": 91.93826800037641,
+      "over_50ms": 1,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3668,
+        "shield_removed": 28,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "calls": 4077,
+        "forward_with_transfer_p95_ms": 3.3713304000229978
+      }
+    },
+    {
+      "seed": 9000005,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.655925904000014,
+      "own_ms_p50": 42.03033249973487,
+      "own_ms_p95": 44.36929344967666,
+      "own_ms_max": 95.67718199969022,
+      "over_50ms": 2,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 598,
+        "simulations": 3532,
+        "shield_removed": 28,
+        "shield_fallbacks": 0,
+        "deadline_stops": 2,
+        "calls": 4059,
+        "forward_with_transfer_p95_ms": 3.3055097001124523
+      }
+    },
+    {
+      "seed": 9000006,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.35831611200001,
+      "own_ms_p50": 41.33140700014337,
+      "own_ms_p95": 44.213976249875486,
+      "own_ms_max": 97.60656600019502,
+      "over_50ms": 2,
+      "deaths": [
+        1,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 598,
+        "simulations": 3655,
+        "shield_removed": 41,
+        "shield_fallbacks": 0,
+        "deadline_stops": 2,
+        "calls": 4137,
+        "forward_with_transfer_p95_ms": 3.2831997998982843
+      }
+    },
+    {
+      "seed": 9000006,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.125024621000193,
+      "own_ms_p50": 40.85730299993884,
+      "own_ms_p95": 43.94822050030598,
+      "own_ms_max": 90.56014399993728,
+      "over_50ms": 1,
+      "deaths": [
+        0,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3646,
+        "shield_removed": 6,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "calls": 4187,
+        "forward_with_transfer_p95_ms": 3.2763579998118075
+      }
+    },
+    {
+      "seed": 9000007,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.395733824999752,
+      "own_ms_p50": 41.473573500070415,
+      "own_ms_p95": 44.28216920007344,
+      "own_ms_max": 98.50890799998524,
+      "over_50ms": 1,
+      "deaths": [
+        0,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3647,
+        "shield_removed": 8,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "calls": 4173,
+        "forward_with_transfer_p95_ms": 3.2881107999855885
+      }
+    },
+    {
+      "seed": 9000007,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.837876547000178,
+      "own_ms_p50": 42.31334899986905,
+      "own_ms_p95": 44.424343549940204,
+      "own_ms_max": 101.25445899984697,
+      "over_50ms": 2,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 598,
+        "simulations": 3599,
+        "shield_removed": 21,
+        "shield_fallbacks": 0,
+        "deadline_stops": 2,
+        "calls": 4083,
+        "forward_with_transfer_p95_ms": 3.302009600020028
+      }
+    },
+    {
+      "seed": 9000008,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.677231562000088,
+      "own_ms_p50": 42.215865499883876,
+      "own_ms_p95": 44.309090500246384,
+      "own_ms_max": 93.66098500004227,
+      "over_50ms": 1,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3540,
+        "shield_removed": 47,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "calls": 4063,
+        "forward_with_transfer_p95_ms": 3.322872299850132
+      }
+    },
+    {
+      "seed": 9000008,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.548012306000146,
+      "own_ms_p50": 41.67531050006801,
+      "own_ms_p95": 44.26799429959374,
+      "own_ms_max": 107.51015599998937,
+      "over_50ms": 2,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 598,
+        "simulations": 3665,
+        "shield_removed": 21,
+        "shield_fallbacks": 0,
+        "deadline_stops": 2,
+        "calls": 4140,
+        "forward_with_transfer_p95_ms": 3.2666906498661774
+      }
+    },
+    {
+      "seed": 9000009,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.711947557999792,
+      "own_ms_p50": 42.115904499951284,
+      "own_ms_p95": 44.33864064978934,
+      "own_ms_max": 99.23203200014541,
+      "over_50ms": 1,
+      "deaths": [
+        2,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3616,
+        "shield_removed": 59,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "calls": 4081,
+        "forward_with_transfer_p95_ms": 3.2816180000736495
+      }
+    },
+    {
+      "seed": 9000009,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.416949176000344,
+      "own_ms_p50": 41.73942050010737,
+      "own_ms_p95": 44.092148749882654,
+      "own_ms_max": 95.48511100001633,
+      "over_50ms": 1,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3635,
+        "shield_removed": 18,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "calls": 4169,
+        "forward_with_transfer_p95_ms": 3.2737149999775284
+      }
+    }
+  ]
+}
