@@ -99,7 +99,7 @@ class Edge:
 
 class NeuralController:
     def __init__(self, checkpoint, seed, budget_ms=50, device='cpu', mode='original'):
-        if mode not in ('original', 'diverse', 'policy'):
+        if mode not in ('original', 'diverse', 'policy', 'guard'):
             raise ValueError('unknown controller mode')
         torch.set_num_threads(1)
         checkpoint = torch.load(Path(checkpoint), map_location='cpu', weights_only=False)
@@ -113,12 +113,15 @@ class NeuralController:
         self.statistics = {'decisions': 0, 'simulations': 0, 'shield_removed': 0,
                            'shield_fallbacks': 0, 'forward_ms': [], 'deadline_stops': 0,
                            'root_action_choices': [0,0,0,0], 'forced_despite_alternatives': 0,
-                           'search_changed_policy': 0, 'chosen_stop': 0}
+                           'search_changed_policy': 0, 'chosen_stop': 0, 'goal_guard_overrides': 0}
 
     def start(self, observation, topology, team, red):
         self.topology, self.team, self.red = topology, list(team), red
         self.enemies = [i for i in range(4) if i not in team]
         self.opponent = OraclePlanner(topology, self.enemies, not red, depth=1)
+        if self.mode == 'guard':
+            from .goal_guard import ProgressGuard
+            self.progress_guard = ProgressGuard(window=8)
         # Warm up without accessing any hidden state or targets.
         encoder = ObservationEncoder(topology, team, red)
         encoder.update(observation, team[0])
@@ -171,6 +174,7 @@ class NeuralController:
                     self.statistics['shield_fallbacks'] += 1
         if count_statistics:
             self.statistics['shield_removed'] += int((raw & ~legal).sum())
+            self.root_legal = legal.copy()
         acting_slot = self.team.index(actor) if self.mode == 'diverse' else None
         return [Edge(plan, prior) for plan, prior in joint_top3(first, second, legal, acting_slot)]
 
@@ -252,5 +256,11 @@ class NeuralController:
             self.statistics['deadline_stops'] += 1
         best = max(root, key=lambda edge: (edge.visits, edge.total / max(1, edge.visits), edge.prior))
         self.statistics['search_changed_policy'] += best.plan[slot] != policy_best.plan[slot]
-        self.statistics['chosen_stop'] += best.plan[slot] == 4
-        return ACTIONS[best.plan[slot]]
+        chosen = ACTIONS[best.plan[slot]]
+        if self.mode == 'guard' and self.progress_guard.should_override(observation,actor):
+            from .goal_guard import choose_goal_action
+            alternative = choose_goal_action(observation,actor,self.topology,self.red,allowed=self.root_legal[slot])
+            self.statistics['goal_guard_overrides'] += alternative != chosen
+            chosen = alternative
+        self.statistics['chosen_stop'] += chosen == 'Stop'
+        return chosen

@@ -70,7 +70,8 @@ def summarize(records):
                          'over_50ms':sum(r['over_50ms'] for r in verified),
                          'own_decisions':sum(r['own_decisions'] for r in verified),
                          'max_ms':max((r['own_ms_max'] for r in verified),default=None),
-                         'forward_p95_ms_max':max((r['search']['forward_p95_ms'] for r in verified),default=None),
+                         'forward_p95_ms_max':max((r['search']['forward_p95_ms'] for r in verified
+                                                   if r['search']['forward_p95_ms'] is not None),default=None),
                          'root_action_choices':histogram,
                          'search_changed_policy':sum(r['search']['search_changed_policy'] for r in verified),
                          'simulations':sum(r['search']['simulations'] for r in verified),
@@ -129,8 +130,8 @@ def run_stage(stage,modes,deadline):
     return finalize_stage(stage,modes,records,deadline)
 
 
-def finalize_stage(stage,modes,records,deadline):
-    stage_dir = OUT/stage
+def finalize_stage(stage,modes,records,deadline,out=None):
+    stage_dir = (Path(out) if out is not None else OUT)/stage
     summary = summarize(records)
     comparisons = {mode:paired_comparison(records,mode) for mode in modes if mode!='original'}
     replays, audit_complete = {}, True
