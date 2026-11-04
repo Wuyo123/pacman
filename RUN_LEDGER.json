@@ -84,6 +84,7 @@
   "improvement_runs": {
     "coverage": "STOP_NO_CANDIDATE_WITH_EXECUTION_ERRORS",
     "recovery": "NOT_ESTABLISHED",
-    "goal": "RUNNING"
-  }
+    "goal": "NOT_ESTABLISHED"
+  },
+  "improvement_report": "IMPROVEMENT_RESULT_20261105.md"
 }
