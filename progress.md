@@ -41,3 +41,7 @@
 2026-11-05 14:15：用户明确保留公开并授权上传；GitHub官方CLI登录成功。两分支及两标签push成功，git ls-remote独立核对7869ca9/7bf5a30与annotated tags peeled目标一致，仓库https://github.com/Wuyo123/pacman。新输入实验仍在运行，未提前声称结果。
 
 2026-11-05 16:02核实：输入修复批次在15:32:53按90分钟截止，INCONCLUSIVE_RESOURCE。200采集完整；V0完成20轮，V1完成15轮/第16轮部分更新中断；0/40评测，进程已退出。保留全部来源/数据/模型，不能判断修复效果，不自动续训或重跑。见INPUT_REPAIR_RESULT_20261105.md。
+
+2026-11-05 17:31:02：用户明确授权继续跑完。Luna已启动独立续跑，原90min RESOURCE不改；源commit97d01c3已推送，70tests和CUDA恢复smoke通过。源checkpoint15轮+第16轮2批，Adam25322精确恢复至总20轮/33760步；不重采、不重训V0、不改40个970种子。45min截止18:16:02，正式PID18/session48527，manifest独立核实RUNNING。
+
+续跑已完成并独立验收：V1补齐20轮，双方Adam33760步。40/40评测完整，V0 7胜12平1负=65%，V1 2胜14平4负=45%，0执行失败/0完整决策>50ms；主代理再次重放40局、核200数据hash/源码/源checkpoint未改通过。1671.53秒内结束，NO_IMPROVEMENT_ESTABLISHED；920与M1–M3未动。新统计确认搜索展开几乎全为1层，观测分支仅0/2次复用；未自动改搜索追加实验。见INPUT_REPAIR_CONTINUATION_RESULT_20261105.md。

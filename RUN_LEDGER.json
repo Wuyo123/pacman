@@ -103,5 +103,24 @@
     "v0_epochs_completed": 20,
     "v1_epochs_completed": 15,
     "evaluation_completed": 0
+  },
+  "input_repair_continuation": {
+    "status": "NO_IMPROVEMENT_ESTABLISHED",
+    "manifest": "runs/input_repair_continuation_20261105/manifest.json",
+    "source_commit": "97d01c31d45d5f98e33d35058fc960a9171174bd",
+    "user_authorized": "继续跑完这轮",
+    "started_local": "2026-11-05T17:31:02+08:00",
+    "deadline_local": "2026-11-05T18:16:02+08:00",
+    "planned_evaluation_games": 40,
+    "source_optimizer_updates": 25322,
+    "expected_final_optimizer_updates": 33760,
+    "executor": "Luna",
+    "elapsed_seconds": 1671.52639809,
+    "final_optimizer_updates": 33760,
+    "evaluation_completed": 40,
+    "result_report": "INPUT_REPAIR_CONTINUATION_RESULT_20261105.md",
+    "independent_verification": "runs/input_repair_continuation_20261105/independent_verification.json",
+    "v0_score_rate": 0.65,
+    "v1_score_rate": 0.45
   }
 }

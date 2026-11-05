@@ -1,0 +1,5168 @@
+{
+  "status": "NO_IMPROVEMENT_ESTABLISHED",
+  "original_90m_status": "INCONCLUSIVE_RESOURCE",
+  "original_90m_manifest_sha256": "294f54f9160e17d4accdde3931d5d191445f027ae00ba6e1690400a426d6f6fb",
+  "original_checkpoint_sha256": {
+    "v0": "2d6885bfcafe2c01e5d6437c9a1905026d8fc43e4cbaf49b98ffa168a1ed8db4",
+    "v1_partial": "22a5564d440e9061d709af223680ec797e14acddf1e2b9e353002b2d7071ec28"
+  },
+  "original_training_source_sha256": "35596373d2b5ac44ddce0aeb8aad30d38a31971e07065b129b31d5433490c2f4",
+  "resume_training_source_sha256": "91dbb31e2ac829567a7d2d980c43889fa550034609e2f86bb09324a832dc0ffa",
+  "driver_source_sha256": "cec0305c86fb04f5c7c947ad8a07aab1a88814b8e879322b8d32c834dfe5bc5b",
+  "resume_helper_source_sha256": "aba066f406ba8542348457e8dd257b29505d1a44b1bd5cbf88fb8da9d92f9592",
+  "protocol_sha256": "028ec2e38fa54d20a227efe51df266d29b6a7783991da8a4c52d9dabf6c6fb80",
+  "source_sha256": {
+    "diagnose_m0.py": "9b02fa750362b1bc287e3eedc92e9b5f5fd4df85f236020d15ba3cd546baf94b",
+    "INPUT_REPAIR_CONTINUATION_PROTOCOL_20261105.md": "028ec2e38fa54d20a227efe51df266d29b6a7783991da8a4c52d9dabf6c6fb80",
+    "belief_mita/evaluate.py": "46d363e66930ed98d1e5ed964f54578e5debc117e99ff82676871df94c06a4d0",
+    "belief_mita/input_repair.py": "bfb02a502573832dcb7955cedbe3332eed2d9893cb6900638af5316bd9d77899",
+    "belief_mita/input_repair_continuation.py": "cec0305c86fb04f5c7c947ad8a07aab1a88814b8e879322b8d32c834dfe5bc5b",
+    "belief_mita/model.py": "05e8c690d84740e856dd162c54ae009ad3bc8d36493f1b6503d3c9de5dee8380",
+    "belief_mita/resume_training.py": "aba066f406ba8542348457e8dd257b29505d1a44b1bd5cbf88fb8da9d92f9592",
+    "belief_mita/runtime.py": "1dab639d33f56402354d621c483483b4bd7651487a6a7566415b813ebc342ccd",
+    "belief_mita/schema.py": "e17e3ec88630ec36e5e6d0362004d8faa184ee851d796ff5e7eb6eb1dc163b9f",
+    "belief_mita/search.py": "303938b695532268de5149f4463984176700814411448d65a3720a900b10d319",
+    "belief_mita/topology.py": "af3d233397af34e8674da0907059eeb2f79db7949dcbc00ca772d13a86b35c0d",
+    "belief_mita/training.py": "91dbb31e2ac829567a7d2d980c43889fa550034609e2f86bb09324a832dc0ffa",
+    "tests/test_input_repair_continuation.py": "de37cef584619325c2a04ee2295125ddfaf3cb5e186307a059c9d094160815d4",
+    "tests/test_training.py": "e1a02d70aa9124acaeef18763e33c16b5653161337f9e417e0ca52d8a6ce09ac"
+  },
+  "resource_preflight": {
+    "observed_utc": "2026-11-05T09:27:41Z",
+    "game_process_scan": "Win32_Process Name matching DeltaForce",
+    "game_processes": [],
+    "game_processes_absent": true,
+    "windows_memory": {
+      "total_gib": 15.85,
+      "free_gib": 6.48
+    },
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+      "utilization_percent": 35,
+      "memory_used_mib": 1007,
+      "memory_total_mib": 4096,
+      "memory_free_mib": 3089,
+      "temperature_c": 78,
+      "compute_processes": []
+    },
+    "wsl_memory": {
+      "total_gib": 12,
+      "used_mib": 277,
+      "available_gib": 12,
+      "swap_total_gib": 4,
+      "swap_used_gib": 0
+    },
+    "reference_training_peak_gpu_allocated_bytes": 998576128,
+    "assessment": "No matching game process or WSL compute process was present. GPU free memory was about 3.2 times the prior training peak; Windows had 6.48 GiB free and WSL had no swap use.",
+    "resource_ok": true
+  },
+  "data_directory": "/mnt/c/D/PacMan/runs/input_repair_20261105/data",
+  "data_audit": {
+    "files": [
+      {
+        "path": "game_0000.npz",
+        "sha256": "9a6f7889db1cefef8a09e1694deb6d7d7ead9ddc1dad0fed171efbefd67658f9",
+        "steps": 600
+      },
+      {
+        "path": "game_0001.npz",
+        "sha256": "b1d1fb8455e1b0a9f3fbb90bb7e10055a5c5f3a231dcdb32cdfe41fbf91d46de",
+        "steps": 600
+      },
+      {
+        "path": "game_0002.npz",
+        "sha256": "990fb4cec2497113f517ea118789adc388207dc108f1c9a83e4562cb503d9c89",
+        "steps": 600
+      },
+      {
+        "path": "game_0003.npz",
+        "sha256": "222f61c9737afd47d7c4c16f328ed795690afee03165e2eab1f339e421bf02b3",
+        "steps": 600
+      },
+      {
+        "path": "game_0004.npz",
+        "sha256": "42875087d0217126fc599c198b68b126089d0c3c5e134eeac55fd82168cc810f",
+        "steps": 600
+      },
+      {
+        "path": "game_0005.npz",
+        "sha256": "9549d54c8986d86281f9e533eec9baf52cd7f0f370f69f2f59211df3a2f25006",
+        "steps": 600
+      },
+      {
+        "path": "game_0006.npz",
+        "sha256": "d13865b7db10cde2bb76f158aa53857015df6250838fca1b8eb87d1d0377e91c",
+        "steps": 600
+      },
+      {
+        "path": "game_0007.npz",
+        "sha256": "4bf0a208aa8a925cd129f6f9c0499dbec59810ba6b0a72e4449712efadae6b62",
+        "steps": 600
+      },
+      {
+        "path": "game_0008.npz",
+        "sha256": "30f1860a5ea5ddeaf49631a10209c338a6f83b2d9270631c8284a039c1095dd2",
+        "steps": 600
+      },
+      {
+        "path": "game_0009.npz",
+        "sha256": "e3cfb48ba9fe386afbce5f51edc363886278568cc8077c854d2a7b35d14a9858",
+        "steps": 600
+      },
+      {
+        "path": "game_0010.npz",
+        "sha256": "66a21a0388f8758521c1399a853dd2db6370ee4277188e452d3ac9deaf03a892",
+        "steps": 600
+      },
+      {
+        "path": "game_0011.npz",
+        "sha256": "0c56c9c0771d271c180cf7a2cefb9a79f16387c2e9087193b6d9a423617a9f50",
+        "steps": 600
+      },
+      {
+        "path": "game_0012.npz",
+        "sha256": "f91663b976ed60ba902ad638df6ed268ff996fb6cfb029d5700573cd59034602",
+        "steps": 600
+      },
+      {
+        "path": "game_0013.npz",
+        "sha256": "ad77492bfdaf73d8e5d031cbf2df1c225eec50a9e83993553922ac320cf2054b",
+        "steps": 600
+      },
+      {
+        "path": "game_0014.npz",
+        "sha256": "a9cd15dafbf2fb09c60f09d339e9cefaa6d353cdb256e54c4e4454f20af9f6d4",
+        "steps": 600
+      },
+      {
+        "path": "game_0015.npz",
+        "sha256": "08e830285c46fd47c7885bf58b2aca8caf25930b2bf0b2df11f7b32ec26f217d",
+        "steps": 600
+      },
+      {
+        "path": "game_0016.npz",
+        "sha256": "28bf999abdec35201c4a6556666827020ebc8f5870a6b03eda258c56bbb28c2d",
+        "steps": 600
+      },
+      {
+        "path": "game_0017.npz",
+        "sha256": "0e368e7e824af2f5340a67420b9932652d44251e23b9959db6e29c5007b72aa6",
+        "steps": 600
+      },
+      {
+        "path": "game_0018.npz",
+        "sha256": "eff4260428b6cd025c453ba72f23646c816871588e387b81567a15152f1de1b7",
+        "steps": 600
+      },
+      {
+        "path": "game_0019.npz",
+        "sha256": "198638fea5c38bb81060bcf2d1105ecc09a8b9b93232d41c2ac258f961e08ad0",
+        "steps": 600
+      },
+      {
+        "path": "game_0020.npz",
+        "sha256": "65f4d38491af9542f7b9684c9f0ba727958b6aca75bcecc4bcf467ac6e321074",
+        "steps": 600
+      },
+      {
+        "path": "game_0021.npz",
+        "sha256": "bfaf5b81085639af550bcf5b890661461c54da16d6c50ba5e1e122e84c0c4014",
+        "steps": 600
+      },
+      {
+        "path": "game_0022.npz",
+        "sha256": "cb08b92f95a285842279a1711941d81005c8f111ca9c26ed015ea053c904ef69",
+        "steps": 600
+      },
+      {
+        "path": "game_0023.npz",
+        "sha256": "084510200a3d99e647962015d5ce9333086e8709b531f9ac5abfe1e8471129b5",
+        "steps": 600
+      },
+      {
+        "path": "game_0024.npz",
+        "sha256": "733121ec4bef1b5055234ab194241b90a6444b054503c5c45ff6ba80c9e042cb",
+        "steps": 600
+      },
+      {
+        "path": "game_0025.npz",
+        "sha256": "1a20490d79af796465746fa959de45430fec92b6410b1ddf20b5ed06582ac051",
+        "steps": 600
+      },
+      {
+        "path": "game_0026.npz",
+        "sha256": "323ecabdcb4155b9d8dcfe884bc694583e7b0eb26a70913dbb8030b1331b4b59",
+        "steps": 600
+      },
+      {
+        "path": "game_0027.npz",
+        "sha256": "3f5e064625fb8ac9b74b4d91efeb4db645b4b35999c6fcfdd09feae6d1fe8ede",
+        "steps": 600
+      },
+      {
+        "path": "game_0028.npz",
+        "sha256": "df531e0de52ed44343d05da4d48eb8d3017a4ded97d57bd9317116d19ea53b15",
+        "steps": 600
+      },
+      {
+        "path": "game_0029.npz",
+        "sha256": "f5f8eacc5165ed2a8ec78dc15a29c07c262c0fdf0a1b81b0ac3d2d51d565cdee",
+        "steps": 600
+      },
+      {
+        "path": "game_0030.npz",
+        "sha256": "52e16302820b3bc44e0be422407fb3c1af365f81a6b7ffeb61cf1c8a11ca902a",
+        "steps": 600
+      },
+      {
+        "path": "game_0031.npz",
+        "sha256": "e10c661f243128e2d969745c98c384c039328f062e243d17c36fecc5bd31c16a",
+        "steps": 600
+      },
+      {
+        "path": "game_0032.npz",
+        "sha256": "681b8ff0ce22b09341ea99c3ff7459cc0965ad45fcd12d8cbfe496e1f347609d",
+        "steps": 600
+      },
+      {
+        "path": "game_0033.npz",
+        "sha256": "06e1a33ac684d2464a7e8f81e889ac8ed0a17a99a911a3e2c13ce460088d7301",
+        "steps": 600
+      },
+      {
+        "path": "game_0034.npz",
+        "sha256": "bc4025815c85a61635c89e8e685c9aeb3e506c1f93f6200dd6d25046754f4984",
+        "steps": 600
+      },
+      {
+        "path": "game_0035.npz",
+        "sha256": "6568e59489daa4eb5ada6a4eb14f0c98f41c39c2a53aa4b6fa2f9dcd80b86ab6",
+        "steps": 600
+      },
+      {
+        "path": "game_0036.npz",
+        "sha256": "7bd0c97c15650808d47793367590f50dc413b9ff6a717818ccb756423d467904",
+        "steps": 600
+      },
+      {
+        "path": "game_0037.npz",
+        "sha256": "5f1665d40341c00a5dc5c925fd674071ce35b1931a8896c3c34b04ba57b45caa",
+        "steps": 600
+      },
+      {
+        "path": "game_0038.npz",
+        "sha256": "a49c19ac04d342d2c99580bbc2cdd6d05da2c0c656825a0f90a6349e5415e38d",
+        "steps": 600
+      },
+      {
+        "path": "game_0039.npz",
+        "sha256": "1d0462b2a7f350fc73b2fcac70cbec331ac748a8825093b7852903dace21cd1c",
+        "steps": 600
+      },
+      {
+        "path": "game_0040.npz",
+        "sha256": "258da8d84a2f9fd6fb19a2dacc26a719580ca84d1155e0799f6ec4b813d48cb3",
+        "steps": 600
+      },
+      {
+        "path": "game_0041.npz",
+        "sha256": "768143ba805cb635fe63a70a449fd537ebd96477feb9100b89319d1176383720",
+        "steps": 600
+      },
+      {
+        "path": "game_0042.npz",
+        "sha256": "c15c0020ba603408e89a54b90da3a8100417a3d491393b195038527a0b73811d",
+        "steps": 600
+      },
+      {
+        "path": "game_0043.npz",
+        "sha256": "ad2358f77f72a5e1301c67d7029c0d622415cfe51f0d723f3d57b0645a147139",
+        "steps": 600
+      },
+      {
+        "path": "game_0044.npz",
+        "sha256": "ec68adfe46fd5477e2c7d3ba30be7440d0336c9bd1b1bc34e55c323069611546",
+        "steps": 600
+      },
+      {
+        "path": "game_0045.npz",
+        "sha256": "cebc88d51ac27491fca95c18464d20df011d233d5087114c0d94ea94699d7816",
+        "steps": 600
+      },
+      {
+        "path": "game_0046.npz",
+        "sha256": "029157646fb421bdb8a8664c122f9f0237d0b5a44e8c3d8500e4814191b4ad55",
+        "steps": 600
+      },
+      {
+        "path": "game_0047.npz",
+        "sha256": "0b7c794bdcf94a15573fbe0d34dd877bbf4d0e005857fa30eafd3605d154c552",
+        "steps": 600
+      },
+      {
+        "path": "game_0048.npz",
+        "sha256": "736faa4eab51a919c3537d5c16bd3cea8784ffbe29bf08fb361e56f7273cad64",
+        "steps": 600
+      },
+      {
+        "path": "game_0049.npz",
+        "sha256": "520a24e3569c791b4a91723a58890a7069bc4c4c1b27cd23b355a4138b964a5a",
+        "steps": 600
+      },
+      {
+        "path": "game_0050.npz",
+        "sha256": "9651748cfa3a0b8201e2b2415d9153102605a9a8e07a5da597ae5b2215df5263",
+        "steps": 600
+      },
+      {
+        "path": "game_0051.npz",
+        "sha256": "1b272931ffc076e566263631e0afcfea6ee96384cee029f889e2ab475fdb892b",
+        "steps": 600
+      },
+      {
+        "path": "game_0052.npz",
+        "sha256": "eb7344964c40f4d880ba21bfada24b2605546b0bdf6226815bc2e50244c480f4",
+        "steps": 600
+      },
+      {
+        "path": "game_0053.npz",
+        "sha256": "7932fcd9a7a905fab09ac7bddbf76df5891066f20efd127cb61e4e40fb6562b7",
+        "steps": 600
+      },
+      {
+        "path": "game_0054.npz",
+        "sha256": "81b29af618f8db8fa683c02f7fbd1f917d20ba5979259952cdd10039ad465c32",
+        "steps": 600
+      },
+      {
+        "path": "game_0055.npz",
+        "sha256": "e740dbd16b20f789cd2b34be4cc4bc1c0f2c1568b3384a11c51f48cfa4620303",
+        "steps": 600
+      },
+      {
+        "path": "game_0056.npz",
+        "sha256": "e4e0cb4e93e9e9b03e01b1b69f5046e8cf155082701129abd9c302f3ca4db529",
+        "steps": 600
+      },
+      {
+        "path": "game_0057.npz",
+        "sha256": "5a468995fcd84372b311adb67b34bceac4ea16d66a2b7e36c78c7f1748741853",
+        "steps": 600
+      },
+      {
+        "path": "game_0058.npz",
+        "sha256": "9ddbdafb74a4925159448f31769976b6627940a50028f140a2e1c3291ab887a4",
+        "steps": 600
+      },
+      {
+        "path": "game_0059.npz",
+        "sha256": "752349b682d9be3b9c8d598d5969934fe152ddf9889a86336a703ee97752b04e",
+        "steps": 600
+      },
+      {
+        "path": "game_0060.npz",
+        "sha256": "b97b1c43bc2219809910ce4eb7e1ca8467255e87ddc919b0f43a33f59cfb60ca",
+        "steps": 600
+      },
+      {
+        "path": "game_0061.npz",
+        "sha256": "3ee30dcca2a55f4f54b803f5d172df3fef1de64c7767376d531e0013f643c13a",
+        "steps": 600
+      },
+      {
+        "path": "game_0062.npz",
+        "sha256": "4b2d93045f2938efe92789ce7f1e87dca90714902d924279c65296487e9fe393",
+        "steps": 600
+      },
+      {
+        "path": "game_0063.npz",
+        "sha256": "e2b8520e3172350d63c56139b2bc59b65d846ab860a6b99cd568b0ab6b4197fd",
+        "steps": 600
+      },
+      {
+        "path": "game_0064.npz",
+        "sha256": "6ec68e4f943d05bf07918b44a9e33e01ad77ac7ead20517ef94b58c5dc72727e",
+        "steps": 600
+      },
+      {
+        "path": "game_0065.npz",
+        "sha256": "14c7bfd5db3e6ec67be4461e4e86dc85e386361e2d86e012a3ce77f20751ee91",
+        "steps": 600
+      },
+      {
+        "path": "game_0066.npz",
+        "sha256": "092cf8c4906832ef7d5ab1131fc4deeb30589682e5a385b410f7cfc4148642a9",
+        "steps": 600
+      },
+      {
+        "path": "game_0067.npz",
+        "sha256": "dec3e932f572fd1baa40eb9c937733cc67e682c303dc062cb4e211b2dc3283e1",
+        "steps": 600
+      },
+      {
+        "path": "game_0068.npz",
+        "sha256": "f68e1e973f59c3538f16ab1c6f047c5767c067d053d6ecf942eb40fe1459beac",
+        "steps": 600
+      },
+      {
+        "path": "game_0069.npz",
+        "sha256": "7f991db4831df70ccecf203f8afa40ae95895e0160d2db24078aca2d33eafa9c",
+        "steps": 600
+      },
+      {
+        "path": "game_0070.npz",
+        "sha256": "55f99d34ccb32c5a63e65172538febe08c9d300d8b55037215584c3012095f3d",
+        "steps": 600
+      },
+      {
+        "path": "game_0071.npz",
+        "sha256": "7821b479f2a73b6c081c0966816071d75b5d9751ba4c29ded943ff13095d1ed2",
+        "steps": 600
+      },
+      {
+        "path": "game_0072.npz",
+        "sha256": "4b81fad2e7d38fb10137e98053f8e9c9b327ad39ce255e391e5b80104e6c3fdd",
+        "steps": 600
+      },
+      {
+        "path": "game_0073.npz",
+        "sha256": "3d5415c4b08f4b217933ea23d3e47103845b94d354e4f07bda5a9ebddd12c4d3",
+        "steps": 600
+      },
+      {
+        "path": "game_0074.npz",
+        "sha256": "d27b715aa05aeac6f28465636da8149f7c6cffd47377ffc727004bac53b3bb80",
+        "steps": 600
+      },
+      {
+        "path": "game_0075.npz",
+        "sha256": "bb38135444334bc172e0a59fef2d707052001054c330308545a55b92aa8f3e24",
+        "steps": 600
+      },
+      {
+        "path": "game_0076.npz",
+        "sha256": "35ca2a6f372bf5dfd4aef27db09d44af93440cd6e7b3d07dabc1a57eefeffc9d",
+        "steps": 600
+      },
+      {
+        "path": "game_0077.npz",
+        "sha256": "539135754c877eb5bc5d77e10db7fe68e37c9386abe0dfc50746d844e94a1418",
+        "steps": 600
+      },
+      {
+        "path": "game_0078.npz",
+        "sha256": "8c8afd91ee1af2cc49fee9dd515c33247d977d4a3e8a4206961d97a3740b5e1e",
+        "steps": 600
+      },
+      {
+        "path": "game_0079.npz",
+        "sha256": "7feea3b30b3547b2a552a82eb8042ac7918327cedb08cd4f1e4150e4d3c7f228",
+        "steps": 600
+      },
+      {
+        "path": "game_0080.npz",
+        "sha256": "25d7c998fd472f40f8c6fa208d15f2d69b6c073be2d01aec7aa139b3e1b235ce",
+        "steps": 600
+      },
+      {
+        "path": "game_0081.npz",
+        "sha256": "549f7bfbc0cd0ec8a9e23ef74d29bb9346055d31f68c20a18695220bb6ae94fd",
+        "steps": 600
+      },
+      {
+        "path": "game_0082.npz",
+        "sha256": "82d7a778799c475bc6966f3ba39fd73d3f637f1cc27d21a18eebb4095c98c75d",
+        "steps": 600
+      },
+      {
+        "path": "game_0083.npz",
+        "sha256": "bd39103055977cc5ef2cec8413e82bc3152a902b04db67efb9e5fab95c6edb6f",
+        "steps": 600
+      },
+      {
+        "path": "game_0084.npz",
+        "sha256": "e04141c51b33bc07fa06ae0f2f44c993431811e1ef4b964771062c09a39d686a",
+        "steps": 600
+      },
+      {
+        "path": "game_0085.npz",
+        "sha256": "223f75db6a51d6393f7c6c08616c8a5dd98fd7e5444185c294b5dfd340b27fb3",
+        "steps": 600
+      },
+      {
+        "path": "game_0086.npz",
+        "sha256": "a32f614d7fc16a6fe615e9600c65ddff9fd7833490b5468613d5a17e142ebe1a",
+        "steps": 600
+      },
+      {
+        "path": "game_0087.npz",
+        "sha256": "cd7a44ca58037b65e74ec038c7e645c27b0ce3964112a0cbd242cce049de74e7",
+        "steps": 600
+      },
+      {
+        "path": "game_0088.npz",
+        "sha256": "57b3f7fb606bdd36d1cd8278d6245af6e9282dcd2813ca99d60cbda849a0576d",
+        "steps": 600
+      },
+      {
+        "path": "game_0089.npz",
+        "sha256": "8cd1641d4b793640fada9487839cadbbc0bb2690c767f5c4995a8225086929c9",
+        "steps": 600
+      },
+      {
+        "path": "game_0090.npz",
+        "sha256": "9423baedf3d897a886ad4c80b30746e46b845c4baa04df4e3a0c86b77e756190",
+        "steps": 600
+      },
+      {
+        "path": "game_0091.npz",
+        "sha256": "47ac247704fb7d93a52ebf40545bfc82d5a3cb9c56cff33eac2c40c00c8ddf7e",
+        "steps": 600
+      },
+      {
+        "path": "game_0092.npz",
+        "sha256": "56810b25d879efe1a1f3683d5d56c467306f6d3ee826ea350f9473a2673f2c9c",
+        "steps": 600
+      },
+      {
+        "path": "game_0093.npz",
+        "sha256": "1fc3feed06bd3785853f8cd575a0c8394ec13d4ac32c2b2f775c27e30b612eb6",
+        "steps": 600
+      },
+      {
+        "path": "game_0094.npz",
+        "sha256": "51919cc30a8b21ac3df8f154cc9141f82b942cba496bee434d9aea5b3b01dd0f",
+        "steps": 600
+      },
+      {
+        "path": "game_0095.npz",
+        "sha256": "04caccb8f1171950a6273c70dc08842fea8d9127c4a5dca97485d4c7ef7289de",
+        "steps": 600
+      },
+      {
+        "path": "game_0096.npz",
+        "sha256": "53f8772f89da8d67c5a797bcd8e1020d89b8a06a31e54265f49e3317e85832f6",
+        "steps": 600
+      },
+      {
+        "path": "game_0097.npz",
+        "sha256": "b8643f2e6e289c6512b8e64d998bc1f89c07994391bc8598f3e81cbeba87d727",
+        "steps": 600
+      },
+      {
+        "path": "game_0098.npz",
+        "sha256": "b8c3848ebff74fc9a37fd385be6f5f025162dfc23fc6daaae699c41c89772338",
+        "steps": 600
+      },
+      {
+        "path": "game_0099.npz",
+        "sha256": "13acbda2f7266f2a7fa134818b6d27f04efc922b77f20fe5d6a7a4b3a925508c",
+        "steps": 600
+      },
+      {
+        "path": "game_0100.npz",
+        "sha256": "4cbabc169b5abba2663808adb3a5d2a222f9221140026b502bf9c10f080a28d9",
+        "steps": 600
+      },
+      {
+        "path": "game_0101.npz",
+        "sha256": "cda22207fc7371af5df5453091f0f7987fa832be780d2150041e012cb7848fd0",
+        "steps": 600
+      },
+      {
+        "path": "game_0102.npz",
+        "sha256": "ade52f7aa90d16f0a90a4e6362b55a66f998eda3e907f8cc4763f0a438df68f1",
+        "steps": 600
+      },
+      {
+        "path": "game_0103.npz",
+        "sha256": "29a9fcd74c81c819a1853d78394febad33594f14212450b79b319d9dda94b682",
+        "steps": 600
+      },
+      {
+        "path": "game_0104.npz",
+        "sha256": "f4a7ba3e970e054a85e3ea8e3f30cdf3bf6ca21b6d7e097368c5d8c0619e3737",
+        "steps": 600
+      },
+      {
+        "path": "game_0105.npz",
+        "sha256": "d77cbc3e8ca328e2904e6f969472fe9552e74be23800d9c654dd4ed07d6355f2",
+        "steps": 600
+      },
+      {
+        "path": "game_0106.npz",
+        "sha256": "b965637ad8f3f2e66ba1eb8e8d676fa887f5d2bef5d1871ec05538bd1b8cd53f",
+        "steps": 600
+      },
+      {
+        "path": "game_0107.npz",
+        "sha256": "f81e2441608db159c25e955cc2de5c696a671c67a46d1751a8f17f94a33439d4",
+        "steps": 600
+      },
+      {
+        "path": "game_0108.npz",
+        "sha256": "a24704dd51641c601b60c7b212a5ddfb1ab06e593908dcb4af5485309409bb1d",
+        "steps": 600
+      },
+      {
+        "path": "game_0109.npz",
+        "sha256": "a7966ba1f70ac68189e4a6a71b13e72ca1f7df6e86caab632fe55c060e812e45",
+        "steps": 600
+      },
+      {
+        "path": "game_0110.npz",
+        "sha256": "f2df61396a90af2f3d1c4dda28c742b3555aaca4722f1bd482f71e3ec67a8084",
+        "steps": 600
+      },
+      {
+        "path": "game_0111.npz",
+        "sha256": "f5a25c976cd5c52d79ee650544ecdba4a45022910f69f77ad562a5c841ebfe55",
+        "steps": 600
+      },
+      {
+        "path": "game_0112.npz",
+        "sha256": "3b237f5b104c518a3519d742b3a9254ab239d5f4f799d9640eb563dea938a961",
+        "steps": 600
+      },
+      {
+        "path": "game_0113.npz",
+        "sha256": "8d4ca233ec0429dacd78a719e328c7a9594dbeb553ff287ac59dbf43a588bf94",
+        "steps": 600
+      },
+      {
+        "path": "game_0114.npz",
+        "sha256": "050bb70925c6756446a6af2cc6f68750acca273c17f38669277a0ca054029937",
+        "steps": 600
+      },
+      {
+        "path": "game_0115.npz",
+        "sha256": "4c95eaa738d898b42e6336bea99abc46446fb7b8193b84c6b6f63706dce14f1f",
+        "steps": 600
+      },
+      {
+        "path": "game_0116.npz",
+        "sha256": "6e7bf1ed400e91413732c8756d4157f6891c7cb6ff44c98762eaedbe3639dcdc",
+        "steps": 600
+      },
+      {
+        "path": "game_0117.npz",
+        "sha256": "d855093ceec54c49191311af3f1c2f8d360e924dd557311cbe92bf42bfabe77d",
+        "steps": 600
+      },
+      {
+        "path": "game_0118.npz",
+        "sha256": "315220f4f3c7f3acd479a6e4b6680eb977dca6a31ffa0468ea3628f0309c4819",
+        "steps": 600
+      },
+      {
+        "path": "game_0119.npz",
+        "sha256": "d83a9667ee0bef53dd321c14495c1523838d743fab555429bbbaddf6139a74c5",
+        "steps": 600
+      },
+      {
+        "path": "game_0120.npz",
+        "sha256": "9644306c3aa3624dc966ded406d97c04cc370dee7baf6c5dd0f17c0e0494cbc4",
+        "steps": 600
+      },
+      {
+        "path": "game_0121.npz",
+        "sha256": "a198bf5ca151ce48acad5d6be09e8370ff45968b2d9ca931354ca8b2e0b2ef34",
+        "steps": 600
+      },
+      {
+        "path": "game_0122.npz",
+        "sha256": "c6808477a0712c7f23c5df18120def47fe8a9df9c9cd7cdfb294a3aaf0b8063b",
+        "steps": 600
+      },
+      {
+        "path": "game_0123.npz",
+        "sha256": "65b7150eee2101af6c38d22d778a598f9f8918821d8083534ed38bd42012fb5a",
+        "steps": 600
+      },
+      {
+        "path": "game_0124.npz",
+        "sha256": "3e310e1daebcd528237a6b1b32ae8e1da16846f10c68c20a3df29b0c27f5d6cb",
+        "steps": 600
+      },
+      {
+        "path": "game_0125.npz",
+        "sha256": "3fd1ac5ca58709e38ce711446c91f55c8464aa9e4fa0e8e372eb63262323f3e1",
+        "steps": 600
+      },
+      {
+        "path": "game_0126.npz",
+        "sha256": "0e402e4e73f619b5a1a1153ffa5570f1c9edd96a5a5ff7a64c33ca46c2c8fcad",
+        "steps": 600
+      },
+      {
+        "path": "game_0127.npz",
+        "sha256": "ea66e9d5d4ed6c134ed178646439550b88d84fbde066c2f96ea9e7c78653664e",
+        "steps": 600
+      },
+      {
+        "path": "game_0128.npz",
+        "sha256": "7b74d10e8d3991d36f7bae5595f1f3480e5db81f50ff283eb893c8e37cdd6cd8",
+        "steps": 600
+      },
+      {
+        "path": "game_0129.npz",
+        "sha256": "e54a24f88651d37c5376cd8b1b544e3b5a1ff80a50addc430fc4415b9a9f48cd",
+        "steps": 600
+      },
+      {
+        "path": "game_0130.npz",
+        "sha256": "00d570ad677d5415bf323a9222f834f09c01ac07594723ce71abd168df99af78",
+        "steps": 600
+      },
+      {
+        "path": "game_0131.npz",
+        "sha256": "e17d67e3c571fac41a67d5f32be9048c31610ba00095a1844891c1c44d308d1b",
+        "steps": 600
+      },
+      {
+        "path": "game_0132.npz",
+        "sha256": "141a558edba5e36c3a1563c064764e48c4c66d7572c665867a3ccf83a80f213e",
+        "steps": 600
+      },
+      {
+        "path": "game_0133.npz",
+        "sha256": "1d36df4d3bcdc89cafa784743994a7e3b29c01f4a28ed1e3dc61fc91b8db6d05",
+        "steps": 600
+      },
+      {
+        "path": "game_0134.npz",
+        "sha256": "55c2a0ee656745835d781206b53b59525c35833dc497dbbb9b16e4fd14525eea",
+        "steps": 600
+      },
+      {
+        "path": "game_0135.npz",
+        "sha256": "5fda1e1c6ebdb26452b23fedfd0dc880ea4ae2b22ec4a02369c354de33e24a6b",
+        "steps": 600
+      },
+      {
+        "path": "game_0136.npz",
+        "sha256": "a68c9a30b141b749a0fdf6a40c3db4ce3273a0addd174e27010000ecaf9f0ef6",
+        "steps": 600
+      },
+      {
+        "path": "game_0137.npz",
+        "sha256": "6532be477f09eb2ed87be3f190f1a03ad45c7b7f2faa45d608e302ff33c549ce",
+        "steps": 600
+      },
+      {
+        "path": "game_0138.npz",
+        "sha256": "8ad0df5f790ae18eb52cbbfd0dbd98974152c74878125d69d2f742b58d3467b3",
+        "steps": 600
+      },
+      {
+        "path": "game_0139.npz",
+        "sha256": "adad5668c688e2e096aa4f468b3103e1ac8bcae02a4db28dc324b7ad20967f39",
+        "steps": 600
+      },
+      {
+        "path": "game_0140.npz",
+        "sha256": "c13051b6ac6515c7b8e7c403b36070a7da67c3cc3dcff2ad3787d0223ee2f5f3",
+        "steps": 600
+      },
+      {
+        "path": "game_0141.npz",
+        "sha256": "11f136ac50a5ffee36c0398ef85bf8976732b7baf0731bdff5ce36bbc5434236",
+        "steps": 600
+      },
+      {
+        "path": "game_0142.npz",
+        "sha256": "ae9c3756bd2d28fa33c4dc7a0cc2c7de489259f416add4611bd9ea7e679cc898",
+        "steps": 600
+      },
+      {
+        "path": "game_0143.npz",
+        "sha256": "c251df6aaecdcc272e308c06f9a2b2cc85d5b8673139082271abdf36a2cd597d",
+        "steps": 600
+      },
+      {
+        "path": "game_0144.npz",
+        "sha256": "a4e91b07af0cacb9fae78d0808a4847a15bb8197f1b9ff30ab81f0424efb99ad",
+        "steps": 600
+      },
+      {
+        "path": "game_0145.npz",
+        "sha256": "5d127e7b48a1b5f9d959e17470da03d6c61593268693ead57b868a2e5347ef57",
+        "steps": 600
+      },
+      {
+        "path": "game_0146.npz",
+        "sha256": "8d441bd68d2ed95b0882fd5e607e8a2779172ef46ad7166fa77a66bfd1bfe210",
+        "steps": 600
+      },
+      {
+        "path": "game_0147.npz",
+        "sha256": "9fecc459d40fdeea5f7dc2b3108634841c1f871ac12ca0e033be05cc5a966ce4",
+        "steps": 600
+      },
+      {
+        "path": "game_0148.npz",
+        "sha256": "f58d24beb050e3ad3eef882915d22bf5fa162e4c5cc5a96e138c6823513c6365",
+        "steps": 600
+      },
+      {
+        "path": "game_0149.npz",
+        "sha256": "3ee7dfc4b78fba633d03a91058ecfb3968bd4c9abdfeb1467e8fee1171fb7270",
+        "steps": 600
+      },
+      {
+        "path": "game_0150.npz",
+        "sha256": "8b1182edee2df686e5055f0b7f8604696a67e730aa668c7b70f5777354a8d12e",
+        "steps": 600
+      },
+      {
+        "path": "game_0151.npz",
+        "sha256": "b13c536d273526e81510165e4c8a1bae231f143e4c0f884aeb44dbfa7e51cd5d",
+        "steps": 600
+      },
+      {
+        "path": "game_0152.npz",
+        "sha256": "334b0d465c27fe379aadd49e21c69428fb5410b4250d86ceb60ce37f19bd21a2",
+        "steps": 600
+      },
+      {
+        "path": "game_0153.npz",
+        "sha256": "c33f223e2fb1e173b43963a2624bab7a041889b3d84cd58758a41f9ff6ef85a8",
+        "steps": 600
+      },
+      {
+        "path": "game_0154.npz",
+        "sha256": "7b5bec275de0dccbcee3f28e1c6bf47c6da016c3f254510005153ece0e1e3fee",
+        "steps": 600
+      },
+      {
+        "path": "game_0155.npz",
+        "sha256": "e5f6cc4445e8e866e289f9bb836174296177eef4772a46ff28fb3a8645652658",
+        "steps": 600
+      },
+      {
+        "path": "game_0156.npz",
+        "sha256": "7912225a44660608959df1f930ec95ff40bc61fa3d16bc7c2244fe15ee46e879",
+        "steps": 600
+      },
+      {
+        "path": "game_0157.npz",
+        "sha256": "67c9469f373e764432ac573f00f2e2981209a95a28f0fc42ac6901a0fd794ba3",
+        "steps": 600
+      },
+      {
+        "path": "game_0158.npz",
+        "sha256": "83851c883fca8170884501bc96386c2792dba89ec63f5d5c0261f51868f43888",
+        "steps": 600
+      },
+      {
+        "path": "game_0159.npz",
+        "sha256": "f8b49b025c661e14f7f4d0230753e6f412be4cbc4dcfab9c55db6fc1b64d5dd7",
+        "steps": 600
+      },
+      {
+        "path": "game_0160.npz",
+        "sha256": "83dd185e79293039bf15e6b1062e08cd5439b03b8c42cca8c1c2ac05fa98bedc",
+        "steps": 600
+      },
+      {
+        "path": "game_0161.npz",
+        "sha256": "991140c28d7b7b523277eabc36aab6dd8ff9350cbeac76f1c1b196e231494e40",
+        "steps": 600
+      },
+      {
+        "path": "game_0162.npz",
+        "sha256": "0b9f319d9925dd11d4fb15dc5f784e3cc1ac15c5992d2318a6cc6afbf9b96599",
+        "steps": 600
+      },
+      {
+        "path": "game_0163.npz",
+        "sha256": "81ce20dfb42d6ea5f8b23ca6bbaa1fc560323d2dda6306cd08d9e0894858f88c",
+        "steps": 600
+      },
+      {
+        "path": "game_0164.npz",
+        "sha256": "8707d2e8f99779164174be695c8b357023b47e9598f7ba63aacb5cd0249a57f9",
+        "steps": 600
+      },
+      {
+        "path": "game_0165.npz",
+        "sha256": "fe2d0210ff3ce31f8c92246b0e40f71f2c70f6d9c3e18af131ea805270fe1b2d",
+        "steps": 600
+      },
+      {
+        "path": "game_0166.npz",
+        "sha256": "09fb94d3e14a56adc806e26525d531b08ec4810dfc713c5341e2cc66e59f66db",
+        "steps": 600
+      },
+      {
+        "path": "game_0167.npz",
+        "sha256": "c944c48e748410410d8c805a58b76276836adffa43747f98d23452f8ba086b07",
+        "steps": 600
+      },
+      {
+        "path": "game_0168.npz",
+        "sha256": "3a9fa38df7af446277efa62dd2e5a56842bc253fdc5b3a66a1f9860d6805008e",
+        "steps": 600
+      },
+      {
+        "path": "game_0169.npz",
+        "sha256": "5c9af6d218a6ec5d389ec23b05e813d489192e64e64c14ebb2e71c6f21d79a32",
+        "steps": 600
+      },
+      {
+        "path": "game_0170.npz",
+        "sha256": "92eb881a3682401150e24091947c54bb0b3e12e2efc98e4889375d4a782af145",
+        "steps": 600
+      },
+      {
+        "path": "game_0171.npz",
+        "sha256": "73cdb119573760b2182f6563de30a382fe8f36454a6aca8813cc2a31a4e661c6",
+        "steps": 600
+      },
+      {
+        "path": "game_0172.npz",
+        "sha256": "d2a742f3c2f4a9b5ff21eddf7182617f46eaa5d36041b4ab109ba31cf258fc71",
+        "steps": 600
+      },
+      {
+        "path": "game_0173.npz",
+        "sha256": "a04672068c9859f42055a18ad7cf903e2840c61cb1793eaaa65a869ee62d1306",
+        "steps": 600
+      },
+      {
+        "path": "game_0174.npz",
+        "sha256": "419b1596d1071a6bcd87ab287994042b9f7643f9da95fe04f35c4f3b6139325d",
+        "steps": 600
+      },
+      {
+        "path": "game_0175.npz",
+        "sha256": "b6577a1b52522c899951b6a9bc3958fe86a603c06c271617b01723cf51aeff29",
+        "steps": 600
+      },
+      {
+        "path": "game_0176.npz",
+        "sha256": "02a2fa4586069fd107ade584d8ee35e7e99e0d7b5747f965ce81f34632a68fff",
+        "steps": 600
+      },
+      {
+        "path": "game_0177.npz",
+        "sha256": "da6de4fcddc700c0f69241e20ed01799acb69c9ffad59c0a6a2ae01c46d0806e",
+        "steps": 600
+      },
+      {
+        "path": "game_0178.npz",
+        "sha256": "3ae9979c2c203f9cb2516815938ef41601db54b5496da4e7c45fa79d2c12926b",
+        "steps": 600
+      },
+      {
+        "path": "game_0179.npz",
+        "sha256": "97935ed43093d3ae7aaaf9b4ad02adeed074efeafebae95df87e0298c8075acd",
+        "steps": 600
+      },
+      {
+        "path": "game_0180.npz",
+        "sha256": "21fc7e8ad8f13581e6e836d575b7fc23a75295627ca8c26e03cd54756500b7b1",
+        "steps": 600
+      },
+      {
+        "path": "game_0181.npz",
+        "sha256": "46a96475a80c99ae2fd8ccd5935277f401bc4c9ffa2382ee7af75b4979ab702d",
+        "steps": 600
+      },
+      {
+        "path": "game_0182.npz",
+        "sha256": "8a424278b487a1c95552109888fadcd735cd30d9b7d1b198fca6dd1b8b9adcba",
+        "steps": 600
+      },
+      {
+        "path": "game_0183.npz",
+        "sha256": "72de7bb0017c3e25da8cc2a5a7b1e658d3535f8ab93515c6edae09e1a3352a5b",
+        "steps": 600
+      },
+      {
+        "path": "game_0184.npz",
+        "sha256": "569b19de43687be2e76d45e96d830ada71faa6e2187c50b8ecdb850994db35e9",
+        "steps": 600
+      },
+      {
+        "path": "game_0185.npz",
+        "sha256": "12e501ec11c920f2697a0656e9f10cde2f085a5c728f6dcde7ce5561afd1326f",
+        "steps": 600
+      },
+      {
+        "path": "game_0186.npz",
+        "sha256": "4c8f5c13868f34d33f5d6d0a569ef5e2b9442e8c98d4c430aabecd982bb2572a",
+        "steps": 600
+      },
+      {
+        "path": "game_0187.npz",
+        "sha256": "167f9a8b86d58a69df14e5a35a62e7e0d97317ccacadb35ed7abd46c13b77ede",
+        "steps": 600
+      },
+      {
+        "path": "game_0188.npz",
+        "sha256": "701b225e744e9b421796b65d236982a34923855a47211dd7efaadd1e6d56e9b0",
+        "steps": 600
+      },
+      {
+        "path": "game_0189.npz",
+        "sha256": "ba02a488ec78b5f3c7035ca6951c069df82e6f51c5ee801a0dd994af7676b9c2",
+        "steps": 600
+      },
+      {
+        "path": "game_0190.npz",
+        "sha256": "af586cb08c494dfbc69749c1f5a7779c204f21fdc9b0bfea045a27d5f019a9fa",
+        "steps": 600
+      },
+      {
+        "path": "game_0191.npz",
+        "sha256": "4c8b66954f068dec7d2e53cb1f233b41bb8d0a5d64c2194c5ad3ab2a4272a21c",
+        "steps": 600
+      },
+      {
+        "path": "game_0192.npz",
+        "sha256": "c574ca0cae10a4ac3394e913418e4e967225e2b9c35c319f541732e478e6eaad",
+        "steps": 600
+      },
+      {
+        "path": "game_0193.npz",
+        "sha256": "754151039bf3421c829558efb01c04c21e26a592350a78d2cd3c2b5a153ea3c3",
+        "steps": 600
+      },
+      {
+        "path": "game_0194.npz",
+        "sha256": "35604a1c60822096b7ee40fc8c7c80141c3f7577920357d04e42f404021881a7",
+        "steps": 600
+      },
+      {
+        "path": "game_0195.npz",
+        "sha256": "d63d8a37c43c4bc80bcba56f8ecc960962a8bf29157dc3d595ec5b869387d6ec",
+        "steps": 600
+      },
+      {
+        "path": "game_0196.npz",
+        "sha256": "0a56f346378696fa1aa6d7886fa5756c29fa69cba29127827e970fcfee38133e",
+        "steps": 600
+      },
+      {
+        "path": "game_0197.npz",
+        "sha256": "5b32c980281eab47b92115d0b9fae6994f8566546c3a05091ba5323dcbfffac5",
+        "steps": 600
+      },
+      {
+        "path": "game_0198.npz",
+        "sha256": "53dc83a1ab3ee0becb540efbdbb56e700a6ede155ff4a4a3609505a2861c0492",
+        "steps": 600
+      },
+      {
+        "path": "game_0199.npz",
+        "sha256": "e2b4446e8e2adbe96c211b67b0cb841daefbc321bee532f2029919b8a8e66a5c",
+        "steps": 600
+      }
+    ],
+    "games": 200,
+    "steps": 120000,
+    "train_games": 180,
+    "validation_games": 20,
+    "all_v0_v1_frames_match": true,
+    "all_labels_legal": true,
+    "hidden_channels_clear": true
+  },
+  "partial_progress": {
+    "completed_epochs": 15,
+    "in_progress_epoch": 16,
+    "batches_completed_in_epoch": 2,
+    "train_samples": 108000,
+    "batch_size": 64,
+    "batches_per_epoch": 1688,
+    "optimizer_updates_at_source": 25322,
+    "expected_final_optimizer_updates": 33760
+  },
+  "max_extension_seconds": 2700,
+  "evaluation_seed_start": 9700000,
+  "training_seed": 20261105,
+  "evaluations": {
+    "v0": {
+      "decision": "M0_NOT_PASSED",
+      "wins": 7,
+      "draws": 12,
+      "losses": 1,
+      "planned_games": 20,
+      "completed_games": 20,
+      "failures": 0,
+      "score_rate": 0.65,
+      "forward_p95_ms": 2.8176227500807722,
+      "moves_over_50ms": 0,
+      "original_forward_gate_ms": 8,
+      "original_score_gate": 0.75,
+      "checkpoint_sha256": "2d6885bfcafe2c01e5d6437c9a1905026d8fc43e4cbaf49b98ffa168a1ed8db4",
+      "inference_device": "cpu",
+      "deferred_cyclic_gc": true,
+      "observation_version": 0,
+      "feature_dim": 18,
+      "source_sha256": {
+        "collect.py": "591af03f487080c624034001c54d6310dd2c66d080795172981d3b0a16607d8d",
+        "evaluate.py": "46d363e66930ed98d1e5ed964f54578e5debc117e99ff82676871df94c06a4d0",
+        "finetune.py": "de6ca20d4dba3badf0561f566f22033cf409100f803a4a599bacb9a1b28c34c1",
+        "goal_guard.py": "4b372ad8f3761002e14ac9ca8b8800145a204c5bdbe88ed8e10186d292fb7282",
+        "input_repair.py": "bfb02a502573832dcb7955cedbe3332eed2d9893cb6900638af5316bd9d77899",
+        "input_repair_continuation.py": "cec0305c86fb04f5c7c947ad8a07aab1a88814b8e879322b8d32c834dfe5bc5b",
+        "latency_probe.py": "227945ae807b2ee44d9a2463df73a30fd32c2316b3cf64c208eb7eb1c38624cf",
+        "m0.py": "26f2f83f847a9fea3f401f968897eb3bbe361a2c7c314a296377b88b4de19a19",
+        "model.py": "05e8c690d84740e856dd162c54ae009ad3bc8d36493f1b6503d3c9de5dee8380",
+        "resume_training.py": "aba066f406ba8542348457e8dd257b29505d1a44b1bd5cbf88fb8da9d92f9592",
+        "runtime.py": "1dab639d33f56402354d621c483483b4bd7651487a6a7566415b813ebc342ccd",
+        "schema.py": "e17e3ec88630ec36e5e6d0362004d8faa184ee851d796ff5e7eb6eb1dc163b9f",
+        "search.py": "303938b695532268de5149f4463984176700814411448d65a3720a900b10d319",
+        "topology.py": "af3d233397af34e8674da0907059eeb2f79db7949dcbc00ca772d13a86b35c0d",
+        "training.py": "91dbb31e2ac829567a7d2d980c43889fa550034609e2f86bb09324a832dc0ffa"
+      },
+      "results": [
+        {
+          "seed": 9700000,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 1,
+          "outcome": 1,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.780348545999914,
+          "own_ms_p50": 39.71890050002003,
+          "own_ms_p95": 44.54397870005096,
+          "own_ms_max": 47.94140599994989,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3155,
+            "shield_removed": 31,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              130,
+              315,
+              155
+            ],
+            "forced_despite_alternatives": 130,
+            "search_changed_policy": 1,
+            "chosen_stop": 402,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              588,
+              12,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3155,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3041,
+            "calls": 3641,
+            "forward_with_transfer_p95_ms": 3.736965000030068
+          }
+        },
+        {
+          "seed": 9700000,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 1,
+          "outcome": 1,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.047808530999873,
+          "own_ms_p50": 40.640652999854865,
+          "own_ms_p95": 44.42907560007825,
+          "own_ms_max": 46.237624000013966,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3299,
+            "shield_removed": 25,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              127,
+              314,
+              159
+            ],
+            "forced_despite_alternatives": 127,
+            "search_changed_policy": 2,
+            "chosen_stop": 319,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              585,
+              15,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3299,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3226,
+            "calls": 3826,
+            "forward_with_transfer_p95_ms": 3.672369249898111
+          }
+        },
+        {
+          "seed": 9700001,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.743003988999817,
+          "own_ms_p50": 39.86608499997146,
+          "own_ms_p95": 44.63567305018614,
+          "own_ms_max": 46.23167900012959,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            1
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3103,
+            "shield_removed": 29,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              124,
+              332,
+              144
+            ],
+            "forced_despite_alternatives": 124,
+            "search_changed_policy": 1,
+            "chosen_stop": 409,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              580,
+              19,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3103,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3037,
+            "calls": 3637,
+            "forward_with_transfer_p95_ms": 3.7278979999427966
+          }
+        },
+        {
+          "seed": 9700001,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.24984830199992,
+          "own_ms_p50": 41.132404499990116,
+          "own_ms_p95": 44.647994999854745,
+          "own_ms_max": 49.48248499999863,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 599,
+            "simulations": 3238,
+            "shield_removed": 22,
+            "shield_fallbacks": 0,
+            "deadline_stops": 1,
+            "root_action_choices": [
+              0,
+              135,
+              312,
+              153
+            ],
+            "forced_despite_alternatives": 135,
+            "search_changed_policy": 3,
+            "chosen_stop": 298,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              578,
+              21,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3241,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3124,
+            "calls": 3724,
+            "forward_with_transfer_p95_ms": 3.971792300080778
+          }
+        },
+        {
+          "seed": 9700002,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": -18,
+          "outcome": -1,
+          "moves": 913,
+          "own_decisions": 456,
+          "seconds": 19.23853502499992,
+          "own_ms_p50": 41.13412250001147,
+          "own_ms_p95": 44.78801749996819,
+          "own_ms_max": 48.19985499989343,
+          "over_50ms": 0,
+          "deaths": [
+            2,
+            1
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 456,
+            "simulations": 2485,
+            "shield_removed": 9,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              107,
+              237,
+              112
+            ],
+            "forced_despite_alternatives": 107,
+            "search_changed_policy": 5,
+            "chosen_stop": 284,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              399,
+              51,
+              6
+            ],
+            "simulation_depth": [
+              0,
+              2485,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 2380,
+            "calls": 2836,
+            "forward_with_transfer_p95_ms": 4.089776500165954
+          }
+        },
+        {
+          "seed": 9700002,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.83841355200002,
+          "own_ms_p50": 39.97858850004832,
+          "own_ms_p95": 44.660140149971994,
+          "own_ms_max": 46.43385299982583,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3095,
+            "shield_removed": 25,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              82,
+              402,
+              116
+            ],
+            "forced_despite_alternatives": 82,
+            "search_changed_policy": 0,
+            "chosen_stop": 466,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              595,
+              5,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3095,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3025,
+            "calls": 3625,
+            "forward_with_transfer_p95_ms": 3.8051838000683342
+          }
+        },
+        {
+          "seed": 9700003,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.09668389300009,
+          "own_ms_p50": 40.46398100001625,
+          "own_ms_p95": 44.596855049906026,
+          "own_ms_max": 49.18311400001585,
+          "over_50ms": 0,
+          "deaths": [
+            2,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 599,
+            "simulations": 3273,
+            "shield_removed": 35,
+            "shield_fallbacks": 0,
+            "deadline_stops": 1,
+            "root_action_choices": [
+              0,
+              122,
+              343,
+              135
+            ],
+            "forced_despite_alternatives": 122,
+            "search_changed_policy": 4,
+            "chosen_stop": 364,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              579,
+              20,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3278,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3203,
+            "calls": 3804,
+            "forward_with_transfer_p95_ms": 3.8520779000236867
+          }
+        },
+        {
+          "seed": 9700003,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.993702168000027,
+          "own_ms_p50": 40.22673799988752,
+          "own_ms_p95": 44.6633982999856,
+          "own_ms_max": 46.69666700010566,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3193,
+            "shield_removed": 24,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              127,
+              335,
+              138
+            ],
+            "forced_despite_alternatives": 127,
+            "search_changed_policy": 1,
+            "chosen_stop": 339,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              590,
+              10,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3193,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3072,
+            "calls": 3672,
+            "forward_with_transfer_p95_ms": 3.8862574999939166
+          }
+        },
+        {
+          "seed": 9700004,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 1,
+          "outcome": 1,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.114427214999978,
+          "own_ms_p50": 40.6278079999538,
+          "own_ms_p95": 44.63667434987428,
+          "own_ms_max": 46.61592299999029,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3310,
+            "shield_removed": 20,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              117,
+              347,
+              136
+            ],
+            "forced_despite_alternatives": 117,
+            "search_changed_policy": 4,
+            "chosen_stop": 422,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              567,
+              24,
+              9
+            ],
+            "simulation_depth": [
+              0,
+              3310,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3185,
+            "calls": 3785,
+            "forward_with_transfer_p95_ms": 3.714462799916873
+          }
+        },
+        {
+          "seed": 9700004,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.824170398999968,
+          "own_ms_p50": 39.93483250008012,
+          "own_ms_p95": 44.88808534999862,
+          "own_ms_max": 49.23540899994805,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 599,
+            "simulations": 3161,
+            "shield_removed": 27,
+            "shield_fallbacks": 0,
+            "deadline_stops": 1,
+            "root_action_choices": [
+              0,
+              86,
+              383,
+              131
+            ],
+            "forced_despite_alternatives": 86,
+            "search_changed_policy": 1,
+            "chosen_stop": 411,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              593,
+              6,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3163,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3053,
+            "calls": 3654,
+            "forward_with_transfer_p95_ms": 3.7255938500152297
+          }
+        },
+        {
+          "seed": 9700005,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.867283147999842,
+          "own_ms_p50": 39.93544549996386,
+          "own_ms_p95": 44.579924049901365,
+          "own_ms_max": 46.52916099985305,
+          "over_50ms": 0,
+          "deaths": [
+            2,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3276,
+            "shield_removed": 43,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              139,
+              304,
+              157
+            ],
+            "forced_despite_alternatives": 139,
+            "search_changed_policy": 1,
+            "chosen_stop": 380,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              591,
+              9,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3276,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3150,
+            "calls": 3750,
+            "forward_with_transfer_p95_ms": 3.634634400043523
+          }
+        },
+        {
+          "seed": 9700005,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.958131414999798,
+          "own_ms_p50": 40.309528999955546,
+          "own_ms_p95": 44.581149700150036,
+          "own_ms_max": 46.34015300007377,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3146,
+            "shield_removed": 29,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              87,
+              373,
+              140
+            ],
+            "forced_despite_alternatives": 87,
+            "search_changed_policy": 0,
+            "chosen_stop": 403,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              596,
+              4,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3146,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3077,
+            "calls": 3677,
+            "forward_with_transfer_p95_ms": 3.728499400040164
+          }
+        },
+        {
+          "seed": 9700006,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 1,
+          "outcome": 1,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.264310256000044,
+          "own_ms_p50": 41.13881599994329,
+          "own_ms_p95": 44.43796850000581,
+          "own_ms_max": 46.34676999990006,
+          "over_50ms": 0,
+          "deaths": [
+            2,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3296,
+            "shield_removed": 41,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              127,
+              317,
+              156
+            ],
+            "forced_despite_alternatives": 127,
+            "search_changed_policy": 6,
+            "chosen_stop": 311,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              559,
+              39,
+              2
+            ],
+            "simulation_depth": [
+              0,
+              3296,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3157,
+            "calls": 3757,
+            "forward_with_transfer_p95_ms": 3.8008269998954343
+          }
+        },
+        {
+          "seed": 9700006,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 1,
+          "outcome": 1,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.957632331000013,
+          "own_ms_p50": 40.275009999959366,
+          "own_ms_p95": 44.6483511999304,
+          "own_ms_max": 46.384977999878174,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3239,
+            "shield_removed": 31,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              116,
+              353,
+              131
+            ],
+            "forced_despite_alternatives": 116,
+            "search_changed_policy": 1,
+            "chosen_stop": 317,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              584,
+              15,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3239,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3161,
+            "calls": 3761,
+            "forward_with_transfer_p95_ms": 3.6951789998056483
+          }
+        },
+        {
+          "seed": 9700007,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.84137705000012,
+          "own_ms_p50": 40.004804499972124,
+          "own_ms_p95": 44.480299650103916,
+          "own_ms_max": 45.62373099997785,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            1
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3288,
+            "shield_removed": 47,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              173,
+              240,
+              187
+            ],
+            "forced_despite_alternatives": 173,
+            "search_changed_policy": 2,
+            "chosen_stop": 366,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              576,
+              22,
+              2
+            ],
+            "simulation_depth": [
+              0,
+              3288,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3157,
+            "calls": 3757,
+            "forward_with_transfer_p95_ms": 3.6829210001542374
+          }
+        },
+        {
+          "seed": 9700007,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 1,
+          "outcome": 1,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.11172695999994,
+          "own_ms_p50": 40.85686999997051,
+          "own_ms_p95": 44.44459970001162,
+          "own_ms_max": 45.91446100016583,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3301,
+            "shield_removed": 23,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              127,
+              329,
+              144
+            ],
+            "forced_despite_alternatives": 127,
+            "search_changed_policy": 2,
+            "chosen_stop": 325,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              582,
+              18,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3301,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3229,
+            "calls": 3829,
+            "forward_with_transfer_p95_ms": 3.6698741999316553
+          }
+        },
+        {
+          "seed": 9700008,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.96693426800016,
+          "own_ms_p50": 40.21493250002095,
+          "own_ms_p95": 44.60336244998189,
+          "own_ms_max": 46.19751400014138,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3182,
+            "shield_removed": 27,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              102,
+              390,
+              108
+            ],
+            "forced_despite_alternatives": 102,
+            "search_changed_policy": 0,
+            "chosen_stop": 428,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              586,
+              14,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3182,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3055,
+            "calls": 3655,
+            "forward_with_transfer_p95_ms": 3.95873739998933
+          }
+        },
+        {
+          "seed": 9700008,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 1,
+          "outcome": 1,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.75088439299998,
+          "own_ms_p50": 39.725779499917735,
+          "own_ms_p95": 44.615915099984704,
+          "own_ms_max": 46.29013099997792,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3131,
+            "shield_removed": 24,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              91,
+              398,
+              111
+            ],
+            "forced_despite_alternatives": 91,
+            "search_changed_policy": 1,
+            "chosen_stop": 409,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              588,
+              11,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3131,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3054,
+            "calls": 3654,
+            "forward_with_transfer_p95_ms": 3.6492405000103645
+          }
+        },
+        {
+          "seed": 9700009,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.762175222999986,
+          "own_ms_p50": 39.872191999961615,
+          "own_ms_p95": 44.5248461000574,
+          "own_ms_max": 47.20140199992784,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3110,
+            "shield_removed": 42,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              128,
+              321,
+              151
+            ],
+            "forced_despite_alternatives": 128,
+            "search_changed_policy": 0,
+            "chosen_stop": 378,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              579,
+              20,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3110,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3042,
+            "calls": 3642,
+            "forward_with_transfer_p95_ms": 3.6949416999391356
+          }
+        },
+        {
+          "seed": 9700009,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 24.793496470000036,
+          "own_ms_p50": 39.88009100010004,
+          "own_ms_p95": 44.62090489984121,
+          "own_ms_max": 49.239569000064876,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 599,
+            "simulations": 3169,
+            "shield_removed": 27,
+            "shield_fallbacks": 0,
+            "deadline_stops": 1,
+            "root_action_choices": [
+              0,
+              84,
+              395,
+              121
+            ],
+            "forced_despite_alternatives": 84,
+            "search_changed_policy": 1,
+            "chosen_stop": 380,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              590,
+              8,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3172,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3054,
+            "calls": 3654,
+            "forward_with_transfer_p95_ms": 3.694944050050708
+          }
+        }
+      ]
+    },
+    "v1": {
+      "decision": "M0_NOT_PASSED",
+      "wins": 2,
+      "draws": 14,
+      "losses": 4,
+      "planned_games": 20,
+      "completed_games": 20,
+      "failures": 0,
+      "score_rate": 0.45,
+      "forward_p95_ms": 2.92634664989464,
+      "moves_over_50ms": 0,
+      "original_forward_gate_ms": 8,
+      "original_score_gate": 0.75,
+      "checkpoint_sha256": "3fbb7489a44a643e7976ab0b0eb6531c916a9341a4d49ba93f7b287571f67ed1",
+      "inference_device": "cpu",
+      "deferred_cyclic_gc": true,
+      "observation_version": 1,
+      "feature_dim": 37,
+      "source_sha256": {
+        "collect.py": "591af03f487080c624034001c54d6310dd2c66d080795172981d3b0a16607d8d",
+        "evaluate.py": "46d363e66930ed98d1e5ed964f54578e5debc117e99ff82676871df94c06a4d0",
+        "finetune.py": "de6ca20d4dba3badf0561f566f22033cf409100f803a4a599bacb9a1b28c34c1",
+        "goal_guard.py": "4b372ad8f3761002e14ac9ca8b8800145a204c5bdbe88ed8e10186d292fb7282",
+        "input_repair.py": "bfb02a502573832dcb7955cedbe3332eed2d9893cb6900638af5316bd9d77899",
+        "input_repair_continuation.py": "cec0305c86fb04f5c7c947ad8a07aab1a88814b8e879322b8d32c834dfe5bc5b",
+        "latency_probe.py": "227945ae807b2ee44d9a2463df73a30fd32c2316b3cf64c208eb7eb1c38624cf",
+        "m0.py": "26f2f83f847a9fea3f401f968897eb3bbe361a2c7c314a296377b88b4de19a19",
+        "model.py": "05e8c690d84740e856dd162c54ae009ad3bc8d36493f1b6503d3c9de5dee8380",
+        "resume_training.py": "aba066f406ba8542348457e8dd257b29505d1a44b1bd5cbf88fb8da9d92f9592",
+        "runtime.py": "1dab639d33f56402354d621c483483b4bd7651487a6a7566415b813ebc342ccd",
+        "schema.py": "e17e3ec88630ec36e5e6d0362004d8faa184ee851d796ff5e7eb6eb1dc163b9f",
+        "search.py": "303938b695532268de5149f4463984176700814411448d65a3720a900b10d319",
+        "topology.py": "af3d233397af34e8674da0907059eeb2f79db7949dcbc00ca772d13a86b35c0d",
+        "training.py": "91dbb31e2ac829567a7d2d980c43889fa550034609e2f86bb09324a832dc0ffa"
+      },
+      "results": [
+        {
+          "seed": 9700000,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.312668855000084,
+          "own_ms_p50": 41.10676149991832,
+          "own_ms_p95": 43.909726449885504,
+          "own_ms_max": 46.48391199998514,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3096,
+            "shield_removed": 34,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              67,
+              401,
+              132
+            ],
+            "forced_despite_alternatives": 67,
+            "search_changed_policy": 0,
+            "chosen_stop": 408,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              587,
+              12,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3096,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 2979,
+            "calls": 3579,
+            "forward_with_transfer_p95_ms": 3.912903600098616
+          }
+        },
+        {
+          "seed": 9700000,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 1,
+          "outcome": 1,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.331162466000023,
+          "own_ms_p50": 41.138460000070154,
+          "own_ms_p95": 44.39491900009216,
+          "own_ms_max": 48.752680000006876,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            1
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3136,
+            "shield_removed": 25,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              119,
+              313,
+              168
+            ],
+            "forced_despite_alternatives": 119,
+            "search_changed_policy": 1,
+            "chosen_stop": 289,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              584,
+              16,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3136,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3057,
+            "calls": 3657,
+            "forward_with_transfer_p95_ms": 3.9702359999864707
+          }
+        },
+        {
+          "seed": 9700001,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.264220385000044,
+          "own_ms_p50": 41.08551799993165,
+          "own_ms_p95": 44.08148264984675,
+          "own_ms_max": 46.45385100002386,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3033,
+            "shield_removed": 35,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              74,
+              422,
+              104
+            ],
+            "forced_despite_alternatives": 74,
+            "search_changed_policy": 2,
+            "chosen_stop": 392,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              573,
+              27,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3033,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 2976,
+            "calls": 3576,
+            "forward_with_transfer_p95_ms": 3.9290922500185843
+          }
+        },
+        {
+          "seed": 9700001,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.268049034999876,
+          "own_ms_p50": 40.999631499971656,
+          "own_ms_p95": 44.412322449920794,
+          "own_ms_max": 46.774839000136126,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            1
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3205,
+            "shield_removed": 30,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              138,
+              305,
+              157
+            ],
+            "forced_despite_alternatives": 138,
+            "search_changed_policy": 4,
+            "chosen_stop": 276,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              576,
+              22,
+              2
+            ],
+            "simulation_depth": [
+              0,
+              3205,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3092,
+            "calls": 3692,
+            "forward_with_transfer_p95_ms": 3.8792383500549477
+          }
+        },
+        {
+          "seed": 9700002,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.276372582000022,
+          "own_ms_p50": 41.01631100002123,
+          "own_ms_p95": 44.354889150065446,
+          "own_ms_max": 46.932089999927484,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            1
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3179,
+            "shield_removed": 38,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              118,
+              339,
+              143
+            ],
+            "forced_despite_alternatives": 118,
+            "search_changed_policy": 4,
+            "chosen_stop": 406,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              575,
+              21,
+              4
+            ],
+            "simulation_depth": [
+              0,
+              3179,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3051,
+            "calls": 3651,
+            "forward_with_transfer_p95_ms": 3.9197185001285106
+          }
+        },
+        {
+          "seed": 9700002,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.246760967,
+          "own_ms_p50": 40.926836999915395,
+          "own_ms_p95": 44.43563835008035,
+          "own_ms_max": 47.946034000005966,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3127,
+            "shield_removed": 23,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              99,
+              334,
+              167
+            ],
+            "forced_despite_alternatives": 99,
+            "search_changed_policy": 0,
+            "chosen_stop": 352,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              579,
+              20,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3125,
+              2,
+              0
+            ],
+            "observation_hits": 2,
+            "observation_misses": 3053,
+            "calls": 3655,
+            "forward_with_transfer_p95_ms": 3.8830239999924734
+          }
+        },
+        {
+          "seed": 9700003,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.287107635999973,
+          "own_ms_p50": 41.11232550008026,
+          "own_ms_p95": 43.7875767998662,
+          "own_ms_max": 46.22144199993272,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3042,
+            "shield_removed": 44,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              86,
+              353,
+              161
+            ],
+            "forced_despite_alternatives": 86,
+            "search_changed_policy": 0,
+            "chosen_stop": 428,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              595,
+              5,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3042,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 2970,
+            "calls": 3570,
+            "forward_with_transfer_p95_ms": 3.940886050054359
+          }
+        },
+        {
+          "seed": 9700003,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.32377178800016,
+          "own_ms_p50": 41.10858499996084,
+          "own_ms_p95": 44.41253200010351,
+          "own_ms_max": 46.257767000042804,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3148,
+            "shield_removed": 26,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              104,
+              283,
+              213
+            ],
+            "forced_despite_alternatives": 104,
+            "search_changed_policy": 0,
+            "chosen_stop": 385,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              592,
+              7,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3148,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3025,
+            "calls": 3625,
+            "forward_with_transfer_p95_ms": 3.9200565999180976
+          }
+        },
+        {
+          "seed": 9700004,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": -18,
+          "outcome": -1,
+          "moves": 782,
+          "own_decisions": 391,
+          "seconds": 16.46335993699995,
+          "own_ms_p50": 40.91399500020998,
+          "own_ms_p95": 44.602373999964584,
+          "own_ms_max": 46.90629399988211,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            1
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 391,
+            "simulations": 2176,
+            "shield_removed": 3,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              62,
+              252,
+              77
+            ],
+            "forced_despite_alternatives": 62,
+            "search_changed_policy": 8,
+            "chosen_stop": 244,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              308,
+              56,
+              27
+            ],
+            "simulation_depth": [
+              0,
+              2176,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 2035,
+            "calls": 2426,
+            "forward_with_transfer_p95_ms": 3.892547750012909
+          }
+        },
+        {
+          "seed": 9700004,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": -18,
+          "outcome": -1,
+          "moves": 1161,
+          "own_decisions": 580,
+          "seconds": 24.61677290900002,
+          "own_ms_p50": 41.35009050003191,
+          "own_ms_p95": 44.603566850059906,
+          "own_ms_max": 47.375625999848126,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            1
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 580,
+            "simulations": 3119,
+            "shield_removed": 9,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              119,
+              319,
+              142
+            ],
+            "forced_despite_alternatives": 119,
+            "search_changed_policy": 9,
+            "chosen_stop": 264,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              517,
+              57,
+              6
+            ],
+            "simulation_depth": [
+              0,
+              3119,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3040,
+            "calls": 3620,
+            "forward_with_transfer_p95_ms": 3.9051010999401115
+          }
+        },
+        {
+          "seed": 9700005,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.25529248099997,
+          "own_ms_p50": 41.018288000032044,
+          "own_ms_p95": 43.99842349995424,
+          "own_ms_max": 47.65528399980212,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3092,
+            "shield_removed": 41,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              62,
+              426,
+              112
+            ],
+            "forced_despite_alternatives": 62,
+            "search_changed_policy": 0,
+            "chosen_stop": 432,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              594,
+              6,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3092,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 2966,
+            "calls": 3566,
+            "forward_with_transfer_p95_ms": 3.9347437501078275
+          }
+        },
+        {
+          "seed": 9700005,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.252273555999864,
+          "own_ms_p50": 41.13250000000335,
+          "own_ms_p95": 44.212269299885065,
+          "own_ms_max": 45.36852499995803,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3133,
+            "shield_removed": 29,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              103,
+              285,
+              212
+            ],
+            "forced_despite_alternatives": 103,
+            "search_changed_policy": 1,
+            "chosen_stop": 378,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              585,
+              14,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3133,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3059,
+            "calls": 3659,
+            "forward_with_transfer_p95_ms": 3.9030210000419174
+          }
+        },
+        {
+          "seed": 9700006,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.27708748400005,
+          "own_ms_p50": 41.022204000000784,
+          "own_ms_p95": 44.410626350202165,
+          "own_ms_max": 45.91843499997594,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            1
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3177,
+            "shield_removed": 34,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              93,
+              392,
+              115
+            ],
+            "forced_despite_alternatives": 93,
+            "search_changed_policy": 3,
+            "chosen_stop": 423,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              568,
+              31,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3177,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3054,
+            "calls": 3654,
+            "forward_with_transfer_p95_ms": 3.9144890999750714
+          }
+        },
+        {
+          "seed": 9700006,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": -18,
+          "outcome": -1,
+          "moves": 1168,
+          "own_decisions": 584,
+          "seconds": 24.692522097000165,
+          "own_ms_p50": 41.15371700004289,
+          "own_ms_p95": 44.33456440012833,
+          "own_ms_max": 48.778435000031095,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 584,
+            "simulations": 3059,
+            "shield_removed": 37,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              145,
+              263,
+              176
+            ],
+            "forced_despite_alternatives": 145,
+            "search_changed_policy": 5,
+            "chosen_stop": 254,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              551,
+              31,
+              2
+            ],
+            "simulation_depth": [
+              0,
+              3059,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3033,
+            "calls": 3617,
+            "forward_with_transfer_p95_ms": 3.8764264000292314
+          }
+        },
+        {
+          "seed": 9700007,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.2027993050001,
+          "own_ms_p50": 41.04279199998473,
+          "own_ms_p95": 44.20540889993845,
+          "own_ms_max": 47.12000800009264,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3154,
+            "shield_removed": 48,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              131,
+              266,
+              203
+            ],
+            "forced_despite_alternatives": 131,
+            "search_changed_policy": 0,
+            "chosen_stop": 380,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              591,
+              8,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3154,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3037,
+            "calls": 3637,
+            "forward_with_transfer_p95_ms": 3.8935813999614766
+          }
+        },
+        {
+          "seed": 9700007,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.36091141399993,
+          "own_ms_p50": 41.14692949997334,
+          "own_ms_p95": 44.30265184989821,
+          "own_ms_max": 47.38949199986564,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3155,
+            "shield_removed": 26,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              109,
+              330,
+              161
+            ],
+            "forced_despite_alternatives": 109,
+            "search_changed_policy": 0,
+            "chosen_stop": 363,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              592,
+              7,
+              1
+            ],
+            "simulation_depth": [
+              0,
+              3155,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3076,
+            "calls": 3676,
+            "forward_with_transfer_p95_ms": 3.915226249944226
+          }
+        },
+        {
+          "seed": 9700008,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.28807163500005,
+          "own_ms_p50": 41.10836149993702,
+          "own_ms_p95": 44.32297260015048,
+          "own_ms_max": 48.421523000115485,
+          "over_50ms": 0,
+          "deaths": [
+            1,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3133,
+            "shield_removed": 56,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              112,
+              317,
+              171
+            ],
+            "forced_despite_alternatives": 112,
+            "search_changed_policy": 2,
+            "chosen_stop": 383,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              569,
+              27,
+              4
+            ],
+            "simulation_depth": [
+              0,
+              3133,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 3011,
+            "calls": 3611,
+            "forward_with_transfer_p95_ms": 3.9184855000939933
+          }
+        },
+        {
+          "seed": 9700008,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 1,
+          "outcome": 1,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.187403036999967,
+          "own_ms_p50": 40.874019499938186,
+          "own_ms_p95": 44.109817900084636,
+          "own_ms_max": 47.454897000079654,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            1
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 600,
+            "simulations": 3033,
+            "shield_removed": 24,
+            "shield_fallbacks": 0,
+            "deadline_stops": 0,
+            "root_action_choices": [
+              0,
+              114,
+              204,
+              282
+            ],
+            "forced_despite_alternatives": 114,
+            "search_changed_policy": 2,
+            "chosen_stop": 393,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              586,
+              14,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3033,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 2962,
+            "calls": 3562,
+            "forward_with_transfer_p95_ms": 3.978532199926121
+          }
+        },
+        {
+          "seed": 9700009,
+          "red": true,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": 0,
+          "outcome": 0,
+          "moves": 1200,
+          "own_decisions": 600,
+          "seconds": 25.556688450000138,
+          "own_ms_p50": 41.447138000080486,
+          "own_ms_p95": 44.83907159992668,
+          "own_ms_max": 49.23981299998559,
+          "over_50ms": 0,
+          "deaths": [
+            2,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 599,
+            "simulations": 3001,
+            "shield_removed": 26,
+            "shield_fallbacks": 0,
+            "deadline_stops": 1,
+            "root_action_choices": [
+              0,
+              75,
+              396,
+              129
+            ],
+            "forced_despite_alternatives": 75,
+            "search_changed_policy": 0,
+            "chosen_stop": 384,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              588,
+              11,
+              0
+            ],
+            "simulation_depth": [
+              0,
+              3004,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 2931,
+            "calls": 3531,
+            "forward_with_transfer_p95_ms": 4.1661424999119845
+          }
+        },
+        {
+          "seed": 9700009,
+          "red": false,
+          "opponent": "baseline",
+          "layout": "defaultCapture",
+          "score": -17,
+          "outcome": -1,
+          "moves": 1109,
+          "own_decisions": 554,
+          "seconds": 23.68880479900008,
+          "own_ms_p50": 41.86939450005411,
+          "own_ms_p95": 45.23189080005068,
+          "own_ms_max": 49.59139800007506,
+          "over_50ms": 0,
+          "deaths": [
+            0,
+            0
+          ],
+          "validated": true,
+          "search": {
+            "decisions": 550,
+            "simulations": 2762,
+            "shield_removed": 22,
+            "shield_fallbacks": 0,
+            "deadline_stops": 4,
+            "root_action_choices": [
+              0,
+              113,
+              306,
+              135
+            ],
+            "forced_despite_alternatives": 113,
+            "search_changed_policy": 2,
+            "chosen_stop": 238,
+            "goal_guard_overrides": 0,
+            "root_visited_edges": [
+              0,
+              519,
+              29,
+              2
+            ],
+            "simulation_depth": [
+              0,
+              2772,
+              0,
+              0
+            ],
+            "observation_hits": 0,
+            "observation_misses": 2703,
+            "calls": 3257,
+            "forward_with_transfer_p95_ms": 4.5781959999658275
+          }
+        }
+      ]
+    }
+  },
+  "planned_evaluation_games": 40,
+  "started_epoch": 1793871062.5092494,
+  "continuation_checkpoint_sha256": "3fbb7489a44a643e7976ab0b0eb6531c916a9341a4d49ba93f7b287571f67ed1",
+  "final_optimizer_updates": 33760,
+  "comparison": {
+    "paired_games": 20,
+    "v1_minus_v0_score_rate": -0.2,
+    "v0_m0_gate_met": false,
+    "v1_m0_gate_met": false,
+    "paired": [
+      {
+        "seed": 9700000,
+        "red": true,
+        "v0_outcome": 1,
+        "v1_outcome": 0,
+        "v0_score": 1,
+        "v1_score": 0,
+        "outcome_delta": -1
+      },
+      {
+        "seed": 9700000,
+        "red": false,
+        "v0_outcome": 1,
+        "v1_outcome": 1,
+        "v0_score": 1,
+        "v1_score": 1,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700001,
+        "red": true,
+        "v0_outcome": 0,
+        "v1_outcome": 0,
+        "v0_score": 0,
+        "v1_score": 0,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700001,
+        "red": false,
+        "v0_outcome": 0,
+        "v1_outcome": 0,
+        "v0_score": 0,
+        "v1_score": 0,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700002,
+        "red": true,
+        "v0_outcome": -1,
+        "v1_outcome": 0,
+        "v0_score": -18,
+        "v1_score": 0,
+        "outcome_delta": 1
+      },
+      {
+        "seed": 9700002,
+        "red": false,
+        "v0_outcome": 0,
+        "v1_outcome": 0,
+        "v0_score": 0,
+        "v1_score": 0,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700003,
+        "red": true,
+        "v0_outcome": 0,
+        "v1_outcome": 0,
+        "v0_score": 0,
+        "v1_score": 0,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700003,
+        "red": false,
+        "v0_outcome": 0,
+        "v1_outcome": 0,
+        "v0_score": 0,
+        "v1_score": 0,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700004,
+        "red": true,
+        "v0_outcome": 1,
+        "v1_outcome": -1,
+        "v0_score": 1,
+        "v1_score": -18,
+        "outcome_delta": -2
+      },
+      {
+        "seed": 9700004,
+        "red": false,
+        "v0_outcome": 0,
+        "v1_outcome": -1,
+        "v0_score": 0,
+        "v1_score": -18,
+        "outcome_delta": -1
+      },
+      {
+        "seed": 9700005,
+        "red": true,
+        "v0_outcome": 0,
+        "v1_outcome": 0,
+        "v0_score": 0,
+        "v1_score": 0,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700005,
+        "red": false,
+        "v0_outcome": 0,
+        "v1_outcome": 0,
+        "v0_score": 0,
+        "v1_score": 0,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700006,
+        "red": true,
+        "v0_outcome": 1,
+        "v1_outcome": 0,
+        "v0_score": 1,
+        "v1_score": 0,
+        "outcome_delta": -1
+      },
+      {
+        "seed": 9700006,
+        "red": false,
+        "v0_outcome": 1,
+        "v1_outcome": -1,
+        "v0_score": 1,
+        "v1_score": -18,
+        "outcome_delta": -2
+      },
+      {
+        "seed": 9700007,
+        "red": true,
+        "v0_outcome": 0,
+        "v1_outcome": 0,
+        "v0_score": 0,
+        "v1_score": 0,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700007,
+        "red": false,
+        "v0_outcome": 1,
+        "v1_outcome": 0,
+        "v0_score": 1,
+        "v1_score": 0,
+        "outcome_delta": -1
+      },
+      {
+        "seed": 9700008,
+        "red": true,
+        "v0_outcome": 0,
+        "v1_outcome": 0,
+        "v0_score": 0,
+        "v1_score": 0,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700008,
+        "red": false,
+        "v0_outcome": 1,
+        "v1_outcome": 1,
+        "v0_score": 1,
+        "v1_score": 1,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700009,
+        "red": true,
+        "v0_outcome": 0,
+        "v1_outcome": 0,
+        "v0_score": 0,
+        "v1_score": 0,
+        "outcome_delta": 0
+      },
+      {
+        "seed": 9700009,
+        "red": false,
+        "v0_outcome": 0,
+        "v1_outcome": -1,
+        "v0_score": 0,
+        "v1_score": -17,
+        "outcome_delta": -1
+      }
+    ],
+    "decision": "NO_IMPROVEMENT_ESTABLISHED",
+    "paired_delta_check": -0.2
+  },
+  "replay_audit": {
+    "planned_games": 40,
+    "replayed_games": 40,
+    "attempted_games": 40,
+    "failures": [],
+    "resource_timeout": false,
+    "all_valid_traces_replayed": true,
+    "results": [
+      {
+        "arm": "v0",
+        "index": 0,
+        "seed": 9700000,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          1,
+          0
+        ],
+        "max_carry": [
+          1,
+          1
+        ],
+        "crossings": [
+          8,
+          10
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6266666666666667,
+          0.7133333333333334
+        ],
+        "stagnant_carry_moves": [
+          0,
+          3
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 1,
+        "seed": 9700000,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          8,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.73,
+          0.3333333333333333
+        ],
+        "stagnant_carry_moves": [
+          3,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 2,
+        "seed": 9700001,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          6,
+          13
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6666666666666666,
+          0.6966666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 3,
+        "seed": 9700001,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          7,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.67,
+          0.32666666666666666
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 4,
+        "seed": 9700002,
+        "red": true,
+        "outcome": -1,
+        "score": -18,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 18,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          4,
+          4
+        ],
+        "decisions": [
+          228,
+          228
+        ],
+        "stop_rate": [
+          0.618421052631579,
+          0.6271929824561403
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 5,
+        "seed": 9700002,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          5
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7766666666666666,
+          0.7766666666666666
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 6,
+        "seed": 9700003,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          2,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          2,
+          0
+        ],
+        "crossings": [
+          4,
+          4
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5866666666666667,
+          0.63
+        ],
+        "stagnant_carry_moves": [
+          20,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 7,
+        "seed": 9700003,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          11,
+          12
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.67,
+          0.46
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 8,
+        "seed": 9700004,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          8,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7666666666666667,
+          0.64
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 9,
+        "seed": 9700004,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          10,
+          19
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7566666666666667,
+          0.6166666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 10,
+        "seed": 9700005,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          6,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5333333333333333,
+          0.7333333333333333
+        ],
+        "stagnant_carry_moves": [
+          22,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 11,
+        "seed": 9700005,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.77,
+          0.5733333333333334
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 12,
+        "seed": 9700006,
+        "red": true,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          5,
+          8
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.49,
+          0.5466666666666666
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 13,
+        "seed": 9700006,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          12,
+          18
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.66,
+          0.39666666666666667
+        ],
+        "stagnant_carry_moves": [
+          3,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 14,
+        "seed": 9700007,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          2,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          2,
+          0
+        ],
+        "crossings": [
+          3,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5266666666666666,
+          0.6933333333333334
+        ],
+        "stagnant_carry_moves": [
+          18,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 15,
+        "seed": 9700007,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          5,
+          8
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7733333333333333,
+          0.31
+        ],
+        "stagnant_carry_moves": [
+          3,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 16,
+        "seed": 9700008,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          2,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          2,
+          0
+        ],
+        "crossings": [
+          4,
+          4
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6466666666666666,
+          0.78
+        ],
+        "stagnant_carry_moves": [
+          20,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 17,
+        "seed": 9700008,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          9,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6666666666666666,
+          0.6966666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 18,
+        "seed": 9700009,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          4,
+          16
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5933333333333334,
+          0.6666666666666666
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v0",
+        "index": 19,
+        "seed": 9700009,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          11
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6766666666666666,
+          0.5933333333333334
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 0,
+        "seed": 9700000,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          7,
+          11
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6333333333333333,
+          0.7266666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 1,
+        "seed": 9700000,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          15,
+          11
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6466666666666666,
+          0.31666666666666665
+        ],
+        "stagnant_carry_moves": [
+          3,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 2,
+        "seed": 9700001,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          6,
+          12
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6,
+          0.7066666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 3,
+        "seed": 9700001,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          7,
+          8
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6533333333333333,
+          0.26666666666666666
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 4,
+        "seed": 9700002,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          4,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6866666666666666,
+          0.6666666666666666
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 5,
+        "seed": 9700002,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          11,
+          9
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7366666666666667,
+          0.43666666666666665
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 6,
+        "seed": 9700003,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          9,
+          8
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6733333333333333,
+          0.7533333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 7,
+        "seed": 9700003,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          12,
+          11
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.74,
+          0.5433333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 8,
+        "seed": 9700004,
+        "red": true,
+        "outcome": -1,
+        "score": -18,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 18,
+        "final_carry": [
+          1,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          1,
+          2
+        ],
+        "decisions": [
+          196,
+          195
+        ],
+        "stop_rate": [
+          0.7091836734693877,
+          0.5384615384615384
+        ],
+        "stagnant_carry_moves": [
+          122,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 9,
+        "seed": 9700004,
+        "red": false,
+        "outcome": -1,
+        "score": -18,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 18,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          12,
+          11
+        ],
+        "decisions": [
+          290,
+          290
+        ],
+        "stop_rate": [
+          0.5310344827586206,
+          0.3793103448275862
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 10,
+        "seed": 9700005,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          6,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6666666666666666,
+          0.7733333333333333
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 11,
+        "seed": 9700005,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          8,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7633333333333333,
+          0.49666666666666665
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 12,
+        "seed": 9700006,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          3,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.7,
+          0.71
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 13,
+        "seed": 9700006,
+        "red": false,
+        "outcome": -1,
+        "score": -18,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 18,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          17,
+          12
+        ],
+        "decisions": [
+          292,
+          292
+        ],
+        "stop_rate": [
+          0.5342465753424658,
+          0.3356164383561644
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 14,
+        "seed": 9700007,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          2,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          2,
+          0
+        ],
+        "crossings": [
+          3,
+          6
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5266666666666666,
+          0.74
+        ],
+        "stagnant_carry_moves": [
+          20,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 15,
+        "seed": 9700007,
+        "red": false,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          5,
+          8
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.81,
+          0.4
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 16,
+        "seed": 9700008,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          3,
+          10
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.59,
+          0.6866666666666666
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 17,
+        "seed": 9700008,
+        "red": false,
+        "outcome": 1,
+        "score": 1,
+        "collected": [
+          0,
+          1
+        ],
+        "returned": [
+          0,
+          1
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          1
+        ],
+        "crossings": [
+          8,
+          7
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.6533333333333333,
+          0.6566666666666666
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 18,
+        "seed": 9700009,
+        "red": true,
+        "outcome": 0,
+        "score": 0,
+        "collected": [
+          0,
+          0
+        ],
+        "returned": [
+          0,
+          0
+        ],
+        "opponent_returned": 0,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          0,
+          0
+        ],
+        "crossings": [
+          5,
+          11
+        ],
+        "decisions": [
+          300,
+          300
+        ],
+        "stop_rate": [
+          0.5566666666666666,
+          0.7266666666666667
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      },
+      {
+        "arm": "v1",
+        "index": 19,
+        "seed": 9700009,
+        "red": false,
+        "outcome": -1,
+        "score": -17,
+        "collected": [
+          1,
+          0
+        ],
+        "returned": [
+          1,
+          0
+        ],
+        "opponent_returned": 18,
+        "final_carry": [
+          0,
+          0
+        ],
+        "max_carry": [
+          1,
+          0
+        ],
+        "crossings": [
+          11,
+          7
+        ],
+        "decisions": [
+          277,
+          277
+        ],
+        "stop_rate": [
+          0.6028880866425993,
+          0.27075812274368233
+        ],
+        "stagnant_carry_moves": [
+          0,
+          0
+        ],
+        "validated": true
+      }
+    ]
+  },
+  "elapsed_seconds": 1671.52639809,
+  "deadline_reached": false
+}

@@ -1,0 +1,1098 @@
+{
+  "decision": "M0_NOT_PASSED",
+  "wins": 7,
+  "draws": 12,
+  "losses": 1,
+  "planned_games": 20,
+  "completed_games": 20,
+  "failures": 0,
+  "score_rate": 0.65,
+  "forward_p95_ms": 2.8176227500807722,
+  "moves_over_50ms": 0,
+  "original_forward_gate_ms": 8,
+  "original_score_gate": 0.75,
+  "checkpoint_sha256": "2d6885bfcafe2c01e5d6437c9a1905026d8fc43e4cbaf49b98ffa168a1ed8db4",
+  "inference_device": "cpu",
+  "deferred_cyclic_gc": true,
+  "observation_version": 0,
+  "feature_dim": 18,
+  "source_sha256": {
+    "collect.py": "591af03f487080c624034001c54d6310dd2c66d080795172981d3b0a16607d8d",
+    "evaluate.py": "46d363e66930ed98d1e5ed964f54578e5debc117e99ff82676871df94c06a4d0",
+    "finetune.py": "de6ca20d4dba3badf0561f566f22033cf409100f803a4a599bacb9a1b28c34c1",
+    "goal_guard.py": "4b372ad8f3761002e14ac9ca8b8800145a204c5bdbe88ed8e10186d292fb7282",
+    "input_repair.py": "bfb02a502573832dcb7955cedbe3332eed2d9893cb6900638af5316bd9d77899",
+    "input_repair_continuation.py": "cec0305c86fb04f5c7c947ad8a07aab1a88814b8e879322b8d32c834dfe5bc5b",
+    "latency_probe.py": "227945ae807b2ee44d9a2463df73a30fd32c2316b3cf64c208eb7eb1c38624cf",
+    "m0.py": "26f2f83f847a9fea3f401f968897eb3bbe361a2c7c314a296377b88b4de19a19",
+    "model.py": "05e8c690d84740e856dd162c54ae009ad3bc8d36493f1b6503d3c9de5dee8380",
+    "resume_training.py": "aba066f406ba8542348457e8dd257b29505d1a44b1bd5cbf88fb8da9d92f9592",
+    "runtime.py": "1dab639d33f56402354d621c483483b4bd7651487a6a7566415b813ebc342ccd",
+    "schema.py": "e17e3ec88630ec36e5e6d0362004d8faa184ee851d796ff5e7eb6eb1dc163b9f",
+    "search.py": "303938b695532268de5149f4463984176700814411448d65a3720a900b10d319",
+    "topology.py": "af3d233397af34e8674da0907059eeb2f79db7949dcbc00ca772d13a86b35c0d",
+    "training.py": "91dbb31e2ac829567a7d2d980c43889fa550034609e2f86bb09324a832dc0ffa"
+  },
+  "results": [
+    {
+      "seed": 9700000,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.780348545999914,
+      "own_ms_p50": 39.71890050002003,
+      "own_ms_p95": 44.54397870005096,
+      "own_ms_max": 47.94140599994989,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3155,
+        "shield_removed": 31,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          130,
+          315,
+          155
+        ],
+        "forced_despite_alternatives": 130,
+        "search_changed_policy": 1,
+        "chosen_stop": 402,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          588,
+          12,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3155,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3041,
+        "calls": 3641,
+        "forward_with_transfer_p95_ms": 3.736965000030068
+      }
+    },
+    {
+      "seed": 9700000,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.047808530999873,
+      "own_ms_p50": 40.640652999854865,
+      "own_ms_p95": 44.42907560007825,
+      "own_ms_max": 46.237624000013966,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3299,
+        "shield_removed": 25,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          127,
+          314,
+          159
+        ],
+        "forced_despite_alternatives": 127,
+        "search_changed_policy": 2,
+        "chosen_stop": 319,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          585,
+          15,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3299,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3226,
+        "calls": 3826,
+        "forward_with_transfer_p95_ms": 3.672369249898111
+      }
+    },
+    {
+      "seed": 9700001,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.743003988999817,
+      "own_ms_p50": 39.86608499997146,
+      "own_ms_p95": 44.63567305018614,
+      "own_ms_max": 46.23167900012959,
+      "over_50ms": 0,
+      "deaths": [
+        1,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3103,
+        "shield_removed": 29,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          124,
+          332,
+          144
+        ],
+        "forced_despite_alternatives": 124,
+        "search_changed_policy": 1,
+        "chosen_stop": 409,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          580,
+          19,
+          1
+        ],
+        "simulation_depth": [
+          0,
+          3103,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3037,
+        "calls": 3637,
+        "forward_with_transfer_p95_ms": 3.7278979999427966
+      }
+    },
+    {
+      "seed": 9700001,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.24984830199992,
+      "own_ms_p50": 41.132404499990116,
+      "own_ms_p95": 44.647994999854745,
+      "own_ms_max": 49.48248499999863,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3238,
+        "shield_removed": 22,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "root_action_choices": [
+          0,
+          135,
+          312,
+          153
+        ],
+        "forced_despite_alternatives": 135,
+        "search_changed_policy": 3,
+        "chosen_stop": 298,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          578,
+          21,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3241,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3124,
+        "calls": 3724,
+        "forward_with_transfer_p95_ms": 3.971792300080778
+      }
+    },
+    {
+      "seed": 9700002,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": -18,
+      "outcome": -1,
+      "moves": 913,
+      "own_decisions": 456,
+      "seconds": 19.23853502499992,
+      "own_ms_p50": 41.13412250001147,
+      "own_ms_p95": 44.78801749996819,
+      "own_ms_max": 48.19985499989343,
+      "over_50ms": 0,
+      "deaths": [
+        2,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 456,
+        "simulations": 2485,
+        "shield_removed": 9,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          107,
+          237,
+          112
+        ],
+        "forced_despite_alternatives": 107,
+        "search_changed_policy": 5,
+        "chosen_stop": 284,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          399,
+          51,
+          6
+        ],
+        "simulation_depth": [
+          0,
+          2485,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 2380,
+        "calls": 2836,
+        "forward_with_transfer_p95_ms": 4.089776500165954
+      }
+    },
+    {
+      "seed": 9700002,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.83841355200002,
+      "own_ms_p50": 39.97858850004832,
+      "own_ms_p95": 44.660140149971994,
+      "own_ms_max": 46.43385299982583,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3095,
+        "shield_removed": 25,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          82,
+          402,
+          116
+        ],
+        "forced_despite_alternatives": 82,
+        "search_changed_policy": 0,
+        "chosen_stop": 466,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          595,
+          5,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3095,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3025,
+        "calls": 3625,
+        "forward_with_transfer_p95_ms": 3.8051838000683342
+      }
+    },
+    {
+      "seed": 9700003,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.09668389300009,
+      "own_ms_p50": 40.46398100001625,
+      "own_ms_p95": 44.596855049906026,
+      "own_ms_max": 49.18311400001585,
+      "over_50ms": 0,
+      "deaths": [
+        2,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3273,
+        "shield_removed": 35,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "root_action_choices": [
+          0,
+          122,
+          343,
+          135
+        ],
+        "forced_despite_alternatives": 122,
+        "search_changed_policy": 4,
+        "chosen_stop": 364,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          579,
+          20,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3278,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3203,
+        "calls": 3804,
+        "forward_with_transfer_p95_ms": 3.8520779000236867
+      }
+    },
+    {
+      "seed": 9700003,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.993702168000027,
+      "own_ms_p50": 40.22673799988752,
+      "own_ms_p95": 44.6633982999856,
+      "own_ms_max": 46.69666700010566,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3193,
+        "shield_removed": 24,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          127,
+          335,
+          138
+        ],
+        "forced_despite_alternatives": 127,
+        "search_changed_policy": 1,
+        "chosen_stop": 339,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          590,
+          10,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3193,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3072,
+        "calls": 3672,
+        "forward_with_transfer_p95_ms": 3.8862574999939166
+      }
+    },
+    {
+      "seed": 9700004,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.114427214999978,
+      "own_ms_p50": 40.6278079999538,
+      "own_ms_p95": 44.63667434987428,
+      "own_ms_max": 46.61592299999029,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3310,
+        "shield_removed": 20,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          117,
+          347,
+          136
+        ],
+        "forced_despite_alternatives": 117,
+        "search_changed_policy": 4,
+        "chosen_stop": 422,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          567,
+          24,
+          9
+        ],
+        "simulation_depth": [
+          0,
+          3310,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3185,
+        "calls": 3785,
+        "forward_with_transfer_p95_ms": 3.714462799916873
+      }
+    },
+    {
+      "seed": 9700004,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.824170398999968,
+      "own_ms_p50": 39.93483250008012,
+      "own_ms_p95": 44.88808534999862,
+      "own_ms_max": 49.23540899994805,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3161,
+        "shield_removed": 27,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "root_action_choices": [
+          0,
+          86,
+          383,
+          131
+        ],
+        "forced_despite_alternatives": 86,
+        "search_changed_policy": 1,
+        "chosen_stop": 411,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          593,
+          6,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3163,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3053,
+        "calls": 3654,
+        "forward_with_transfer_p95_ms": 3.7255938500152297
+      }
+    },
+    {
+      "seed": 9700005,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.867283147999842,
+      "own_ms_p50": 39.93544549996386,
+      "own_ms_p95": 44.579924049901365,
+      "own_ms_max": 46.52916099985305,
+      "over_50ms": 0,
+      "deaths": [
+        2,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3276,
+        "shield_removed": 43,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          139,
+          304,
+          157
+        ],
+        "forced_despite_alternatives": 139,
+        "search_changed_policy": 1,
+        "chosen_stop": 380,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          591,
+          9,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3276,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3150,
+        "calls": 3750,
+        "forward_with_transfer_p95_ms": 3.634634400043523
+      }
+    },
+    {
+      "seed": 9700005,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.958131414999798,
+      "own_ms_p50": 40.309528999955546,
+      "own_ms_p95": 44.581149700150036,
+      "own_ms_max": 46.34015300007377,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3146,
+        "shield_removed": 29,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          87,
+          373,
+          140
+        ],
+        "forced_despite_alternatives": 87,
+        "search_changed_policy": 0,
+        "chosen_stop": 403,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          596,
+          4,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3146,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3077,
+        "calls": 3677,
+        "forward_with_transfer_p95_ms": 3.728499400040164
+      }
+    },
+    {
+      "seed": 9700006,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.264310256000044,
+      "own_ms_p50": 41.13881599994329,
+      "own_ms_p95": 44.43796850000581,
+      "own_ms_max": 46.34676999990006,
+      "over_50ms": 0,
+      "deaths": [
+        2,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3296,
+        "shield_removed": 41,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          127,
+          317,
+          156
+        ],
+        "forced_despite_alternatives": 127,
+        "search_changed_policy": 6,
+        "chosen_stop": 311,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          559,
+          39,
+          2
+        ],
+        "simulation_depth": [
+          0,
+          3296,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3157,
+        "calls": 3757,
+        "forward_with_transfer_p95_ms": 3.8008269998954343
+      }
+    },
+    {
+      "seed": 9700006,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.957632331000013,
+      "own_ms_p50": 40.275009999959366,
+      "own_ms_p95": 44.6483511999304,
+      "own_ms_max": 46.384977999878174,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3239,
+        "shield_removed": 31,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          116,
+          353,
+          131
+        ],
+        "forced_despite_alternatives": 116,
+        "search_changed_policy": 1,
+        "chosen_stop": 317,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          584,
+          15,
+          1
+        ],
+        "simulation_depth": [
+          0,
+          3239,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3161,
+        "calls": 3761,
+        "forward_with_transfer_p95_ms": 3.6951789998056483
+      }
+    },
+    {
+      "seed": 9700007,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.84137705000012,
+      "own_ms_p50": 40.004804499972124,
+      "own_ms_p95": 44.480299650103916,
+      "own_ms_max": 45.62373099997785,
+      "over_50ms": 0,
+      "deaths": [
+        1,
+        1
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3288,
+        "shield_removed": 47,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          173,
+          240,
+          187
+        ],
+        "forced_despite_alternatives": 173,
+        "search_changed_policy": 2,
+        "chosen_stop": 366,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          576,
+          22,
+          2
+        ],
+        "simulation_depth": [
+          0,
+          3288,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3157,
+        "calls": 3757,
+        "forward_with_transfer_p95_ms": 3.6829210001542374
+      }
+    },
+    {
+      "seed": 9700007,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 25.11172695999994,
+      "own_ms_p50": 40.85686999997051,
+      "own_ms_p95": 44.44459970001162,
+      "own_ms_max": 45.91446100016583,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3301,
+        "shield_removed": 23,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          127,
+          329,
+          144
+        ],
+        "forced_despite_alternatives": 127,
+        "search_changed_policy": 2,
+        "chosen_stop": 325,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          582,
+          18,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3301,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3229,
+        "calls": 3829,
+        "forward_with_transfer_p95_ms": 3.6698741999316553
+      }
+    },
+    {
+      "seed": 9700008,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.96693426800016,
+      "own_ms_p50": 40.21493250002095,
+      "own_ms_p95": 44.60336244998189,
+      "own_ms_max": 46.19751400014138,
+      "over_50ms": 0,
+      "deaths": [
+        1,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3182,
+        "shield_removed": 27,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          102,
+          390,
+          108
+        ],
+        "forced_despite_alternatives": 102,
+        "search_changed_policy": 0,
+        "chosen_stop": 428,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          586,
+          14,
+          0
+        ],
+        "simulation_depth": [
+          0,
+          3182,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3055,
+        "calls": 3655,
+        "forward_with_transfer_p95_ms": 3.95873739998933
+      }
+    },
+    {
+      "seed": 9700008,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 1,
+      "outcome": 1,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.75088439299998,
+      "own_ms_p50": 39.725779499917735,
+      "own_ms_p95": 44.615915099984704,
+      "own_ms_max": 46.29013099997792,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3131,
+        "shield_removed": 24,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          91,
+          398,
+          111
+        ],
+        "forced_despite_alternatives": 91,
+        "search_changed_policy": 1,
+        "chosen_stop": 409,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          588,
+          11,
+          1
+        ],
+        "simulation_depth": [
+          0,
+          3131,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3054,
+        "calls": 3654,
+        "forward_with_transfer_p95_ms": 3.6492405000103645
+      }
+    },
+    {
+      "seed": 9700009,
+      "red": true,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.762175222999986,
+      "own_ms_p50": 39.872191999961615,
+      "own_ms_p95": 44.5248461000574,
+      "own_ms_max": 47.20140199992784,
+      "over_50ms": 0,
+      "deaths": [
+        1,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 600,
+        "simulations": 3110,
+        "shield_removed": 42,
+        "shield_fallbacks": 0,
+        "deadline_stops": 0,
+        "root_action_choices": [
+          0,
+          128,
+          321,
+          151
+        ],
+        "forced_despite_alternatives": 128,
+        "search_changed_policy": 0,
+        "chosen_stop": 378,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          579,
+          20,
+          1
+        ],
+        "simulation_depth": [
+          0,
+          3110,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3042,
+        "calls": 3642,
+        "forward_with_transfer_p95_ms": 3.6949416999391356
+      }
+    },
+    {
+      "seed": 9700009,
+      "red": false,
+      "opponent": "baseline",
+      "layout": "defaultCapture",
+      "score": 0,
+      "outcome": 0,
+      "moves": 1200,
+      "own_decisions": 600,
+      "seconds": 24.793496470000036,
+      "own_ms_p50": 39.88009100010004,
+      "own_ms_p95": 44.62090489984121,
+      "own_ms_max": 49.239569000064876,
+      "over_50ms": 0,
+      "deaths": [
+        0,
+        0
+      ],
+      "validated": true,
+      "search": {
+        "decisions": 599,
+        "simulations": 3169,
+        "shield_removed": 27,
+        "shield_fallbacks": 0,
+        "deadline_stops": 1,
+        "root_action_choices": [
+          0,
+          84,
+          395,
+          121
+        ],
+        "forced_despite_alternatives": 84,
+        "search_changed_policy": 1,
+        "chosen_stop": 380,
+        "goal_guard_overrides": 0,
+        "root_visited_edges": [
+          0,
+          590,
+          8,
+          1
+        ],
+        "simulation_depth": [
+          0,
+          3172,
+          0,
+          0
+        ],
+        "observation_hits": 0,
+        "observation_misses": 3054,
+        "calls": 3654,
+        "forward_with_transfer_p95_ms": 3.694944050050708
+      }
+    }
+  ]
+}
