@@ -1,0 +1,51 @@
+{
+  "diagnosis_timestamp_utc": "2026-11-05T06:26:35Z",
+  "run_started_utc": "2026-11-05T06:02:53Z",
+  "run_elapsed_at_snapshot_seconds": 1419,
+  "training": {
+    "environment": "Ubuntu WSL; /opt/lagat-h-20261022/venv/bin/python",
+    "phase": "v0 training",
+    "completed_epochs": 1,
+    "requested_epochs_per_arm": 20,
+    "first_epoch_seconds": 768.02,
+    "historical_epoch_seconds_approx": 93,
+    "remaining_epochs_across_both_arms": 39,
+    "remaining_budget_seconds_approx": 3960,
+    "required_average_seconds_per_remaining_epoch_approx": 102,
+    "completion_assessment": "unlikely_at_observed_throughput; full 90-minute completion requires immediate return to near historical speed"
+  },
+  "resources": {
+    "wsl_memory_total_gib": 12,
+    "wsl_memory_available_gib": 9.6,
+    "wsl_swap_total_gib": 4,
+    "wsl_swap_used_gib": 0,
+    "vmstat_swap_in_out": "0/0",
+    "vmstat_io_wait_percent": 0,
+    "windows_physical_memory_total_gib": 15.85,
+    "windows_physical_memory_free_gib": 0.55,
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+      "utilization_percent": 100,
+      "memory_used_mib": 3337,
+      "memory_total_mib": 4096,
+      "temperature_c": 86,
+      "clock_sm_mhz": 1297,
+      "power_draw_w": 42.56
+    }
+  },
+  "confirmed_parallel_resource_competition": {
+    "process": "DeltaForceClient-Win64-Shipping",
+    "pid": 25608,
+    "gpu_dedicated_gib": 1.54,
+    "gpu_shared_gib": 1.33,
+    "working_set_gib": 6.3,
+    "commit_gib": 14.8,
+    "assessment": "concurrent GPU and host-memory resource competition confirmed"
+  },
+  "causality_limits": {
+    "competition_caused_ninefold_slowdown": "not isolated or proven",
+    "thermal_throttling": "not proven",
+    "wsl_memory_swapping": "not observed in this snapshot"
+  },
+  "action_taken": "read-only diagnosis only; no application was closed, no process restarted, and no budget extended"
+}
