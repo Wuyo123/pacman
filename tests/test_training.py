@@ -1,4 +1,5 @@
 import importlib
+import json
 from pathlib import Path
 import tempfile
 import time
@@ -6,6 +7,7 @@ import unittest
 
 import numpy as np
 import torch
+from unittest.mock import patch
 
 
 class TrainingTests(unittest.TestCase):
@@ -26,6 +28,16 @@ class TrainingTests(unittest.TestCase):
                             landmarks=np.arange(16, dtype=np.int64) % 4,
                             distances=np.array([[0, 1, 2, -1], [1, 0, 1, -1],
                                                 [2, 1, 0, -1], [-1, -1, -1, 0]], dtype=np.int32))
+        return path
+
+    def versioned_episode(self, directory, game=0):
+        path = self.episode(directory, game)
+        with np.load(path, allow_pickle=False) as archive:
+            arrays = {key: archive[key] for key in archive.files}
+        arrays['frames_v1'] = np.concatenate(
+            [arrays['frames'], np.ones((*arrays['frames'].shape[:2], 19), dtype=np.float16)], axis=-1)
+        arrays['observation_version'] = np.asarray(1, dtype=np.int64)
+        np.savez_compressed(path, **arrays)
         return path
 
     def test_histories_repeat_first_frame_and_never_cross_games(self):
@@ -81,6 +93,108 @@ class TrainingTests(unittest.TestCase):
             new_output = new(new_x, landmarks, agents)
         for key in old_output:
             torch.testing.assert_close(old_output[key], new_output[key], atol=1e-6, rtol=1e-6)
+
+    def test_resume_shuffle_matches_uninterrupted_epoch_and_skips_completed_batches(self):
+        training = self.training()
+        from torch.utils.data import DataLoader, TensorDataset
+        values = torch.arange(10)
+        generator = torch.Generator().manual_seed(20261105)
+        uninterrupted = DataLoader(TensorDataset(values), batch_size=3, shuffle=True,
+                                   generator=generator, num_workers=0)
+        list(uninterrupted)
+        expected = [batch[0].tolist() for batch in uninterrupted]
+        resumed_generator = torch.Generator().manual_seed(20261105)
+        resumed = DataLoader(TensorDataset(values), batch_size=3, shuffle=True,
+                             generator=resumed_generator, num_workers=0)
+        iterator = training.restore_train_iterator(resumed, completed_epochs=1,
+                                                   batches_completed_in_epoch=1)
+        actual = [batch[0].tolist() for batch in iterator]
+        self.assertEqual(actual, expected[1:])
+
+    def _assert_optimizer_states_equal(self, expected, actual):
+        first, second = expected['optimizer_state_dict']['state'], actual['optimizer_state_dict']['state']
+        self.assertEqual(first.keys(), second.keys())
+        for key in first:
+            self.assertEqual(first[key].keys(), second[key].keys())
+            for name, value in first[key].items():
+                if torch.is_tensor(value):
+                    torch.testing.assert_close(value, second[key][name], atol=0, rtol=0)
+                else:
+                    self.assertEqual(value, second[key][name])
+
+    def _assert_resumed_checkpoint_equals_full(self, full_path, resumed_path, expected_updates):
+        full = torch.load(full_path, map_location='cpu', weights_only=False)
+        resumed = torch.load(resumed_path, map_location='cpu', weights_only=False)
+        self.assertEqual(full['epochs'], resumed['epochs'])
+        self.assertEqual(full['observation_version'], resumed['observation_version'])
+        for key, value in full['state_dict'].items():
+            torch.testing.assert_close(value, resumed['state_dict'][key], atol=0, rtol=0)
+        self._assert_optimizer_states_equal(full, resumed)
+        steps = {int(state['step']) for state in resumed['optimizer_state_dict']['state'].values()}
+        self.assertEqual(steps, {expected_updates})
+
+    def test_mid_epoch_resume_matches_uninterrupted_model_and_adam_updates(self):
+        training = self.training()
+        with tempfile.TemporaryDirectory() as directory, patch('torch.cuda.is_available', return_value=False):
+            root = Path(directory)
+            data = root / 'data'
+            data.mkdir()
+            self.versioned_episode(data, 0)
+            self.versioned_episode(data, 1)
+            full = training.train(data, root / 'full', epochs=3, d=8, batch_size=2,
+                                  seed=20261105, observation_version=1)
+            original_getitem = training.EpisodeDataset.__getitem__
+            calls = 0
+            def interrupt_after_one_batch(dataset, index):
+                nonlocal calls
+                calls += 1
+                if calls == 3:
+                    raise FloatingPointError('injected mid-epoch interruption')
+                return original_getitem(dataset, index)
+            with patch.object(training.EpisodeDataset, '__getitem__', interrupt_after_one_batch):
+                with self.assertRaises(FloatingPointError):
+                    training.train(data, root / 'partial', epochs=3, d=8, batch_size=2,
+                                   seed=20261105, observation_version=1)
+            partial = torch.load(root / 'partial/model.pt', map_location='cpu', weights_only=False)
+            self.assertEqual(partial['epoch_in_progress'], 1)
+            self.assertEqual(partial['batches_completed_in_epoch'], 1)
+            resumed = training.train(data, root / 'resumed', epochs=3, d=8, batch_size=2,
+                                     seed=20261105, observation_version=1,
+                                     resume_from=root / 'partial/model.pt')
+            self.assertEqual(resumed['epochs_completed'], 3)
+            with (root / 'resumed/epochs.jsonl').open() as stream:
+                records = [json.loads(line) for line in stream]
+            self.assertEqual(records[0]['train_metrics_scope'], 'remaining_batches_after_resume')
+            self._assert_resumed_checkpoint_equals_full(root / 'full/model.pt',
+                                                       root / 'resumed/model.pt', 6)
+
+    def test_validation_interruption_retries_validation_without_duplicate_updates(self):
+        training = self.training()
+        with tempfile.TemporaryDirectory() as directory, patch('torch.cuda.is_available', return_value=False):
+            root = Path(directory)
+            data = root / 'data'
+            data.mkdir()
+            self.versioned_episode(data, 0)
+            self.versioned_episode(data, 1)
+            full = training.train(data, root / 'full', epochs=3, d=8, batch_size=2,
+                                  seed=20261105, observation_version=1)
+            with patch.object(training, '_evaluate', side_effect=FloatingPointError('injected validation interruption')):
+                with self.assertRaises(FloatingPointError):
+                    training.train(data, root / 'partial', epochs=3, d=8, batch_size=2,
+                                   seed=20261105, observation_version=1)
+            partial = torch.load(root / 'partial/model.pt', map_location='cpu', weights_only=False)
+            self.assertEqual(partial['epoch_in_progress'], 1)
+            self.assertEqual(partial['batches_completed_in_epoch'], 2)
+            resumed = training.train(data, root / 'resumed', epochs=3, d=8, batch_size=2,
+                                     seed=20261105, observation_version=1,
+                                     resume_from=root / 'partial/model.pt')
+            self.assertEqual(resumed['epochs_completed'], 3)
+            with (root / 'resumed/epochs.jsonl').open() as stream:
+                records = [json.loads(line) for line in stream]
+            self.assertEqual(records[0]['train_metrics_scope'], 'validation_only')
+            self.assertEqual(records[0]['train'], {})
+            self._assert_resumed_checkpoint_equals_full(root / 'full/model.pt',
+                                                       root / 'resumed/model.pt', 6)
 
     def test_game_split_is_exact_and_disjoint(self):
         training = self.training()

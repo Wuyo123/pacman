@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-11-05T09:27:41Z",
+  "game_process_scan": "Win32_Process Name matching DeltaForce",
+  "game_processes": [],
+  "game_processes_absent": true,
+  "windows_memory": {
+    "total_gib": 15.85,
+    "free_gib": 6.48
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "utilization_percent": 35,
+    "memory_used_mib": 1007,
+    "memory_total_mib": 4096,
+    "memory_free_mib": 3089,
+    "temperature_c": 78,
+    "compute_processes": []
+  },
+  "wsl_memory": {
+    "total_gib": 12,
+    "used_mib": 277,
+    "available_gib": 12,
+    "swap_total_gib": 4,
+    "swap_used_gib": 0
+  },
+  "reference_training_peak_gpu_allocated_bytes": 998576128,
+  "assessment": "No matching game process or WSL compute process was present. GPU free memory was about 3.2 times the prior training peak; Windows had 6.48 GiB free and WSL had no swap use.",
+  "resource_ok": true
+}

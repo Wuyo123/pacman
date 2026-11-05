@@ -15,6 +15,7 @@ from torch.utils.data import DataLoader, Dataset, Subset
 
 from .model import BeliefMiTA
 from .schema import FEATURE_DIMS, validate_checkpoint_schema
+from .resume_training import optimizer_steps, restore_train_iterator, validate_resume_checkpoint
 
 
 def split_games(paths):
@@ -207,7 +208,7 @@ def model_initialization_hashes(model):
 
 
 def train(data_dir, out_dir, epochs=20, d=64, batch_size=64, seed=20261104, deadline=None,
-          observation_version=0):
+          observation_version=0, resume_from=None, protocol_sha256=None):
     """Train every requested epoch. deadline, if set, is an absolute monotonic time."""
     if epochs < 1 or batch_size < 1:
         raise ValueError("positive epochs and batch_size are required")
@@ -253,8 +254,56 @@ def train(data_dir, out_dir, epochs=20, d=64, batch_size=64, seed=20261104, dead
         "initialization_sha256": initialization_hash,
         "shared_initialization_sha256": shared_initialization_hash,
     }
-    summary = {"status": "running", "epochs_completed": 0, "epoch_in_progress": 0,
-               "batches_completed_in_epoch": 0, "provenance": provenance}
+    continuation = None
+    resume_position = None
+    source_log_lines = []
+    if resume_from is not None:
+        from .resume_training import sha256
+        resume_from = Path(resume_from).resolve()
+        checkpoint = torch.load(resume_from, map_location="cpu", weights_only=False)
+        resume_position = validate_resume_checkpoint(
+            checkpoint, dataset.paths, seed=seed, epochs=epochs, d=d, batch_size=batch_size,
+            observation_version=observation_version)
+        if resume_position["batches_completed_in_epoch"] > len(train_loader):
+            raise ValueError("resume checkpoint exceeds the current epoch batch count")
+        expected_partial_updates = (resume_position["epochs_completed"] * len(train_loader)
+                                    + (resume_position["batches_completed_in_epoch"]
+                                       if resume_position["epoch_in_progress"] else 0))
+        if optimizer_steps(checkpoint["optimizer_state_dict"]) != expected_partial_updates:
+            raise ValueError("resume Adam step does not match the stored completed updates")
+        source_summary_path = resume_from.parent / "summary.json"
+        source_summary = json.loads(source_summary_path.read_text(encoding="utf-8"))
+        for key in ("epochs_completed", "epoch_in_progress", "batches_completed_in_epoch"):
+            checkpoint_key = "epochs" if key == "epochs_completed" else key
+            if source_summary[key] != checkpoint[checkpoint_key]:
+                raise ValueError(f"checkpoint and source summary disagree on {key}")
+        source_log = resume_from.parent / "epochs.jsonl"
+        source_log_lines = [line for line in source_log.read_text(encoding="utf-8").splitlines() if line]
+        if len(source_log_lines) != resume_position["epochs_completed"]:
+            raise ValueError("source epoch log does not match completed checkpoint epochs")
+        model.load_state_dict(checkpoint["state_dict"])
+        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+        provenance = checkpoint["provenance"]
+        continuation = {
+            "source_checkpoint_path": str(resume_from),
+            "source_checkpoint_sha256": sha256(resume_from),
+            "source_training_source_sha256": provenance.get("training_source_sha256"),
+            "resume_training_source_sha256": _sha256(Path(__file__)),
+            "resume_helper_source_sha256": _sha256(Path(__file__).with_name("resume_training.py")),
+            "protocol_sha256": protocol_sha256,
+            "partial_completed_updates": expected_partial_updates,
+            "expected_final_optimizer_steps": epochs * len(train_loader),
+            "completed_epochs_at_source": resume_position["epochs_completed"],
+            "in_progress_epoch_at_source": resume_position["epoch_in_progress"],
+            "completed_batches_in_progress_epoch": resume_position["batches_completed_in_epoch"],
+        }
+        summary = {"status": "running", "epochs_completed": resume_position["epochs_completed"],
+                   "epoch_in_progress": resume_position["epoch_in_progress"],
+                   "batches_completed_in_epoch": resume_position["batches_completed_in_epoch"],
+                   "provenance": provenance, "continuation": continuation}
+    else:
+        summary = {"status": "running", "epochs_completed": 0, "epoch_in_progress": 0,
+                   "batches_completed_in_epoch": 0, "provenance": provenance}
     started = time.monotonic()
 
     def check_deadline():
@@ -270,21 +319,42 @@ def train(data_dir, out_dir, epochs=20, d=64, batch_size=64, seed=20261104, dead
                     "observation_version": observation_version, "epochs": summary["epochs_completed"],
                     "status": summary["status"], "epoch_in_progress": summary["epoch_in_progress"],
                     "batches_completed_in_epoch": summary["batches_completed_in_epoch"],
-                    "provenance": provenance}, temporary)
+                    "provenance": provenance, "continuation": continuation}, temporary)
         temporary.replace(out_dir / "model.pt")
         (out_dir / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False), encoding="utf-8")
 
     try:
         check_deadline()
-        with (out_dir / "epochs.jsonl").open("w", encoding="utf-8") as log:
-            for epoch in range(1, epochs + 1):
+        if resume_from is not None:
+            restored_iterator = restore_train_iterator(
+                train_loader, completed_epochs=resume_position["epochs_completed"],
+                batches_completed_in_epoch=(resume_position["batches_completed_in_epoch"]
+                                            if resume_position["epoch_in_progress"] else 0))
+            start_epoch = (resume_position["epoch_in_progress"] or
+                           resume_position["epochs_completed"] + 1)
+            skipped_batches = (resume_position["batches_completed_in_epoch"]
+                               if resume_position["epoch_in_progress"] else 0)
+            log_mode = "a"
+            if source_log_lines:
+                (out_dir / "epochs.jsonl").write_text("\n".join(source_log_lines) + "\n", encoding="utf-8")
+        else:
+            restored_iterator, start_epoch, skipped_batches, log_mode = None, 1, 0, "w"
+        with (out_dir / "epochs.jsonl").open(log_mode, encoding="utf-8") as log:
+            for epoch in range(start_epoch, epochs + 1):
                 check_deadline()
                 summary["epoch_in_progress"] = epoch
-                summary["batches_completed_in_epoch"] = 0
+                if not (resume_from is not None and epoch == start_epoch):
+                    summary["batches_completed_in_epoch"] = 0
                 model.train()
                 sums, count = {}, 0
                 epoch_started = time.monotonic()
-                for batch in train_loader:
+                if resume_from is not None and epoch == start_epoch:
+                    iterator = restored_iterator
+                    skipped = skipped_batches
+                else:
+                    iterator = iter(train_loader)
+                    skipped = 0
+                for batch in iterator:
                     check_deadline()
                     batch = _move(batch, device)
                     optimizer.zero_grad(set_to_none=True)
@@ -300,16 +370,23 @@ def train(data_dir, out_dir, epochs=20, d=64, batch_size=64, seed=20261104, dead
                         sums[key] = sums.get(key, 0.) + number * size
                     summary["batches_completed_in_epoch"] += 1
                 validation = _evaluate(model, val_loader, device, check_deadline)
-                record = {"epoch": epoch, "train": {key: value / count for key, value in sums.items()},
+                train_metrics = {key: value / count for key, value in sums.items()} if count else {}
+                scope = ("full_epoch" if skipped == 0 else
+                         "validation_only" if count == 0 else "remaining_batches_after_resume")
+                record = {"epoch": epoch, "train": train_metrics, "train_metrics_scope": scope,
                           "validation": validation, "seconds": time.monotonic() - epoch_started}
                 log.write(json.dumps(record, allow_nan=False) + "\n")
                 log.flush()
                 summary.update(epochs_completed=epoch, epoch_in_progress=0, batches_completed_in_epoch=0,
                                validation=validation)
                 save()
-                print(json.dumps({"epoch": epoch, "train_loss": record["train"]["loss"],
+                print(json.dumps({"epoch": epoch, "train_loss": record["train"].get("loss"),
                                   "val_loss": validation["loss"], "seconds": record["seconds"]}), flush=True)
         summary["status"] = "completed"
+        if resume_from is not None:
+            final_steps = optimizer_steps(optimizer.state_dict())
+            if final_steps != continuation["expected_final_optimizer_steps"]:
+                raise RuntimeError("final Adam step count differs from requested 20-epoch training")
         save()
         return summary
     except (TimeoutError, RuntimeError, FloatingPointError) as error:
