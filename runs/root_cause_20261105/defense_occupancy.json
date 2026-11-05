@@ -1,0 +1,42 @@
+{
+  "definition": "second team slot; decision-weighted occupancy, not causal attribution",
+  "new_world_rollouts": 0,
+  "arms": {
+    "original": {
+      "games": 20,
+      "defender_decisions": 5735,
+      "defender_home": 3969,
+      "defender_scared": 160,
+      "invasion_decisions": 1266,
+      "defender_home_during_invasion": 878,
+      "both_away_during_invasion": 273,
+      "enemy_respawns": 144,
+      "defender_home_fraction": 0.6920662598081952,
+      "home_fraction_during_invasion": 0.693522906793049
+    },
+    "guard": {
+      "games": 20,
+      "defender_decisions": 5057,
+      "defender_home": 3600,
+      "defender_scared": 701,
+      "invasion_decisions": 2674,
+      "defender_home_during_invasion": 2007,
+      "both_away_during_invasion": 432,
+      "enemy_respawns": 59,
+      "defender_home_fraction": 0.7118845165117659,
+      "home_fraction_during_invasion": 0.75056095736724
+    },
+    "heuristic": {
+      "games": 20,
+      "defender_decisions": 3178,
+      "defender_home": 964,
+      "defender_scared": 794,
+      "invasion_decisions": 2395,
+      "defender_home_during_invasion": 207,
+      "both_away_during_invasion": 2104,
+      "enemy_respawns": 17,
+      "defender_home_fraction": 0.30333543108873506,
+      "home_fraction_during_invasion": 0.08643006263048017
+    }
+  }
+}
