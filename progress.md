@@ -35,3 +35,7 @@
 01:49：最后一轮结束：original8胜10平2负=65%，guard7胜2平11负=40%，heuristic0胜20负=0%；各20局完整、无故障/超时，全部重放通过。无候选进入920确认。角色诊断：己方返还原版0.4/守卫2.1/规则9.55，对手返还1.8/9.9/18；进攻进度增加但失分更大。三轮未建立改进，按预定停止规则收口，默认保留v0。汇总IMPROVEMENT_RESULT_20261105.md；远端仍缺地址，未推送。
 
 2026-11-05：完成输入/专家/协调/搜索根因审计，确定性4项反例见ROOT_CAUSE_ANALYSIS_20261105.md，提交8a607c0。用户新授权修复并继续实验，指定Luna执行实验；已派Luna设计最小单变量修复对照，尚未启动新训练。用户已创建Wuyo123/pacman，origin已配置，push等待本机Git登录，尚未上传完成。
+
+2026-11-05 14:02:53+08:00：Luna已启动正式输入修复对照；主PID18，manifest started_epoch1793858573.0182498，固定截止15:32:53+08:00。已独立确认进程与manifest RUNNING，240计划记录=200采集+40评测。实现commit7869ca9，66tests/CUDA smoke通过。日志runs/input_repair_20261105.log；原结果与920确认集不变。
+
+2026-11-05 14:15：用户明确保留公开并授权上传；GitHub官方CLI登录成功。两分支及两标签push成功，git ls-remote独立核对7869ca9/7bf5a30与annotated tags peeled目标一致，仓库https://github.com/Wuyo123/pacman。新输入实验仍在运行，未提前声称结果。
