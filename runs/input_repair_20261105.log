@@ -1,0 +1,47 @@
+{"stage": "collect", "completed": 20, "failed": 0, "planned": 200, "seconds": 50.74914311500004}
+{"stage": "collect", "completed": 40, "failed": 0, "planned": 200, "seconds": 99.29233667400001}
+{"stage": "collect", "completed": 60, "failed": 0, "planned": 200, "seconds": 149.576197502}
+{"stage": "collect", "completed": 80, "failed": 0, "planned": 200, "seconds": 199.25562082100004}
+{"stage": "collect", "completed": 100, "failed": 0, "planned": 200, "seconds": 248.221959895}
+{"stage": "collect", "completed": 120, "failed": 0, "planned": 200, "seconds": 298.19460746799996}
+{"stage": "collect", "completed": 140, "failed": 0, "planned": 200, "seconds": 349.124559418}
+{"stage": "collect", "completed": 160, "failed": 0, "planned": 200, "seconds": 400.80878910900003}
+{"stage": "collect", "completed": 180, "failed": 0, "planned": 200, "seconds": 455.071982823}
+{"stage": "collect", "completed": 200, "failed": 0, "planned": 200, "seconds": 514.851723529}
+{"status": "PASS", "planned_games": 200, "completed_games": 200, "failures": [], "steps": 120000, "wins": 128, "draws": 72, "losses": 0, "seconds": 514.860756928, "seed_start": 1100000, "observation_version": 1, "source_sha256": {"belief_mita/collect.py": "591af03f487080c624034001c54d6310dd2c66d080795172981d3b0a16607d8d", "belief_mita/evaluate.py": "46d363e66930ed98d1e5ed964f54578e5debc117e99ff82676871df94c06a4d0", "belief_mita/finetune.py": "de6ca20d4dba3badf0561f566f22033cf409100f803a4a599bacb9a1b28c34c1", "belief_mita/goal_guard.py": "4b372ad8f3761002e14ac9ca8b8800145a204c5bdbe88ed8e10186d292fb7282", "belief_mita/input_repair.py": "bfb02a502573832dcb7955cedbe3332eed2d9893cb6900638af5316bd9d77899", "belief_mita/latency_probe.py": "227945ae807b2ee44d9a2463df73a30fd32c2316b3cf64c208eb7eb1c38624cf", "belief_mita/m0.py": "26f2f83f847a9fea3f401f968897eb3bbe361a2c7c314a296377b88b4de19a19", "belief_mita/model.py": "05e8c690d84740e856dd162c54ae009ad3bc8d36493f1b6503d3c9de5dee8380", "belief_mita/runtime.py": "1dab639d33f56402354d621c483483b4bd7651487a6a7566415b813ebc342ccd", "belief_mita/schema.py": "e17e3ec88630ec36e5e6d0362004d8faa184ee851d796ff5e7eb6eb1dc163b9f", "belief_mita/search.py": "303938b695532268de5149f4463984176700814411448d65a3720a900b10d319", "belief_mita/topology.py": "af3d233397af34e8674da0907059eeb2f79db7949dcbc00ca772d13a86b35c0d", "belief_mita/training.py": "35596373d2b5ac44ddce0aeb8aad30d38a31971e07065b129b31d5433490c2f4"}}
+{"epoch": 1, "train_loss": 2.80071843846639, "val_loss": 2.3299744167327883, "seconds": 768.022425041}
+{"epoch": 2, "train_loss": 2.175647753185696, "val_loss": 2.132078233083089, "seconds": 928.023512832}
+{"epoch": 3, "train_loss": 2.0164735172413013, "val_loss": 2.015772967974345, "seconds": 94.18244827199987}
+{"epoch": 4, "train_loss": 1.9135499602776986, "val_loss": 1.9254113890329996, "seconds": 93.89803505300006}
+{"epoch": 5, "train_loss": 1.8263842554092407, "val_loss": 1.851875389099121, "seconds": 94.81965382099997}
+{"epoch": 6, "train_loss": 1.7528549589934173, "val_loss": 1.7892793394724529, "seconds": 93.43112321699982}
+{"epoch": 7, "train_loss": 1.6952879907113534, "val_loss": 1.7539560769399007, "seconds": 91.28593974800015}
+{"epoch": 8, "train_loss": 1.6479098763289275, "val_loss": 1.7013663393656413, "seconds": 92.08707365200007}
+{"epoch": 9, "train_loss": 1.6093960786748815, "val_loss": 1.664619766553243, "seconds": 92.49424886600036}
+{"epoch": 10, "train_loss": 1.5744598628503306, "val_loss": 1.6507488746643066, "seconds": 91.41327707900018}
+{"epoch": 11, "train_loss": 1.547277062733968, "val_loss": 1.614159512201945, "seconds": 89.54804739200017}
+{"epoch": 12, "train_loss": 1.5234473073040997, "val_loss": 1.5833553733825683, "seconds": 91.40341132899994}
+{"epoch": 13, "train_loss": 1.4989339028464423, "val_loss": 1.578158688545227, "seconds": 88.25407321600005}
+{"epoch": 14, "train_loss": 1.4798674649839048, "val_loss": 1.5678601439793904, "seconds": 91.81120083499991}
+{"epoch": 15, "train_loss": 1.4617534264811762, "val_loss": 1.5556830403010051, "seconds": 88.62236147999965}
+{"epoch": 16, "train_loss": 1.442535162395901, "val_loss": 1.5284937181472777, "seconds": 88.04882382000005}
+{"epoch": 17, "train_loss": 1.427762196222941, "val_loss": 1.5205978686014812, "seconds": 88.02334929999961}
+{"epoch": 18, "train_loss": 1.4121390305271855, "val_loss": 1.5174611212412517, "seconds": 87.96575331799977}
+{"epoch": 19, "train_loss": 1.3991903124208804, "val_loss": 1.5180801200866698, "seconds": 87.75467583099999}
+{"epoch": 20, "train_loss": 1.3838638138241237, "val_loss": 1.5034449297587076, "seconds": 87.62222880700028}
+{"epoch": 1, "train_loss": 2.7032306377976028, "val_loss": 2.226749585469564, "seconds": 96.39981614600038}
+{"epoch": 2, "train_loss": 2.0899564062754314, "val_loss": 2.055776756286621, "seconds": 96.22168277100081}
+{"epoch": 3, "train_loss": 1.933030032934966, "val_loss": 1.935709251085917, "seconds": 96.21163073099979}
+{"epoch": 4, "train_loss": 1.8308250168341178, "val_loss": 1.8582953214645386, "seconds": 96.77517680399978}
+{"epoch": 5, "train_loss": 1.7515485117170546, "val_loss": 1.7890521364212035, "seconds": 96.6807387480003}
+{"epoch": 6, "train_loss": 1.6866414241790773, "val_loss": 1.728048791885376, "seconds": 96.0172588939995}
+{"epoch": 7, "train_loss": 1.629425437397427, "val_loss": 1.7067066605885823, "seconds": 96.26556934200016}
+{"epoch": 8, "train_loss": 1.5846406518088447, "val_loss": 1.6425378252665201, "seconds": 96.06175730499945}
+{"epoch": 9, "train_loss": 1.5471290765691688, "val_loss": 1.6197994785308838, "seconds": 96.02104072800012}
+{"epoch": 10, "train_loss": 1.5160224876050596, "val_loss": 1.6007670110066732, "seconds": 96.15284326700021}
+{"epoch": 11, "train_loss": 1.4908010648091634, "val_loss": 1.5944609521230062, "seconds": 103.02388685500046}
+{"epoch": 12, "train_loss": 1.4670634947529546, "val_loss": 1.5930531711578368, "seconds": 103.03501601100015}
+{"epoch": 13, "train_loss": 1.444106108100326, "val_loss": 1.5639811779658, "seconds": 103.41317368699947}
+{"epoch": 14, "train_loss": 1.4258703835452045, "val_loss": 1.5567777938842773, "seconds": 103.89810871899954}
+{"epoch": 15, "train_loss": 1.4076838729999683, "val_loss": 1.5164563347498576, "seconds": 102.97506533599972}
+{"status": "INCONCLUSIVE_RESOURCE", "elapsed_seconds": 5400.086124064001, "planned_records": 240, "collection": {"status": "PASS", "planned_games": 200, "completed_games": 200, "failures": [], "steps": 120000, "wins": 128, "draws": 72, "losses": 0, "seconds": 514.860756928, "seed_start": 1100000, "observation_version": 1, "source_sha256": {"belief_mita/collect.py": "591af03f487080c624034001c54d6310dd2c66d080795172981d3b0a16607d8d", "belief_mita/evaluate.py": "46d363e66930ed98d1e5ed964f54578e5debc117e99ff82676871df94c06a4d0", "belief_mita/finetune.py": "de6ca20d4dba3badf0561f566f22033cf409100f803a4a599bacb9a1b28c34c1", "belief_mita/goal_guard.py": "4b372ad8f3761002e14ac9ca8b8800145a204c5bdbe88ed8e10186d292fb7282", "belief_mita/input_repair.py": "bfb02a502573832dcb7955cedbe3332eed2d9893cb6900638af5316bd9d77899", "belief_mita/latency_probe.py": "227945ae807b2ee44d9a2463df73a30fd32c2316b3cf64c208eb7eb1c38624cf", "belief_mita/m0.py": "26f2f83f847a9fea3f401f968897eb3bbe361a2c7c314a296377b88b4de19a19", "belief_mita/model.py": "05e8c690d84740e856dd162c54ae009ad3bc8d36493f1b6503d3c9de5dee8380", "belief_mita/runtime.py": "1dab639d33f56402354d621c483483b4bd7651487a6a7566415b813ebc342ccd", "belief_mita/schema.py": "e17e3ec88630ec36e5e6d0362004d8faa184ee851d796ff5e7eb6eb1dc163b9f", "belief_mita/search.py": "303938b695532268de5149f4463984176700814411448d65a3720a900b10d319", "belief_mita/topology.py": "af3d233397af34e8674da0907059eeb2f79db7949dcbc00ca772d13a86b35c0d", "belief_mita/training.py": "35596373d2b5ac44ddce0aeb8aad30d38a31971e07065b129b31d5433490c2f4"}}, "comparison": null}

@@ -1,0 +1,1057 @@
+{
+  "status": "timeout",
+  "epochs_completed": 15,
+  "epoch_in_progress": 16,
+  "batches_completed_in_epoch": 2,
+  "provenance": {
+    "seed": 20261105,
+    "device": "cuda",
+    "torch_version": "2.8.0+cu126",
+    "observation_version": 1,
+    "feature_dim": 37,
+    "batch_size": 64,
+    "requested_epochs": 20,
+    "lr": 0.0003,
+    "loss_weights": {
+      "first_ce": 1.0,
+      "conditional_second_ce": 1.0,
+      "marginal_second_ce": 0.0,
+      "belief_kl": 1.0,
+      "value_mse": 0.5
+    },
+    "belief_target": "normalized graph Gaussian sigma=1 over walkable cells",
+    "action_top3_second": "conditional policy given predicted first action",
+    "blind_expected_l1": "posterior expected Manhattan distance to true enemy cell",
+    "train_games": [
+      "game_0000.npz",
+      "game_0001.npz",
+      "game_0002.npz",
+      "game_0003.npz",
+      "game_0004.npz",
+      "game_0005.npz",
+      "game_0006.npz",
+      "game_0007.npz",
+      "game_0008.npz",
+      "game_0009.npz",
+      "game_0010.npz",
+      "game_0011.npz",
+      "game_0012.npz",
+      "game_0013.npz",
+      "game_0014.npz",
+      "game_0015.npz",
+      "game_0016.npz",
+      "game_0017.npz",
+      "game_0018.npz",
+      "game_0019.npz",
+      "game_0020.npz",
+      "game_0021.npz",
+      "game_0022.npz",
+      "game_0023.npz",
+      "game_0024.npz",
+      "game_0025.npz",
+      "game_0026.npz",
+      "game_0027.npz",
+      "game_0028.npz",
+      "game_0029.npz",
+      "game_0030.npz",
+      "game_0031.npz",
+      "game_0032.npz",
+      "game_0033.npz",
+      "game_0034.npz",
+      "game_0035.npz",
+      "game_0036.npz",
+      "game_0037.npz",
+      "game_0038.npz",
+      "game_0039.npz",
+      "game_0040.npz",
+      "game_0041.npz",
+      "game_0042.npz",
+      "game_0043.npz",
+      "game_0044.npz",
+      "game_0045.npz",
+      "game_0046.npz",
+      "game_0047.npz",
+      "game_0048.npz",
+      "game_0049.npz",
+      "game_0050.npz",
+      "game_0051.npz",
+      "game_0052.npz",
+      "game_0053.npz",
+      "game_0054.npz",
+      "game_0055.npz",
+      "game_0056.npz",
+      "game_0057.npz",
+      "game_0058.npz",
+      "game_0059.npz",
+      "game_0060.npz",
+      "game_0061.npz",
+      "game_0062.npz",
+      "game_0063.npz",
+      "game_0064.npz",
+      "game_0065.npz",
+      "game_0066.npz",
+      "game_0067.npz",
+      "game_0068.npz",
+      "game_0069.npz",
+      "game_0070.npz",
+      "game_0071.npz",
+      "game_0072.npz",
+      "game_0073.npz",
+      "game_0074.npz",
+      "game_0075.npz",
+      "game_0076.npz",
+      "game_0077.npz",
+      "game_0078.npz",
+      "game_0079.npz",
+      "game_0080.npz",
+      "game_0081.npz",
+      "game_0082.npz",
+      "game_0083.npz",
+      "game_0084.npz",
+      "game_0085.npz",
+      "game_0086.npz",
+      "game_0087.npz",
+      "game_0088.npz",
+      "game_0089.npz",
+      "game_0090.npz",
+      "game_0091.npz",
+      "game_0092.npz",
+      "game_0093.npz",
+      "game_0094.npz",
+      "game_0095.npz",
+      "game_0096.npz",
+      "game_0097.npz",
+      "game_0098.npz",
+      "game_0099.npz",
+      "game_0100.npz",
+      "game_0101.npz",
+      "game_0102.npz",
+      "game_0103.npz",
+      "game_0104.npz",
+      "game_0105.npz",
+      "game_0106.npz",
+      "game_0107.npz",
+      "game_0108.npz",
+      "game_0109.npz",
+      "game_0110.npz",
+      "game_0111.npz",
+      "game_0112.npz",
+      "game_0113.npz",
+      "game_0114.npz",
+      "game_0115.npz",
+      "game_0116.npz",
+      "game_0117.npz",
+      "game_0118.npz",
+      "game_0119.npz",
+      "game_0120.npz",
+      "game_0121.npz",
+      "game_0122.npz",
+      "game_0123.npz",
+      "game_0124.npz",
+      "game_0125.npz",
+      "game_0126.npz",
+      "game_0127.npz",
+      "game_0128.npz",
+      "game_0129.npz",
+      "game_0130.npz",
+      "game_0131.npz",
+      "game_0132.npz",
+      "game_0133.npz",
+      "game_0134.npz",
+      "game_0135.npz",
+      "game_0136.npz",
+      "game_0137.npz",
+      "game_0138.npz",
+      "game_0139.npz",
+      "game_0140.npz",
+      "game_0141.npz",
+      "game_0142.npz",
+      "game_0143.npz",
+      "game_0144.npz",
+      "game_0145.npz",
+      "game_0146.npz",
+      "game_0147.npz",
+      "game_0148.npz",
+      "game_0149.npz",
+      "game_0150.npz",
+      "game_0151.npz",
+      "game_0152.npz",
+      "game_0153.npz",
+      "game_0154.npz",
+      "game_0155.npz",
+      "game_0156.npz",
+      "game_0157.npz",
+      "game_0158.npz",
+      "game_0159.npz",
+      "game_0160.npz",
+      "game_0161.npz",
+      "game_0162.npz",
+      "game_0163.npz",
+      "game_0164.npz",
+      "game_0165.npz",
+      "game_0166.npz",
+      "game_0167.npz",
+      "game_0168.npz",
+      "game_0169.npz",
+      "game_0170.npz",
+      "game_0171.npz",
+      "game_0172.npz",
+      "game_0173.npz",
+      "game_0174.npz",
+      "game_0175.npz",
+      "game_0176.npz",
+      "game_0177.npz",
+      "game_0178.npz",
+      "game_0179.npz"
+    ],
+    "val_games": [
+      "game_0180.npz",
+      "game_0181.npz",
+      "game_0182.npz",
+      "game_0183.npz",
+      "game_0184.npz",
+      "game_0185.npz",
+      "game_0186.npz",
+      "game_0187.npz",
+      "game_0188.npz",
+      "game_0189.npz",
+      "game_0190.npz",
+      "game_0191.npz",
+      "game_0192.npz",
+      "game_0193.npz",
+      "game_0194.npz",
+      "game_0195.npz",
+      "game_0196.npz",
+      "game_0197.npz",
+      "game_0198.npz",
+      "game_0199.npz"
+    ],
+    "train_samples": 108000,
+    "val_samples": 12000,
+    "files": [
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0000.npz",
+        "sha256": "9a6f7889db1cefef8a09e1694deb6d7d7ead9ddc1dad0fed171efbefd67658f9"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0001.npz",
+        "sha256": "b1d1fb8455e1b0a9f3fbb90bb7e10055a5c5f3a231dcdb32cdfe41fbf91d46de"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0002.npz",
+        "sha256": "990fb4cec2497113f517ea118789adc388207dc108f1c9a83e4562cb503d9c89"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0003.npz",
+        "sha256": "222f61c9737afd47d7c4c16f328ed795690afee03165e2eab1f339e421bf02b3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0004.npz",
+        "sha256": "42875087d0217126fc599c198b68b126089d0c3c5e134eeac55fd82168cc810f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0005.npz",
+        "sha256": "9549d54c8986d86281f9e533eec9baf52cd7f0f370f69f2f59211df3a2f25006"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0006.npz",
+        "sha256": "d13865b7db10cde2bb76f158aa53857015df6250838fca1b8eb87d1d0377e91c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0007.npz",
+        "sha256": "4bf0a208aa8a925cd129f6f9c0499dbec59810ba6b0a72e4449712efadae6b62"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0008.npz",
+        "sha256": "30f1860a5ea5ddeaf49631a10209c338a6f83b2d9270631c8284a039c1095dd2"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0009.npz",
+        "sha256": "e3cfb48ba9fe386afbce5f51edc363886278568cc8077c854d2a7b35d14a9858"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0010.npz",
+        "sha256": "66a21a0388f8758521c1399a853dd2db6370ee4277188e452d3ac9deaf03a892"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0011.npz",
+        "sha256": "0c56c9c0771d271c180cf7a2cefb9a79f16387c2e9087193b6d9a423617a9f50"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0012.npz",
+        "sha256": "f91663b976ed60ba902ad638df6ed268ff996fb6cfb029d5700573cd59034602"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0013.npz",
+        "sha256": "ad77492bfdaf73d8e5d031cbf2df1c225eec50a9e83993553922ac320cf2054b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0014.npz",
+        "sha256": "a9cd15dafbf2fb09c60f09d339e9cefaa6d353cdb256e54c4e4454f20af9f6d4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0015.npz",
+        "sha256": "08e830285c46fd47c7885bf58b2aca8caf25930b2bf0b2df11f7b32ec26f217d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0016.npz",
+        "sha256": "28bf999abdec35201c4a6556666827020ebc8f5870a6b03eda258c56bbb28c2d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0017.npz",
+        "sha256": "0e368e7e824af2f5340a67420b9932652d44251e23b9959db6e29c5007b72aa6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0018.npz",
+        "sha256": "eff4260428b6cd025c453ba72f23646c816871588e387b81567a15152f1de1b7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0019.npz",
+        "sha256": "198638fea5c38bb81060bcf2d1105ecc09a8b9b93232d41c2ac258f961e08ad0"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0020.npz",
+        "sha256": "65f4d38491af9542f7b9684c9f0ba727958b6aca75bcecc4bcf467ac6e321074"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0021.npz",
+        "sha256": "bfaf5b81085639af550bcf5b890661461c54da16d6c50ba5e1e122e84c0c4014"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0022.npz",
+        "sha256": "cb08b92f95a285842279a1711941d81005c8f111ca9c26ed015ea053c904ef69"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0023.npz",
+        "sha256": "084510200a3d99e647962015d5ce9333086e8709b531f9ac5abfe1e8471129b5"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0024.npz",
+        "sha256": "733121ec4bef1b5055234ab194241b90a6444b054503c5c45ff6ba80c9e042cb"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0025.npz",
+        "sha256": "1a20490d79af796465746fa959de45430fec92b6410b1ddf20b5ed06582ac051"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0026.npz",
+        "sha256": "323ecabdcb4155b9d8dcfe884bc694583e7b0eb26a70913dbb8030b1331b4b59"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0027.npz",
+        "sha256": "3f5e064625fb8ac9b74b4d91efeb4db645b4b35999c6fcfdd09feae6d1fe8ede"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0028.npz",
+        "sha256": "df531e0de52ed44343d05da4d48eb8d3017a4ded97d57bd9317116d19ea53b15"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0029.npz",
+        "sha256": "f5f8eacc5165ed2a8ec78dc15a29c07c262c0fdf0a1b81b0ac3d2d51d565cdee"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0030.npz",
+        "sha256": "52e16302820b3bc44e0be422407fb3c1af365f81a6b7ffeb61cf1c8a11ca902a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0031.npz",
+        "sha256": "e10c661f243128e2d969745c98c384c039328f062e243d17c36fecc5bd31c16a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0032.npz",
+        "sha256": "681b8ff0ce22b09341ea99c3ff7459cc0965ad45fcd12d8cbfe496e1f347609d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0033.npz",
+        "sha256": "06e1a33ac684d2464a7e8f81e889ac8ed0a17a99a911a3e2c13ce460088d7301"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0034.npz",
+        "sha256": "bc4025815c85a61635c89e8e685c9aeb3e506c1f93f6200dd6d25046754f4984"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0035.npz",
+        "sha256": "6568e59489daa4eb5ada6a4eb14f0c98f41c39c2a53aa4b6fa2f9dcd80b86ab6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0036.npz",
+        "sha256": "7bd0c97c15650808d47793367590f50dc413b9ff6a717818ccb756423d467904"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0037.npz",
+        "sha256": "5f1665d40341c00a5dc5c925fd674071ce35b1931a8896c3c34b04ba57b45caa"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0038.npz",
+        "sha256": "a49c19ac04d342d2c99580bbc2cdd6d05da2c0c656825a0f90a6349e5415e38d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0039.npz",
+        "sha256": "1d0462b2a7f350fc73b2fcac70cbec331ac748a8825093b7852903dace21cd1c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0040.npz",
+        "sha256": "258da8d84a2f9fd6fb19a2dacc26a719580ca84d1155e0799f6ec4b813d48cb3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0041.npz",
+        "sha256": "768143ba805cb635fe63a70a449fd537ebd96477feb9100b89319d1176383720"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0042.npz",
+        "sha256": "c15c0020ba603408e89a54b90da3a8100417a3d491393b195038527a0b73811d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0043.npz",
+        "sha256": "ad2358f77f72a5e1301c67d7029c0d622415cfe51f0d723f3d57b0645a147139"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0044.npz",
+        "sha256": "ec68adfe46fd5477e2c7d3ba30be7440d0336c9bd1b1bc34e55c323069611546"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0045.npz",
+        "sha256": "cebc88d51ac27491fca95c18464d20df011d233d5087114c0d94ea94699d7816"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0046.npz",
+        "sha256": "029157646fb421bdb8a8664c122f9f0237d0b5a44e8c3d8500e4814191b4ad55"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0047.npz",
+        "sha256": "0b7c794bdcf94a15573fbe0d34dd877bbf4d0e005857fa30eafd3605d154c552"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0048.npz",
+        "sha256": "736faa4eab51a919c3537d5c16bd3cea8784ffbe29bf08fb361e56f7273cad64"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0049.npz",
+        "sha256": "520a24e3569c791b4a91723a58890a7069bc4c4c1b27cd23b355a4138b964a5a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0050.npz",
+        "sha256": "9651748cfa3a0b8201e2b2415d9153102605a9a8e07a5da597ae5b2215df5263"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0051.npz",
+        "sha256": "1b272931ffc076e566263631e0afcfea6ee96384cee029f889e2ab475fdb892b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0052.npz",
+        "sha256": "eb7344964c40f4d880ba21bfada24b2605546b0bdf6226815bc2e50244c480f4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0053.npz",
+        "sha256": "7932fcd9a7a905fab09ac7bddbf76df5891066f20efd127cb61e4e40fb6562b7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0054.npz",
+        "sha256": "81b29af618f8db8fa683c02f7fbd1f917d20ba5979259952cdd10039ad465c32"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0055.npz",
+        "sha256": "e740dbd16b20f789cd2b34be4cc4bc1c0f2c1568b3384a11c51f48cfa4620303"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0056.npz",
+        "sha256": "e4e0cb4e93e9e9b03e01b1b69f5046e8cf155082701129abd9c302f3ca4db529"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0057.npz",
+        "sha256": "5a468995fcd84372b311adb67b34bceac4ea16d66a2b7e36c78c7f1748741853"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0058.npz",
+        "sha256": "9ddbdafb74a4925159448f31769976b6627940a50028f140a2e1c3291ab887a4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0059.npz",
+        "sha256": "752349b682d9be3b9c8d598d5969934fe152ddf9889a86336a703ee97752b04e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0060.npz",
+        "sha256": "b97b1c43bc2219809910ce4eb7e1ca8467255e87ddc919b0f43a33f59cfb60ca"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0061.npz",
+        "sha256": "3ee30dcca2a55f4f54b803f5d172df3fef1de64c7767376d531e0013f643c13a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0062.npz",
+        "sha256": "4b2d93045f2938efe92789ce7f1e87dca90714902d924279c65296487e9fe393"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0063.npz",
+        "sha256": "e2b8520e3172350d63c56139b2bc59b65d846ab860a6b99cd568b0ab6b4197fd"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0064.npz",
+        "sha256": "6ec68e4f943d05bf07918b44a9e33e01ad77ac7ead20517ef94b58c5dc72727e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0065.npz",
+        "sha256": "14c7bfd5db3e6ec67be4461e4e86dc85e386361e2d86e012a3ce77f20751ee91"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0066.npz",
+        "sha256": "092cf8c4906832ef7d5ab1131fc4deeb30589682e5a385b410f7cfc4148642a9"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0067.npz",
+        "sha256": "dec3e932f572fd1baa40eb9c937733cc67e682c303dc062cb4e211b2dc3283e1"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0068.npz",
+        "sha256": "f68e1e973f59c3538f16ab1c6f047c5767c067d053d6ecf942eb40fe1459beac"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0069.npz",
+        "sha256": "7f991db4831df70ccecf203f8afa40ae95895e0160d2db24078aca2d33eafa9c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0070.npz",
+        "sha256": "55f99d34ccb32c5a63e65172538febe08c9d300d8b55037215584c3012095f3d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0071.npz",
+        "sha256": "7821b479f2a73b6c081c0966816071d75b5d9751ba4c29ded943ff13095d1ed2"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0072.npz",
+        "sha256": "4b81fad2e7d38fb10137e98053f8e9c9b327ad39ce255e391e5b80104e6c3fdd"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0073.npz",
+        "sha256": "3d5415c4b08f4b217933ea23d3e47103845b94d354e4f07bda5a9ebddd12c4d3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0074.npz",
+        "sha256": "d27b715aa05aeac6f28465636da8149f7c6cffd47377ffc727004bac53b3bb80"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0075.npz",
+        "sha256": "bb38135444334bc172e0a59fef2d707052001054c330308545a55b92aa8f3e24"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0076.npz",
+        "sha256": "35ca2a6f372bf5dfd4aef27db09d44af93440cd6e7b3d07dabc1a57eefeffc9d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0077.npz",
+        "sha256": "539135754c877eb5bc5d77e10db7fe68e37c9386abe0dfc50746d844e94a1418"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0078.npz",
+        "sha256": "8c8afd91ee1af2cc49fee9dd515c33247d977d4a3e8a4206961d97a3740b5e1e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0079.npz",
+        "sha256": "7feea3b30b3547b2a552a82eb8042ac7918327cedb08cd4f1e4150e4d3c7f228"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0080.npz",
+        "sha256": "25d7c998fd472f40f8c6fa208d15f2d69b6c073be2d01aec7aa139b3e1b235ce"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0081.npz",
+        "sha256": "549f7bfbc0cd0ec8a9e23ef74d29bb9346055d31f68c20a18695220bb6ae94fd"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0082.npz",
+        "sha256": "82d7a778799c475bc6966f3ba39fd73d3f637f1cc27d21a18eebb4095c98c75d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0083.npz",
+        "sha256": "bd39103055977cc5ef2cec8413e82bc3152a902b04db67efb9e5fab95c6edb6f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0084.npz",
+        "sha256": "e04141c51b33bc07fa06ae0f2f44c993431811e1ef4b964771062c09a39d686a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0085.npz",
+        "sha256": "223f75db6a51d6393f7c6c08616c8a5dd98fd7e5444185c294b5dfd340b27fb3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0086.npz",
+        "sha256": "a32f614d7fc16a6fe615e9600c65ddff9fd7833490b5468613d5a17e142ebe1a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0087.npz",
+        "sha256": "cd7a44ca58037b65e74ec038c7e645c27b0ce3964112a0cbd242cce049de74e7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0088.npz",
+        "sha256": "57b3f7fb606bdd36d1cd8278d6245af6e9282dcd2813ca99d60cbda849a0576d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0089.npz",
+        "sha256": "8cd1641d4b793640fada9487839cadbbc0bb2690c767f5c4995a8225086929c9"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0090.npz",
+        "sha256": "9423baedf3d897a886ad4c80b30746e46b845c4baa04df4e3a0c86b77e756190"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0091.npz",
+        "sha256": "47ac247704fb7d93a52ebf40545bfc82d5a3cb9c56cff33eac2c40c00c8ddf7e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0092.npz",
+        "sha256": "56810b25d879efe1a1f3683d5d56c467306f6d3ee826ea350f9473a2673f2c9c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0093.npz",
+        "sha256": "1fc3feed06bd3785853f8cd575a0c8394ec13d4ac32c2b2f775c27e30b612eb6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0094.npz",
+        "sha256": "51919cc30a8b21ac3df8f154cc9141f82b942cba496bee434d9aea5b3b01dd0f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0095.npz",
+        "sha256": "04caccb8f1171950a6273c70dc08842fea8d9127c4a5dca97485d4c7ef7289de"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0096.npz",
+        "sha256": "53f8772f89da8d67c5a797bcd8e1020d89b8a06a31e54265f49e3317e85832f6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0097.npz",
+        "sha256": "b8643f2e6e289c6512b8e64d998bc1f89c07994391bc8598f3e81cbeba87d727"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0098.npz",
+        "sha256": "b8c3848ebff74fc9a37fd385be6f5f025162dfc23fc6daaae699c41c89772338"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0099.npz",
+        "sha256": "13acbda2f7266f2a7fa134818b6d27f04efc922b77f20fe5d6a7a4b3a925508c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0100.npz",
+        "sha256": "4cbabc169b5abba2663808adb3a5d2a222f9221140026b502bf9c10f080a28d9"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0101.npz",
+        "sha256": "cda22207fc7371af5df5453091f0f7987fa832be780d2150041e012cb7848fd0"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0102.npz",
+        "sha256": "ade52f7aa90d16f0a90a4e6362b55a66f998eda3e907f8cc4763f0a438df68f1"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0103.npz",
+        "sha256": "29a9fcd74c81c819a1853d78394febad33594f14212450b79b319d9dda94b682"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0104.npz",
+        "sha256": "f4a7ba3e970e054a85e3ea8e3f30cdf3bf6ca21b6d7e097368c5d8c0619e3737"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0105.npz",
+        "sha256": "d77cbc3e8ca328e2904e6f969472fe9552e74be23800d9c654dd4ed07d6355f2"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0106.npz",
+        "sha256": "b965637ad8f3f2e66ba1eb8e8d676fa887f5d2bef5d1871ec05538bd1b8cd53f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0107.npz",
+        "sha256": "f81e2441608db159c25e955cc2de5c696a671c67a46d1751a8f17f94a33439d4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0108.npz",
+        "sha256": "a24704dd51641c601b60c7b212a5ddfb1ab06e593908dcb4af5485309409bb1d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0109.npz",
+        "sha256": "a7966ba1f70ac68189e4a6a71b13e72ca1f7df6e86caab632fe55c060e812e45"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0110.npz",
+        "sha256": "f2df61396a90af2f3d1c4dda28c742b3555aaca4722f1bd482f71e3ec67a8084"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0111.npz",
+        "sha256": "f5a25c976cd5c52d79ee650544ecdba4a45022910f69f77ad562a5c841ebfe55"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0112.npz",
+        "sha256": "3b237f5b104c518a3519d742b3a9254ab239d5f4f799d9640eb563dea938a961"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0113.npz",
+        "sha256": "8d4ca233ec0429dacd78a719e328c7a9594dbeb553ff287ac59dbf43a588bf94"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0114.npz",
+        "sha256": "050bb70925c6756446a6af2cc6f68750acca273c17f38669277a0ca054029937"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0115.npz",
+        "sha256": "4c95eaa738d898b42e6336bea99abc46446fb7b8193b84c6b6f63706dce14f1f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0116.npz",
+        "sha256": "6e7bf1ed400e91413732c8756d4157f6891c7cb6ff44c98762eaedbe3639dcdc"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0117.npz",
+        "sha256": "d855093ceec54c49191311af3f1c2f8d360e924dd557311cbe92bf42bfabe77d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0118.npz",
+        "sha256": "315220f4f3c7f3acd479a6e4b6680eb977dca6a31ffa0468ea3628f0309c4819"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0119.npz",
+        "sha256": "d83a9667ee0bef53dd321c14495c1523838d743fab555429bbbaddf6139a74c5"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0120.npz",
+        "sha256": "9644306c3aa3624dc966ded406d97c04cc370dee7baf6c5dd0f17c0e0494cbc4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0121.npz",
+        "sha256": "a198bf5ca151ce48acad5d6be09e8370ff45968b2d9ca931354ca8b2e0b2ef34"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0122.npz",
+        "sha256": "c6808477a0712c7f23c5df18120def47fe8a9df9c9cd7cdfb294a3aaf0b8063b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0123.npz",
+        "sha256": "65b7150eee2101af6c38d22d778a598f9f8918821d8083534ed38bd42012fb5a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0124.npz",
+        "sha256": "3e310e1daebcd528237a6b1b32ae8e1da16846f10c68c20a3df29b0c27f5d6cb"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0125.npz",
+        "sha256": "3fd1ac5ca58709e38ce711446c91f55c8464aa9e4fa0e8e372eb63262323f3e1"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0126.npz",
+        "sha256": "0e402e4e73f619b5a1a1153ffa5570f1c9edd96a5a5ff7a64c33ca46c2c8fcad"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0127.npz",
+        "sha256": "ea66e9d5d4ed6c134ed178646439550b88d84fbde066c2f96ea9e7c78653664e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0128.npz",
+        "sha256": "7b74d10e8d3991d36f7bae5595f1f3480e5db81f50ff283eb893c8e37cdd6cd8"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0129.npz",
+        "sha256": "e54a24f88651d37c5376cd8b1b544e3b5a1ff80a50addc430fc4415b9a9f48cd"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0130.npz",
+        "sha256": "00d570ad677d5415bf323a9222f834f09c01ac07594723ce71abd168df99af78"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0131.npz",
+        "sha256": "e17d67e3c571fac41a67d5f32be9048c31610ba00095a1844891c1c44d308d1b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0132.npz",
+        "sha256": "141a558edba5e36c3a1563c064764e48c4c66d7572c665867a3ccf83a80f213e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0133.npz",
+        "sha256": "1d36df4d3bcdc89cafa784743994a7e3b29c01f4a28ed1e3dc61fc91b8db6d05"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0134.npz",
+        "sha256": "55c2a0ee656745835d781206b53b59525c35833dc497dbbb9b16e4fd14525eea"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0135.npz",
+        "sha256": "5fda1e1c6ebdb26452b23fedfd0dc880ea4ae2b22ec4a02369c354de33e24a6b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0136.npz",
+        "sha256": "a68c9a30b141b749a0fdf6a40c3db4ce3273a0addd174e27010000ecaf9f0ef6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0137.npz",
+        "sha256": "6532be477f09eb2ed87be3f190f1a03ad45c7b7f2faa45d608e302ff33c549ce"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0138.npz",
+        "sha256": "8ad0df5f790ae18eb52cbbfd0dbd98974152c74878125d69d2f742b58d3467b3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0139.npz",
+        "sha256": "adad5668c688e2e096aa4f468b3103e1ac8bcae02a4db28dc324b7ad20967f39"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0140.npz",
+        "sha256": "c13051b6ac6515c7b8e7c403b36070a7da67c3cc3dcff2ad3787d0223ee2f5f3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0141.npz",
+        "sha256": "11f136ac50a5ffee36c0398ef85bf8976732b7baf0731bdff5ce36bbc5434236"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0142.npz",
+        "sha256": "ae9c3756bd2d28fa33c4dc7a0cc2c7de489259f416add4611bd9ea7e679cc898"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0143.npz",
+        "sha256": "c251df6aaecdcc272e308c06f9a2b2cc85d5b8673139082271abdf36a2cd597d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0144.npz",
+        "sha256": "a4e91b07af0cacb9fae78d0808a4847a15bb8197f1b9ff30ab81f0424efb99ad"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0145.npz",
+        "sha256": "5d127e7b48a1b5f9d959e17470da03d6c61593268693ead57b868a2e5347ef57"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0146.npz",
+        "sha256": "8d441bd68d2ed95b0882fd5e607e8a2779172ef46ad7166fa77a66bfd1bfe210"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0147.npz",
+        "sha256": "9fecc459d40fdeea5f7dc2b3108634841c1f871ac12ca0e033be05cc5a966ce4"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0148.npz",
+        "sha256": "f58d24beb050e3ad3eef882915d22bf5fa162e4c5cc5a96e138c6823513c6365"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0149.npz",
+        "sha256": "3ee7dfc4b78fba633d03a91058ecfb3968bd4c9abdfeb1467e8fee1171fb7270"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0150.npz",
+        "sha256": "8b1182edee2df686e5055f0b7f8604696a67e730aa668c7b70f5777354a8d12e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0151.npz",
+        "sha256": "b13c536d273526e81510165e4c8a1bae231f143e4c0f884aeb44dbfa7e51cd5d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0152.npz",
+        "sha256": "334b0d465c27fe379aadd49e21c69428fb5410b4250d86ceb60ce37f19bd21a2"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0153.npz",
+        "sha256": "c33f223e2fb1e173b43963a2624bab7a041889b3d84cd58758a41f9ff6ef85a8"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0154.npz",
+        "sha256": "7b5bec275de0dccbcee3f28e1c6bf47c6da016c3f254510005153ece0e1e3fee"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0155.npz",
+        "sha256": "e5f6cc4445e8e866e289f9bb836174296177eef4772a46ff28fb3a8645652658"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0156.npz",
+        "sha256": "7912225a44660608959df1f930ec95ff40bc61fa3d16bc7c2244fe15ee46e879"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0157.npz",
+        "sha256": "67c9469f373e764432ac573f00f2e2981209a95a28f0fc42ac6901a0fd794ba3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0158.npz",
+        "sha256": "83851c883fca8170884501bc96386c2792dba89ec63f5d5c0261f51868f43888"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0159.npz",
+        "sha256": "f8b49b025c661e14f7f4d0230753e6f412be4cbc4dcfab9c55db6fc1b64d5dd7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0160.npz",
+        "sha256": "83dd185e79293039bf15e6b1062e08cd5439b03b8c42cca8c1c2ac05fa98bedc"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0161.npz",
+        "sha256": "991140c28d7b7b523277eabc36aab6dd8ff9350cbeac76f1c1b196e231494e40"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0162.npz",
+        "sha256": "0b9f319d9925dd11d4fb15dc5f784e3cc1ac15c5992d2318a6cc6afbf9b96599"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0163.npz",
+        "sha256": "81ce20dfb42d6ea5f8b23ca6bbaa1fc560323d2dda6306cd08d9e0894858f88c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0164.npz",
+        "sha256": "8707d2e8f99779164174be695c8b357023b47e9598f7ba63aacb5cd0249a57f9"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0165.npz",
+        "sha256": "fe2d0210ff3ce31f8c92246b0e40f71f2c70f6d9c3e18af131ea805270fe1b2d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0166.npz",
+        "sha256": "09fb94d3e14a56adc806e26525d531b08ec4810dfc713c5341e2cc66e59f66db"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0167.npz",
+        "sha256": "c944c48e748410410d8c805a58b76276836adffa43747f98d23452f8ba086b07"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0168.npz",
+        "sha256": "3a9fa38df7af446277efa62dd2e5a56842bc253fdc5b3a66a1f9860d6805008e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0169.npz",
+        "sha256": "5c9af6d218a6ec5d389ec23b05e813d489192e64e64c14ebb2e71c6f21d79a32"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0170.npz",
+        "sha256": "92eb881a3682401150e24091947c54bb0b3e12e2efc98e4889375d4a782af145"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0171.npz",
+        "sha256": "73cdb119573760b2182f6563de30a382fe8f36454a6aca8813cc2a31a4e661c6"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0172.npz",
+        "sha256": "d2a742f3c2f4a9b5ff21eddf7182617f46eaa5d36041b4ab109ba31cf258fc71"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0173.npz",
+        "sha256": "a04672068c9859f42055a18ad7cf903e2840c61cb1793eaaa65a869ee62d1306"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0174.npz",
+        "sha256": "419b1596d1071a6bcd87ab287994042b9f7643f9da95fe04f35c4f3b6139325d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0175.npz",
+        "sha256": "b6577a1b52522c899951b6a9bc3958fe86a603c06c271617b01723cf51aeff29"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0176.npz",
+        "sha256": "02a2fa4586069fd107ade584d8ee35e7e99e0d7b5747f965ce81f34632a68fff"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0177.npz",
+        "sha256": "da6de4fcddc700c0f69241e20ed01799acb69c9ffad59c0a6a2ae01c46d0806e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0178.npz",
+        "sha256": "3ae9979c2c203f9cb2516815938ef41601db54b5496da4e7c45fa79d2c12926b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0179.npz",
+        "sha256": "97935ed43093d3ae7aaaf9b4ad02adeed074efeafebae95df87e0298c8075acd"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0180.npz",
+        "sha256": "21fc7e8ad8f13581e6e836d575b7fc23a75295627ca8c26e03cd54756500b7b1"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0181.npz",
+        "sha256": "46a96475a80c99ae2fd8ccd5935277f401bc4c9ffa2382ee7af75b4979ab702d"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0182.npz",
+        "sha256": "8a424278b487a1c95552109888fadcd735cd30d9b7d1b198fca6dd1b8b9adcba"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0183.npz",
+        "sha256": "72de7bb0017c3e25da8cc2a5a7b1e658d3535f8ab93515c6edae09e1a3352a5b"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0184.npz",
+        "sha256": "569b19de43687be2e76d45e96d830ada71faa6e2187c50b8ecdb850994db35e9"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0185.npz",
+        "sha256": "12e501ec11c920f2697a0656e9f10cde2f085a5c728f6dcde7ce5561afd1326f"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0186.npz",
+        "sha256": "4c8f5c13868f34d33f5d6d0a569ef5e2b9442e8c98d4c430aabecd982bb2572a"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0187.npz",
+        "sha256": "167f9a8b86d58a69df14e5a35a62e7e0d97317ccacadb35ed7abd46c13b77ede"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0188.npz",
+        "sha256": "701b225e744e9b421796b65d236982a34923855a47211dd7efaadd1e6d56e9b0"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0189.npz",
+        "sha256": "ba02a488ec78b5f3c7035ca6951c069df82e6f51c5ee801a0dd994af7676b9c2"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0190.npz",
+        "sha256": "af586cb08c494dfbc69749c1f5a7779c204f21fdc9b0bfea045a27d5f019a9fa"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0191.npz",
+        "sha256": "4c8b66954f068dec7d2e53cb1f233b41bb8d0a5d64c2194c5ad3ab2a4272a21c"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0192.npz",
+        "sha256": "c574ca0cae10a4ac3394e913418e4e967225e2b9c35c319f541732e478e6eaad"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0193.npz",
+        "sha256": "754151039bf3421c829558efb01c04c21e26a592350a78d2cd3c2b5a153ea3c3"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0194.npz",
+        "sha256": "35604a1c60822096b7ee40fc8c7c80141c3f7577920357d04e42f404021881a7"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0195.npz",
+        "sha256": "d63d8a37c43c4bc80bcba56f8ecc960962a8bf29157dc3d595ec5b869387d6ec"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0196.npz",
+        "sha256": "0a56f346378696fa1aa6d7886fa5756c29fa69cba29127827e970fcfee38133e"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0197.npz",
+        "sha256": "5b32c980281eab47b92115d0b9fae6994f8566546c3a05091ba5323dcbfffac5"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0198.npz",
+        "sha256": "53dc83a1ab3ee0becb540efbdbb56e700a6ede155ff4a4a3609505a2861c0492"
+      },
+      {
+        "path": "/mnt/c/D/PacMan/runs/input_repair_20261105/data/game_0199.npz",
+        "sha256": "e2b4446e8e2adbe96c211b67b0cb841daefbc321bee532f2029919b8a8e66a5c"
+      }
+    ],
+    "model_source_sha256": "05e8c690d84740e856dd162c54ae009ad3bc8d36493f1b6503d3c9de5dee8380",
+    "training_source_sha256": "35596373d2b5ac44ddce0aeb8aad30d38a31971e07065b129b31d5433490c2f4",
+    "initialization_sha256": "246fbbce102d6ebf6a9ba4b55ada0a6bc2941254b31e6e01cea2824e8291890d",
+    "shared_initialization_sha256": "0542aa551edfdd781ea542155b63ff1afed4ed533be660b214f3efa9da3ac530"
+  },
+  "validation": {
+    "loss": 1.5164563347498576,
+    "action_loss": 0.1545048921315271,
+    "marginal_loss": 1.5710161946415901,
+    "belief_kl": 1.244167665163676,
+    "value_mse": 0.23556754938637217,
+    "samples": 12000,
+    "action_top3_per_agent": [
+      0.9991666674613953,
+      0.9994166493415833
+    ],
+    "blind_count": 18321,
+    "blind_nll": 2.751741291296208,
+    "blind_hit3": 0.4560886414497025,
+    "blind_expected_l1": 4.195709737495892
+  },
+  "elapsed_seconds": 1479.7908693470008,
+  "peak_gpu_memory_bytes": 1056225792,
+  "error": "training monotonic deadline reached"
+}

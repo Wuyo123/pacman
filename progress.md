@@ -39,3 +39,5 @@
 2026-11-05 14:02:53+08:00：Luna已启动正式输入修复对照；主PID18，manifest started_epoch1793858573.0182498，固定截止15:32:53+08:00。已独立确认进程与manifest RUNNING，240计划记录=200采集+40评测。实现commit7869ca9，66tests/CUDA smoke通过。日志runs/input_repair_20261105.log；原结果与920确认集不变。
 
 2026-11-05 14:15：用户明确保留公开并授权上传；GitHub官方CLI登录成功。两分支及两标签push成功，git ls-remote独立核对7869ca9/7bf5a30与annotated tags peeled目标一致，仓库https://github.com/Wuyo123/pacman。新输入实验仍在运行，未提前声称结果。
+
+2026-11-05 16:02核实：输入修复批次在15:32:53按90分钟截止，INCONCLUSIVE_RESOURCE。200采集完整；V0完成20轮，V1完成15轮/第16轮部分更新中断；0/40评测，进程已退出。保留全部来源/数据/模型，不能判断修复效果，不自动续训或重跑。见INPUT_REPAIR_RESULT_20261105.md。

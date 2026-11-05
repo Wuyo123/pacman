@@ -93,10 +93,15 @@
   "improvement_report": "IMPROVEMENT_RESULT_20261105.md",
   "root_cause_report": "ROOT_CAUSE_ANALYSIS_20261105.md",
   "input_repair": {
-    "status": "RUNNING",
+    "status": "INCONCLUSIVE_RESOURCE",
     "manifest": "runs/input_repair_20261105/manifest.json",
     "planned_records": 240,
     "deadline_local": "2026-11-05T15:32:53+08:00",
-    "executor": "Luna"
+    "executor": "Luna",
+    "result_report": "INPUT_REPAIR_RESULT_20261105.md",
+    "collection_completed": 200,
+    "v0_epochs_completed": 20,
+    "v1_epochs_completed": 15,
+    "evaluation_completed": 0
   }
 }
