@@ -78,13 +78,16 @@
     "original_tag": "v0-m0-20261104",
     "neural_control_commit": "1b156c9",
     "neural_control_tag": "m0-neural-controls-20261105",
-    "remote_status": "AWAITING_DESTINATION",
-    "pushed": false
+    "remote_status": "AWAITING_VISIBILITY_CHOICE_AND_LOCAL_GIT_LOGIN",
+    "pushed": false,
+    "remote_url": "https://github.com/Wuyo123/pacman.git",
+    "verified_remote_private": false
   },
   "improvement_runs": {
     "coverage": "STOP_NO_CANDIDATE_WITH_EXECUTION_ERRORS",
     "recovery": "NOT_ESTABLISHED",
     "goal": "NOT_ESTABLISHED"
   },
-  "improvement_report": "IMPROVEMENT_RESULT_20261105.md"
+  "improvement_report": "IMPROVEMENT_RESULT_20261105.md",
+  "root_cause_report": "ROOT_CAUSE_ANALYSIS_20261105.md"
 }

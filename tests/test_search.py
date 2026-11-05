@@ -7,6 +7,20 @@ except ImportError:
 
 
 class SearchTests(unittest.TestCase):
+    def test_live_search_reports_actual_visits_depth_and_observation_reuse(self):
+        from belief_mita.search import NeuralController
+        from belief_mita.runtime import ROOT, play_game
+        checkpoint = ROOT / 'runs/m0_original/training/model.pt'
+        controller = NeuralController(checkpoint, 20261105)
+        result = play_game(20261105, controller=controller, length=16)
+        stats = controller.statistics
+        self.assertTrue(result['validated'])
+        self.assertEqual(sum(stats['root_visited_edges']), stats['decisions'])
+        self.assertEqual(sum(stats['simulation_depth']), stats['simulations'])
+        self.assertEqual(stats['simulation_depth'][0], 0)
+        expanded_steps = sum(depth * count for depth, count in enumerate(stats['simulation_depth']))
+        self.assertLessEqual(stats['observation_hits'] + stats['observation_misses'], expanded_steps)
+
     def setUp(self):
         self.assertIsNotNone(joint_top3, 'shielded cooperative PUCT not implemented')
 

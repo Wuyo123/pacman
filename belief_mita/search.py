@@ -12,6 +12,7 @@ import torch
 
 from .model import BeliefMiTA
 from .runtime import ACTIONS, Actions, Configuration, ObservationEncoder, OraclePlanner
+from .schema import validate_checkpoint_schema
 
 
 def joint_top3(first, conditional_second, legal, acting_slot=None):
@@ -105,7 +106,8 @@ class NeuralController:
         checkpoint = torch.load(Path(checkpoint), map_location='cpu', weights_only=False)
         if not isinstance(checkpoint.get('epochs'),int) or checkpoint['epochs'] < 1 or checkpoint['status'] != 'completed':
             raise ValueError('evaluation requires a completed training checkpoint')
-        self.model = BeliefMiTA(d=checkpoint['d']).to(device).eval()
+        self.observation_version = validate_checkpoint_schema(checkpoint)
+        self.model = BeliefMiTA(feature_dim=checkpoint.get('feature_dim', 18), d=checkpoint['d']).to(device).eval()
         self.model.load_state_dict(checkpoint['state_dict'])
         self.device, self.budget = torch.device(device), budget_ms / 1000
         self.mode = mode
@@ -113,7 +115,9 @@ class NeuralController:
         self.statistics = {'decisions': 0, 'simulations': 0, 'shield_removed': 0,
                            'shield_fallbacks': 0, 'forward_ms': [], 'deadline_stops': 0,
                            'root_action_choices': [0,0,0,0], 'forced_despite_alternatives': 0,
-                           'search_changed_policy': 0, 'chosen_stop': 0, 'goal_guard_overrides': 0}
+                           'search_changed_policy': 0, 'chosen_stop': 0, 'goal_guard_overrides': 0,
+                           'root_visited_edges': [0, 0, 0, 0], 'simulation_depth': [0, 0, 0, 0],
+                           'observation_hits': 0, 'observation_misses': 0}
 
     def start(self, observation, topology, team, red):
         self.topology, self.team, self.red = topology, list(team), red
@@ -123,7 +127,7 @@ class NeuralController:
             from .goal_guard import ProgressGuard
             self.progress_guard = ProgressGuard(window=8)
         # Warm up without accessing any hidden state or targets.
-        encoder = ObservationEncoder(topology, team, red)
+        encoder = ObservationEncoder(topology, team, red, version=self.observation_version)
         encoder.update(observation, team[0])
         landmarks = topology.landmark_indices(observation.getRedFood().asList() +
                     observation.getBlueFood().asList(), observation.getCapsules())
@@ -210,6 +214,7 @@ class NeuralController:
         policy_best = max(root, key=lambda edge: edge.prior)
         if self.mode == 'policy':
             self.statistics['decisions'] += 1
+            self.statistics['root_visited_edges'][0] += 1
             self.statistics['chosen_stop'] += policy_best.plan[slot] == 4
             return ACTIONS[policy_best.plan[slot]]
         simulations = 0
@@ -238,8 +243,10 @@ class NeuralController:
                              tuple(future.getAgentDistances()), future.getScore(),
                              tuple(future.getRedFood().asList()), tuple(future.getBlueFood().asList()))
                 if signature not in edge.observations:
+                    self.statistics['observation_misses'] += 1
                     edge.observations[signature] = self.plans(future, next_belief, next_first, next_second, actor=actor)
                     break
+                self.statistics['observation_hits'] += 1
                 edges = edge.observations[signature]
                 if not edges:
                     break
@@ -250,8 +257,10 @@ class NeuralController:
                 edge.visits += 1
                 edge.total += value
             simulations += 1
+            self.statistics['simulation_depth'][len(path)] += 1
         self.statistics['decisions'] += 1
         self.statistics['simulations'] += simulations
+        self.statistics['root_visited_edges'][sum(edge.visits > 0 for edge in root)] += 1
         if simulations == 0:
             self.statistics['deadline_stops'] += 1
         best = max(root, key=lambda edge: (edge.visits, edge.total / max(1, edge.visits), edge.prior))
