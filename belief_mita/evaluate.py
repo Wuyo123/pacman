@@ -16,10 +16,11 @@ from .model import BeliefMiTA
 from .runtime import play_game
 from .search import NeuralController
 from .training import EpisodeDataset
+from .schema import FEATURE_DIMS, validate_checkpoint_schema
 
 
-def evaluation_spec(index):
-    return {'seed': 9000000 + index // 2, 'red': index % 2 == 0}
+def evaluation_spec(index, seed_start=9000000):
+    return {'seed': seed_start + index // 2, 'red': index % 2 == 0}
 
 
 def gate_result(outcomes, forward_p95_ms, failures=0, over_budget=0):
@@ -45,20 +46,27 @@ def gate_result(outcomes, forward_p95_ms, failures=0, over_budget=0):
             'original_score_gate': 0.75}
 
 
-def benchmark(checkpoint, data_dir, out, deadline=None):
+def benchmark(checkpoint, data_dir, out, deadline=None, device_override=None):
     def check_deadline():
         if deadline is not None and time.monotonic() >= deadline:
             raise TimeoutError('M0 budget expired during latency benchmark')
     check_deadline()
     checkpoint = torch.load(checkpoint, map_location='cpu', weights_only=False)
+    observation_version = validate_checkpoint_schema(checkpoint)
     paths = sorted(Path(data_dir).glob('*.npz'))[-20:]
-    dataset = EpisodeDataset(paths)
+    dataset = EpisodeDataset(paths, observation_version=observation_version)
     samples = [dataset[int(i)] for i in np.linspace(0, len(dataset)-1, 100)]
     timings = {}
     torch.set_num_threads(1)
-    for device in ['cpu'] + (['cuda'] if torch.cuda.is_available() else []):
+    devices = [device_override] if device_override is not None else (
+        ['cpu'] + (['cuda'] if torch.cuda.is_available() else []))
+    if any(device not in ('cpu', 'cuda') for device in devices):
+        raise ValueError('benchmark device must be cpu or cuda')
+    if 'cuda' in devices and not torch.cuda.is_available():
+        raise ValueError('CUDA benchmark requested but unavailable')
+    for device in devices:
         check_deadline()
-        model = BeliefMiTA(d=checkpoint['d']).to(device).eval()
+        model = BeliefMiTA(feature_dim=FEATURE_DIMS[observation_version], d=checkpoint['d']).to(device).eval()
         model.load_state_dict(checkpoint['state_dict'])
         inputs = [(sample['x'][None].to(device), sample['landmarks'][None].to(device),
                    sample['agents'][None].to(device)) for sample in samples]
@@ -129,18 +137,21 @@ class TimedController(NeuralController):
             return 'Stop' if 'Stop' in legal else legal[0]
 
 
-def evaluate(checkpoint, data_dir, out_dir, deadline=None, defer_gc=False):
+def evaluate(checkpoint, data_dir, out_dir, deadline=None, defer_gc=False, seed_start=9000000,
+             device_override=None):
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     if (out/'gate.json').exists():
         raise FileExistsError('do not overwrite an existing M0 gate')
-    device, forward_ms = benchmark(checkpoint, data_dir, out/'latency.json', deadline)
+    checkpoint_data = torch.load(checkpoint, map_location='cpu', weights_only=False)
+    observation_version = validate_checkpoint_schema(checkpoint_data)
+    device, forward_ms = benchmark(checkpoint, data_dir, out/'latency.json', deadline, device_override)
     results, outcomes, failures = [], [], 0
     over_budget = 0
     for index in range(20):
         if deadline is not None and time.monotonic() >= deadline:
             break
-        spec = evaluation_spec(index)
+        spec = evaluation_spec(index, seed_start=seed_start)
         controller = TimedController(checkpoint, spec['seed'], device=device)
         try:
             with defer_cyclic_gc() if defer_gc else nullcontext():
@@ -165,6 +176,8 @@ def evaluate(checkpoint, data_dir, out_dir, deadline=None, defer_gc=False):
     gate['checkpoint_sha256'] = hashlib.sha256(Path(checkpoint).read_bytes()).hexdigest()
     gate['inference_device'] = device
     gate['deferred_cyclic_gc'] = defer_gc
+    gate['observation_version'] = observation_version
+    gate['feature_dim'] = FEATURE_DIMS[observation_version]
     gate['source_sha256'] = {str(path.name): hashlib.sha256(path.read_bytes()).hexdigest()
                              for path in Path(__file__).parent.glob('*.py')}
     gate['results'] = [{k:v for k,v in result.items() if k != 'action_trace'} for result in results]
@@ -180,6 +193,8 @@ if __name__ == '__main__':
     parser.add_argument('out_dir')
     parser.add_argument('--deadline-epoch', type=float, required=True)
     parser.add_argument('--defer-gc', action='store_true')
+    parser.add_argument('--seed-start', type=int, default=9000000)
     args = parser.parse_args()
     evaluate(args.checkpoint, args.data_dir, args.out_dir,
-             time.monotonic() + max(0, args.deadline_epoch - time.time()), args.defer_gc)
+             time.monotonic() + max(0, args.deadline_epoch - time.time()), args.defer_gc,
+             args.seed_start)

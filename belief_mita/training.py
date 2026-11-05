@@ -14,6 +14,7 @@ from torch.nn import functional as F
 from torch.utils.data import DataLoader, Dataset, Subset
 
 from .model import BeliefMiTA
+from .schema import FEATURE_DIMS, validate_checkpoint_schema
 
 
 def split_games(paths):
@@ -35,17 +36,36 @@ def graph_gaussian(distances, enemy, sigma=1.0):
 class EpisodeDataset(Dataset):
     """Keep raw arrays once; construct eight-frame histories only when sampled."""
 
-    def __init__(self, paths):
+    def __init__(self, paths, observation_version=0):
+        if type(observation_version) is not int or observation_version not in FEATURE_DIMS:
+            raise ValueError(f"unsupported observation version: {observation_version}")
+        self.observation_version = observation_version
         self.paths = list(map(Path, paths))
         self.episodes = []
         self.offsets = [0]
         for path in self.paths:
             with np.load(path, allow_pickle=False) as archive:
+                if 'observation_version' in archive:
+                    version_value = archive['observation_version']
+                    if version_value.shape != () or version_value.dtype.kind not in 'iu':
+                        raise ValueError(f"invalid observation version metadata: {path}")
+                    archive_version = int(version_value)
+                else:
+                    archive_version = 0
+                if archive_version not in (0, 1) or observation_version == 1 and archive_version != 1:
+                    raise ValueError(f"observation version mismatch: {path}")
+                frame_key = 'frames' if observation_version == 0 else 'frames_v1'
+                if frame_key not in archive:
+                    raise ValueError(f"missing {frame_key}: {path}")
                 episode = {key: torch.from_numpy(archive[key]) for key in
                            ("frames", "agents", "labels", "enemy", "visible", "legal", "values",
                             "landmarks", "distances", "cells")}
+                if observation_version == 1:
+                    episode['frames'] = torch.from_numpy(archive[frame_key])
+                    if not np.array_equal(archive['frames_v1'][..., :18], archive['frames']):
+                        raise ValueError(f"V1 legacy channels do not match V0 frames: {path}")
             frames = episode["frames"]
-            if frames.ndim != 3 or frames.shape[-1] != 18 or len(frames) == 0:
+            if frames.ndim != 3 or frames.shape[-1] != FEATURE_DIMS[observation_version] or len(frames) == 0:
                 raise ValueError(f"invalid observation frames: {path}")
             self.episodes.append(episode)
             self.offsets.append(self.offsets[-1] + len(frames))
@@ -150,10 +170,49 @@ def _sha256(path):
     return digest.hexdigest()
 
 
-def train(data_dir, out_dir, epochs=20, d=64, batch_size=64, seed=20261104, deadline=None):
+def initialize_model(seed, observation_version, d=64):
+    """Initialize V0 and V1 from identical shared weights; new input columns start at zero."""
+    if type(observation_version) is not int or observation_version not in FEATURE_DIMS:
+        raise ValueError(f"unsupported observation version: {observation_version}")
+    torch.manual_seed(seed)
+    if observation_version == 0:
+        return BeliefMiTA(feature_dim=FEATURE_DIMS[0], d=d)
+    baseline = BeliefMiTA(feature_dim=FEATURE_DIMS[0], d=d)
+    model = BeliefMiTA(feature_dim=FEATURE_DIMS[1], d=d)
+    baseline_state, model_state = baseline.state_dict(), model.state_dict()
+    with torch.no_grad():
+        for key, value in baseline_state.items():
+            if key == 'temporal_encoder.weight_ih_l0':
+                model_state[key][:, :FEATURE_DIMS[0]].copy_(value)
+                model_state[key][:, FEATURE_DIMS[0]:].zero_()
+            else:
+                model_state[key].copy_(value)
+    model.load_state_dict(model_state)
+    return model
+
+
+def initialize_paired_models(seed, d=64):
+    """Expose the shared initialization for tests and paired experiment setup."""
+    return (initialize_model(seed, 0, d), initialize_model(seed, 1, d))
+
+
+def model_initialization_hashes(model):
+    full, shared = hashlib.sha256(), hashlib.sha256()
+    for key, value in sorted(model.state_dict().items()):
+        value = value.detach().cpu().contiguous()
+        full.update(key.encode('utf-8') + b'\0' + value.numpy().tobytes())
+        common = value[:, :FEATURE_DIMS[0]] if key == 'temporal_encoder.weight_ih_l0' else value
+        shared.update(key.encode('utf-8') + b'\0' + common.contiguous().numpy().tobytes())
+    return full.hexdigest(), shared.hexdigest()
+
+
+def train(data_dir, out_dir, epochs=20, d=64, batch_size=64, seed=20261104, deadline=None,
+          observation_version=0):
     """Train every requested epoch. deadline, if set, is an absolute monotonic time."""
     if epochs < 1 or batch_size < 1:
         raise ValueError("positive epochs and batch_size are required")
+    if type(observation_version) is not int or observation_version not in FEATURE_DIMS:
+        raise ValueError(f"unsupported observation version: {observation_version}")
     torch.set_num_threads(1)
     random.seed(seed)
     np.random.seed(seed)
@@ -167,16 +226,19 @@ def train(data_dir, out_dir, epochs=20, d=64, batch_size=64, seed=20261104, dead
     if (out_dir / "epochs.jsonl").exists() or (out_dir / "model.pt").exists():
         raise FileExistsError("use a fresh output directory to preserve training provenance")
     train_paths, val_paths = split_games(Path(data_dir).glob("*.npz"))
-    dataset = EpisodeDataset(train_paths + val_paths)
+    dataset = EpisodeDataset(train_paths + val_paths, observation_version=observation_version)
     cut = dataset.offsets[len(train_paths)]
     generator = torch.Generator().manual_seed(seed)
     train_loader = DataLoader(Subset(dataset, range(cut)), batch_size=batch_size,
                               shuffle=True, generator=generator, num_workers=0)
     val_loader = DataLoader(Subset(dataset, range(cut, len(dataset))), batch_size=batch_size, num_workers=0)
-    model = BeliefMiTA(d=d).to(device)
+    model = initialize_model(seed, observation_version, d=d)
+    initialization_hash, shared_initialization_hash = model_initialization_hashes(model)
+    model = model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=3e-4)
     provenance = {
         "seed": seed, "device": str(device), "torch_version": str(torch.__version__),
+        "observation_version": observation_version, "feature_dim": FEATURE_DIMS[observation_version],
         "batch_size": batch_size, "requested_epochs": epochs, "lr": 3e-4,
         "loss_weights": {"first_ce": 1., "conditional_second_ce": 1., "marginal_second_ce": 0.,
                          "belief_kl": 1., "value_mse": 0.5},
@@ -188,6 +250,8 @@ def train(data_dir, out_dir, epochs=20, d=64, batch_size=64, seed=20261104, dead
         "files": [{"path": str(path.resolve()), "sha256": _sha256(path)} for path in dataset.paths],
         "model_source_sha256": _sha256(Path(__file__).with_name("model.py")),
         "training_source_sha256": _sha256(Path(__file__)),
+        "initialization_sha256": initialization_hash,
+        "shared_initialization_sha256": shared_initialization_hash,
     }
     summary = {"status": "running", "epochs_completed": 0, "epoch_in_progress": 0,
                "batches_completed_in_epoch": 0, "provenance": provenance}
@@ -202,7 +266,8 @@ def train(data_dir, out_dir, epochs=20, d=64, batch_size=64, seed=20261104, dead
         summary["peak_gpu_memory_bytes"] = torch.cuda.max_memory_allocated() if device.type == "cuda" else 0
         temporary = out_dir / "model.pt.tmp"
         torch.save({"state_dict": model.state_dict(), "optimizer_state_dict": optimizer.state_dict(),
-                    "d": d, "feature_dim": 18, "epochs": summary["epochs_completed"],
+                    "d": d, "feature_dim": FEATURE_DIMS[observation_version],
+                    "observation_version": observation_version, "epochs": summary["epochs_completed"],
                     "status": summary["status"], "epoch_in_progress": summary["epoch_in_progress"],
                     "batches_completed_in_epoch": summary["batches_completed_in_epoch"],
                     "provenance": provenance}, temporary)
@@ -263,7 +328,9 @@ if __name__ == "__main__":
     parser.add_argument("--d", type=int, default=64)
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--seed", type=int, default=20261104)
+    parser.add_argument("--observation-version", type=int, choices=(0, 1), default=0)
     parser.add_argument("--deadline-seconds", type=float)
     args = parser.parse_args()
     deadline = time.monotonic() + args.deadline_seconds if args.deadline_seconds is not None else None
-    train(args.data_dir, args.out_dir, args.epochs, args.d, args.batch_size, args.seed, deadline)
+    train(args.data_dir, args.out_dir, args.epochs, args.d, args.batch_size, args.seed, deadline,
+          args.observation_version)

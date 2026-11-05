@@ -11,6 +11,7 @@ import time
 import numpy as np
 
 from .topology import MapTopology
+from .schema import FEATURE_DIMS
 
 ROOT = Path(__file__).resolve().parents[1]
 ENGINE = ROOT / 'vendor' / 'capture'
@@ -80,19 +81,25 @@ def validate_transition(before, after, actor, action):
 
 
 class ObservationEncoder:
-    def __init__(self, topology, team, red):
+    def __init__(self, topology, team, red, version=0):
+        if type(version) is not int or version not in FEATURE_DIMS:
+            raise ValueError(f'unsupported observation version: {version}')
+        self.version = version
+        self.feature_dim = FEATURE_DIMS[version]
         self.topology, self.team, self.red = topology, list(team), red
         self.enemies = [i for i in range(4) if i not in team]
         self.frames = deque(maxlen=8)
         self.previous_defended = None
         self.xy = np.asarray(topology.cells, dtype=np.float32)
-        self.static = np.zeros((len(topology.cells), 18), np.float32)
+        self.static = np.zeros((len(topology.cells), self.feature_dim), np.float32)
         self.static[:, 0:2] = self.xy / [max(1, topology.width - 1), max(1, topology.height - 1)]
         self.static[:, 2] = ((self.xy[:, 0] < topology.width / 2) == red)
         self.static[list(topology.articulation), 14] = 1
         self.static[:, 15] = topology.escape_depth / max(topology.width, topology.height)
 
     def update(self, observation, observer):
+        if observer not in self.team:
+            raise ValueError('observer must belong to the encoded team')
         self.last_observation = observation
         frame = self.static.copy()
         index = self.topology.index
@@ -122,6 +129,17 @@ class ObservationEncoder:
                 frame[index[point], 13] = 1
         self.previous_defended = defended
         frame[:, 17] = observation.data.timeleft / 1200
+        self.v0_frame = frame[:, :18].copy()
+        if self.version == 1:
+            agents = self.team + self.enemies
+            states = [observation.getAgentState(agent) for agent in agents]
+            frame[:, 18:22] = np.asarray([state.numCarrying / 30 for state in states], np.float32)
+            frame[:, 22:26] = np.asarray([state.numReturned / 60 for state in states], np.float32)
+            score = observation.getScore() * (1 if self.red else -1) / 60
+            frame[:, 26] = score
+            frame[:, 27:31] = np.asarray([float(state.isPacman) for state in states], np.float32)
+            frame[:, 31:35] = np.asarray([state.scaredTimer / 40 for state in states], np.float32)
+            frame[:, 35 + self.team.index(observer)] = 1
         self.frames.append(frame)
         return frame
 
@@ -236,7 +254,7 @@ class OraclePlanner:
 
 
 def play_game(seed, red=True, opponent='baseline', name='defaultCapture', length=1200,
-              collect=False, controller=None, deadline=None):
+              collect=False, controller=None, deadline=None, observation_version=0):
     random.seed(seed)
     np.random.seed(seed)
     state = initial_state(name, length)
@@ -247,7 +265,9 @@ def play_game(seed, red=True, opponent='baseline', name='defaultCapture', length
     opponents = dict(zip(other, load_team(opponent, other, not red)))
     for agent in opponents.values():
         agent.registerInitialState(state.deepCopy())
-    encoder = ObservationEncoder(topology, team, red)
+    if controller is not None:
+        observation_version = getattr(controller, 'observation_version', observation_version)
+    encoder = ObservationEncoder(topology, team, red, version=observation_version)
     oracle = OraclePlanner(topology, team, red)
     if controller is not None:
         controller.start(state.makeObservation(team[0]), topology, team, red)
@@ -255,6 +275,8 @@ def play_game(seed, red=True, opponent='baseline', name='defaultCapture', length
                                          state.getCapsules(), 16)
     rows = {key: [] for key in ('frames', 'agents', 'labels', 'enemy', 'visible', 'legal',
                                 'student_action', 'actor_slot')}
+    if observation_version == 1:
+        rows['frames_v1'] = []
     times, deaths, moves = [], [0, 0, 0, 0], []
     actor = random.randint(0, 1)
     started = time.perf_counter()
@@ -286,7 +308,9 @@ def play_game(seed, red=True, opponent='baseline', name='defaultCapture', length
                 # Expert queries are offline labels; only the student's callback is timed.
                 if controller is not None:
                     joint_plan = oracle.plan(state, actor)
-                rows['frames'].append(frame)
+                rows['frames'].append(encoder.v0_frame if observation_version == 1 else frame)
+                if observation_version == 1:
+                    rows['frames_v1'].append(frame)
                 rows['agents'].append([topology.index[observation.getAgentPosition(i)] for i in team])
                 rows['labels'].append(joint_plan)
                 rows['enemy'].append([topology.index[state.getAgentPosition(i)] for i in other])
@@ -316,6 +340,7 @@ def play_game(seed, red=True, opponent='baseline', name='defaultCapture', length
               'action_trace': moves}
     if collect:
         episode = {key: np.asarray(value, dtype=np.float16 if key == 'frames' else
+                    np.float16 if key == 'frames_v1' else
                     np.bool_ if key in ('visible', 'legal') else np.int64) for key, value in rows.items()}
         episode.update(values=np.full(len(rows['frames']), result['outcome'], np.float32),
                        landmarks=landmarks, distances=topology.distances, cells=np.asarray(topology.cells))

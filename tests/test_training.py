@@ -39,6 +39,49 @@ class TrainingTests(unittest.TestCase):
             torch.testing.assert_close(dataset[3]["x"], torch.full((8, 4, 18), 10.))
             self.assertEqual(tuple(dataset[2]["belief_target"].shape), (2, 4))
 
+    def test_versioned_dataset_selects_matched_feature_array(self):
+        training = self.training()
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.episode(directory)
+            with np.load(path) as archive:
+                arrays = {key: archive[key] for key in archive.files}
+            arrays["frames_v1"] = np.concatenate(
+                [arrays["frames"], np.ones((*arrays["frames"].shape[:2], 19), dtype=np.float16)], axis=-1)
+            arrays["observation_version"] = np.asarray(1, dtype=np.int64)
+            np.savez_compressed(path, **arrays)
+            old = training.EpisodeDataset([path], observation_version=0)
+            new = training.EpisodeDataset([path], observation_version=1)
+            self.assertEqual(old[0]["x"].shape[-1], 18)
+            self.assertEqual(new[0]["x"].shape[-1], 37)
+            torch.testing.assert_close(old[0]["x"], new[0]["x"][..., :18])
+
+    def test_v1_initialization_copies_v0_weights_and_zeros_added_input_columns(self):
+        training = self.training()
+        old, new = training.initialize_paired_models(seed=23)
+        old_state, new_state = old.state_dict(), new.state_dict()
+        for key in old_state:
+            if key == "temporal_encoder.weight_ih_l0":
+                torch.testing.assert_close(new_state[key][:, :18], old_state[key], atol=0, rtol=0)
+                torch.testing.assert_close(new_state[key][:, 18:], torch.zeros_like(new_state[key][:, 18:]), atol=0, rtol=0)
+            else:
+                torch.testing.assert_close(new_state[key], old_state[key], atol=0, rtol=0)
+        old_hash, old_shared = training.model_initialization_hashes(old)
+        new_hash, new_shared = training.model_initialization_hashes(new)
+        self.assertNotEqual(old_hash, new_hash)
+        self.assertEqual(old_shared, new_shared)
+        cells = 4
+        old_x = torch.randn(2, 8, cells, 18)
+        new_x = torch.cat((old_x, torch.randn(2, 8, cells, 19)), dim=-1)
+        landmarks = torch.arange(16).remainder(cells).expand(2, -1)
+        agents = torch.tensor([[0, 1], [2, 3]])
+        old.eval()
+        new.eval()
+        with torch.no_grad():
+            old_output = old(old_x, landmarks, agents)
+            new_output = new(new_x, landmarks, agents)
+        for key in old_output:
+            torch.testing.assert_close(old_output[key], new_output[key], atol=1e-6, rtol=1e-6)
+
     def test_game_split_is_exact_and_disjoint(self):
         training = self.training()
         games = [Path(f"game_{i:04d}.npz") for i in reversed(range(200))]
